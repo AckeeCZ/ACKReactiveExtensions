@@ -1,29 +1,31 @@
 # ACKReactiveExtensions
 
-[![CI Status](http://img.shields.io/travis/Jan Mísař/ACKReactiveExtensions.svg?style=flat)](https://travis-ci.org/Jan Mísař/ACKReactiveExtensions)
-[![Version](https://img.shields.io/cocoapods/v/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
-[![License](https://img.shields.io/cocoapods/l/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
-[![Platform](https://img.shields.io/cocoapods/p/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+ACKReactiveExtensions contains extensions for views, label, controls and other UIKit classes for simple use with ReactiveCocoa. It also offers extensions for Argo, Reachability and probably much more in the future.
 
 ## Installation
 
-ACKReactiveExtensions is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+ACKReactiveExtensions is available through [CocoaPods](http://cocoapods.org). You need to add Ackee private repo to your Cocoapods installation. See https://gitlab.ack.ee/Ackee/AckeePods for details. Then simply add the following line to your Podfile:
 
 ```ruby
 pod "ACKReactiveExtensions"
 ```
 
+## Subspecs
+By using `pod "ACKReactiveExtensions"` you will get only general and UIKit extensions but there are also subspecs you can like/need.
+
+```ruby
+pod "ACKReactiveExtensions/Argo"
+pod "ACKReactiveExtensions/Reachability"
+```
+These subspecs mostly require aditional dependencies (as Argo or Reachability) and you could not need it for your project. That's why it is separated to subspecs.
+
+## Usage
+Code contains only some useful extensions for existing classes, so just look to the code and use it.
+
 ## Author
 
-Jan Mísař, misar.jan@gmail.com
+j.m. misar.jan@gmail.com
 
 ## License
 
-ACKReactiveExtensions is available under the MIT license. See the LICENSE file for more info.
+ACKReactiveExtensions has no license. We are ackee. Fuck license.
