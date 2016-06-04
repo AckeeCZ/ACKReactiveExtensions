@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ACKReactiveExtensions_Example' do
+  pod 'ACKReactiveExtensions', :path => '../'
+
+  target 'ACKReactiveExtensions_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
