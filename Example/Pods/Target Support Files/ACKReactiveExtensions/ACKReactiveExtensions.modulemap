@@ -1,0 +1,6 @@
+framework module ACKReactiveExtensions {
+  umbrella header "ACKReactiveExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}

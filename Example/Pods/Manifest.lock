@@ -1,0 +1,38 @@
+PODS:
+  - ACKReactiveExtensions (1.0.0):
+    - ACKReactiveExtensions/Argo (= 1.0.0)
+    - ACKReactiveExtensions/Reachability (= 1.0.0)
+    - ACKReactiveExtensions/UIKit (= 1.0.0)
+    - ReactiveCocoa
+  - ACKReactiveExtensions/Argo (1.0.0):
+    - ReactiveCocoa
+  - ACKReactiveExtensions/Reachability (1.0.0):
+    - ReactiveCocoa
+  - ACKReactiveExtensions/UIKit (1.0.0):
+    - ReactiveCocoa
+  - ReactiveCocoa (4.1.0):
+    - ReactiveCocoa/UI (= 4.1.0)
+    - Result (~> 2.0)
+  - ReactiveCocoa/Core (4.1.0):
+    - ReactiveCocoa/no-arc
+    - Result (~> 2.0)
+  - ReactiveCocoa/no-arc (4.1.0):
+    - Result (~> 2.0)
+  - ReactiveCocoa/UI (4.1.0):
+    - ReactiveCocoa/Core
+    - Result (~> 2.0)
+  - Result (2.0.0)
+
+DEPENDENCIES:
+  - ACKReactiveExtensions (from `../`)
+
+EXTERNAL SOURCES:
+  ACKReactiveExtensions:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ACKReactiveExtensions: 2fc820239a258c99307ab30da993f8c54a80d677
+  ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
+
+COCOAPODS: 0.39.0

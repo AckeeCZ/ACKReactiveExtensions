@@ -1,0 +1,41 @@
+{
+  "name": "ACKReactiveExtensions",
+  "version": "1.0.0",
+  "summary": "Useful extensions for ReactiveCocoa.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://gitlab.ack.ee/Ackee/ACKReactiveExtensions",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jan Mísař": "misar.jan@gmail.com"
+  },
+  "source": {
+    "git": "git@gitlab.ack.ee:Ackee/ACKReactiveExtensions.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ACKReactiveExtensions/*",
+  "dependencies": {
+    "ReactiveCocoa": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "UIKit",
+      "source_files": "ACKReactiveExtensions/UIKit/**/*"
+    },
+    {
+      "name": "Argo",
+      "source_files": "ACKReactiveExtensions/Argo/**/*"
+    },
+    {
+      "name": "Reachability",
+      "source_files": "ACKReactiveExtensions/Reachability/**/*"
+    }
+  ]
+}
