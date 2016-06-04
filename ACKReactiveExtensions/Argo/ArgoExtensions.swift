@@ -10,7 +10,7 @@ import Foundation
 import ReactiveCocoa
 import Argo
 
-public func rac_decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> SignalProducer<T, DecodeError> {
+public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<T, DecodeError> {
     return SignalProducer { sink, disposable in
 
         let decoded: Decoded<T> = decode(object)
@@ -24,9 +24,7 @@ public func rac_decode<T: Decodable where T == T.DecodedType>(object: AnyObject)
     }
 }
 
-
-
-public func rac_decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> SignalProducer<[T], DecodeError> {
+public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<[T], DecodeError> {
     return SignalProducer { sink, disposable in
 
         let decoded: Decoded<[T]> = decode(object)
@@ -39,13 +37,17 @@ public func rac_decode<T: Decodable where T == T.DecodedType>(object: AnyObject)
             sink.sendFailed(e)
         }
     }
-
 }
 
-public func rac_decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: String, object: AnyObject) -> SignalProducer<[T], DecodeError> {
+public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (rootKey: String, object: AnyObject) -> SignalProducer<[T], DecodeError> {
     return SignalProducer { sink, disposable in
 
-        let decoded: Decoded<[T]> = decodeWithRootKey(rootKey, object)
+        guard let object = object as? [String: AnyObject] else {
+            sink.sendFailed(DecodeError.Custom("Invalid format"))
+            return
+        }
+
+        let decoded: Decoded<[T]> = decode(object, rootKey: rootKey)
         switch decoded {
         case .Success(let box):
             sink.sendNext(box)
@@ -55,13 +57,17 @@ public func rac_decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey
             sink.sendFailed(e)
         }
     }
-
 }
 
-public func rac_decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: String, object: AnyObject) -> SignalProducer<T, DecodeError> {
+public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (rootKey: String, object: AnyObject) -> SignalProducer<T, DecodeError> {
     return SignalProducer { sink, disposable in
 
-        let decoded: Decoded<T> = decodeWithRootKey(rootKey, object)
+        guard let object = object as? [String: AnyObject] else {
+            sink.sendFailed(DecodeError.Custom("Invalid format"))
+            return
+        }
+
+        let decoded: Decoded<T> = decode(object, rootKey: rootKey)
         switch decoded {
         case .Success(let box):
             sink.sendNext(box)
@@ -72,7 +78,7 @@ public func rac_decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey
     }
 }
 
-public func rac_decodeByOne<T: Decodable where T == T.DecodedType>(object: AnyObject) -> SignalProducer<T, DecodeError> {
+public func rac_decodeByOne < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<T, DecodeError> {
     return SignalProducer { sink, disposable in
 
         let decoded: Decoded<[T]> = decode(object)
@@ -86,6 +92,5 @@ public func rac_decodeByOne<T: Decodable where T == T.DecodedType>(object: AnyOb
             sink.sendFailed(e)
             break
         }
-
     }
 }

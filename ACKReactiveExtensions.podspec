@@ -23,6 +23,8 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ACKReactiveExtensions/*'
 
+  s.default_subspec = 'UIKit'
+
   s.dependency 'ReactiveCocoa'
 
   s.subspec 'UIKit' do |uikit|
@@ -30,10 +32,12 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Argo' do |argo|
+    argo.dependency 'Argo'
     argo.source_files = 'ACKReactiveExtensions/Argo/**/*'
   end
 
   s.subspec 'Reachability' do |reachability|
+    reachability.dependency 'Reachability'
     reachability.source_files = 'ACKReactiveExtensions/Reachability/**/*'
   end
 

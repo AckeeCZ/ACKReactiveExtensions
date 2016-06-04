@@ -2,4 +2,6 @@ use_frameworks!
 
 target 'ACKReactiveExtensions_Example' do
   pod 'ACKReactiveExtensions', :path => '../'
+  pod 'ACKReactiveExtensions/Argo', :path => '../'
+  pod 'ACKReactiveExtensions/Reachability', :path => '../'
 end
