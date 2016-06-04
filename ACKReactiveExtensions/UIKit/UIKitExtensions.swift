@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import Result
 
 private struct AssociationKey {
     static var hidden: UInt8 = 1
@@ -26,29 +27,6 @@ private struct AssociationKey {
     static var attributedText: UInt8 = 14
     static var on: UInt8 = 15
     static var animating: UInt8 = 16
-}
-
-// lazily creates a gettable associated property via the given factory
-func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafePointer<Void>, factory: () -> T) -> T {
-    var associatedProperty = objc_getAssociatedObject(host, key) as? T
-
-    if associatedProperty == nil {
-        associatedProperty = factory()
-        objc_setAssociatedObject(host, key, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
-    }
-    return associatedProperty!
-}
-
-func lazyMutableProperty<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
-    return lazyAssociatedProperty(host, key) {
-        let property = MutableProperty<T>(getter())
-        property.producer
-            .startWithNext {
-                newValue in
-                setter(newValue)
-        }
-        return property
-    }
 }
 
 extension UIView {

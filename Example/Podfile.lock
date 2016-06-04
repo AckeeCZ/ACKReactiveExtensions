@@ -1,11 +1,15 @@
 PODS:
   - ACKReactiveExtensions (1.0.0):
+    - ACKReactiveExtensions/Core (= 1.0.0)
     - ACKReactiveExtensions/UIKit (= 1.0.0)
     - ReactiveCocoa
   - ACKReactiveExtensions/Argo (1.0.0):
     - Argo
     - ReactiveCocoa
+  - ACKReactiveExtensions/Core (1.0.0):
+    - ReactiveCocoa
   - ACKReactiveExtensions/Reachability (1.0.0):
+    - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa
   - ACKReactiveExtensions/UIKit (1.0.0):
@@ -35,7 +39,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 96f21c62e045660d80cad05ee20695226161c48c
+  ACKReactiveExtensions: 2f64caf89fc7dcb17976a26932bd5c851b00f910
   Argo: 22c5d62b7967020a641468c91dc9488bea9523b8
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949

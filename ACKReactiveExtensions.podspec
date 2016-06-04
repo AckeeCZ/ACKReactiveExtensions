@@ -21,13 +21,18 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'git@gitlab.ack.ee:Ackee/ACKReactiveExtensions.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ACKReactiveExtensions/*'
+#s.source_files = ''
 
-  s.default_subspec = 'UIKit'
+  s.default_subspec = 'Core','UIKit'
 
   s.dependency 'ReactiveCocoa'
 
+  s.subspec 'Core' do |core|
+    core.source_files = 'ACKReactiveExtensions/Core/**/*'
+  end
+
   s.subspec 'UIKit' do |uikit|
+    uikit.dependency 'ACKReactiveExtensions/Core'
     uikit.source_files = 'ACKReactiveExtensions/UIKit/**/*'
   end
 
@@ -37,6 +42,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Reachability' do |reachability|
+    reachability.dependency 'ACKReactiveExtensions/Core'
     reachability.dependency 'Reachability'
     reachability.source_files = 'ACKReactiveExtensions/Reachability/**/*'
   end

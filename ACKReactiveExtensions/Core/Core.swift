@@ -8,9 +8,7 @@
 
 import Foundation
 import ReactiveCocoa
-
-import enum Result.NoError
-public typealias NoError = Result.NoError
+import Result
 
 extension SignalProducerType {
     public func ignoreError() -> SignalProducer<Value, NoError> {
@@ -53,5 +51,30 @@ extension Disposing {
 
     var rac_willDeallocSignal: Signal<(), NoError> {
         return lifecycleObject.rac_willDeallocSignal
+    }
+}
+
+//MARK: Associated properties
+
+// lazily creates a gettable associated property via the given factory
+func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafePointer<Void>, factory: () -> T) -> T {
+    var associatedProperty = objc_getAssociatedObject(host, key) as? T
+
+    if associatedProperty == nil {
+        associatedProperty = factory()
+        objc_setAssociatedObject(host, key, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
+    }
+    return associatedProperty!
+}
+
+func lazyMutableProperty<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
+    return lazyAssociatedProperty(host, key) {
+        let property = MutableProperty<T>(getter())
+        property.producer
+            .startWithNext {
+                newValue in
+                setter(newValue)
+        }
+        return property
     }
 }
