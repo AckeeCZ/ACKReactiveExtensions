@@ -27,12 +27,12 @@ private struct AssociationKey {
     static var lifecycleObject: UInt8 = 1
 }
 
-protocol Disposing: class {
+public protocol Disposing: class {
     var rac_willDeallocSignal: Signal<(), NoError> { get }
 }
 
-extension NSObject {
-    var rac_willDeallocSignal: Signal<(), NoError> {
+extension NSObject: Disposing {
+    public var rac_willDeallocSignal: Signal<(), NoError> {
         var extractedSignal: Signal<(), NoError>!
         self.rac_willDeallocSignal().toSignalProducer().ignoreError().map { _ in() }
             .startWithSignal { signal, _ in
@@ -49,7 +49,7 @@ extension Disposing {
         })
     }
 
-    var rac_willDeallocSignal: Signal<(), NoError> {
+    public var rac_willDeallocSignal: Signal<(), NoError> {
         return lifecycleObject.rac_willDeallocSignal
     }
 }
