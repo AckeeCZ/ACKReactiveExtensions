@@ -17,7 +17,7 @@ private struct AssociationKeys {
 }
 
 extension Reachability {
-    var rac_status: SignalProducer<NetworkStatus, NoError> {
+    public var rac_status: SignalProducer<NetworkStatus, NoError> {
         if let signalProducer = (objc_getAssociatedObject(self, &AssociationKeys.statusKey) as? RACSignal)?.toSignalProducer() {
             return signalProducer
                 .map { NetworkStatus(rawValue: ($0 as! NSNumber).integerValue)! }
