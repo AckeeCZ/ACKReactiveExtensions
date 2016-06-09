@@ -37,7 +37,7 @@ extension UIView {
     public var rac_hidden: MutableProperty<Bool> {
         return lazyMutableProperty(self, &AssociationKey.hidden, { [unowned self] in self.hidden = $0 }, { [unowned self] in self.hidden })
     }
-    public var rac_tintColor: MutableProperty<UIColor> {
+    public var rac_tintColor: MutableProperty<UIColor?> {
         return lazyMutableProperty(self, &AssociationKey.tintColor, { [unowned self] in self.tintColor = $0 }, { [unowned self] in self.tintColor })
     }
     public var rac_backgroundColor: MutableProperty<UIColor?> {
@@ -61,10 +61,10 @@ extension UIImageView {
 }
 
 extension UILabel {
-    public var rac_text: MutableProperty<String?> {
-        return lazyMutableProperty(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text })
+    public var rac_text: MutableProperty<String> {
+        return lazyMutableProperty(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text ?? "" })
     }
-    public var rac_textColor: MutableProperty<UIColor> {
+    public var rac_textColor: MutableProperty<UIColor?> {
         return lazyMutableProperty(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
     }
     public var rac_attributedText: MutableProperty<NSAttributedString?> {
@@ -85,18 +85,18 @@ extension UIActivityIndicatorView {
 }
 
 extension UITextView {
-    public var rac_text: MutableProperty<String?> {
+    public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) { [unowned self] in
             NSNotificationCenter.defaultCenter().rac_addObserverForName(UITextViewTextDidChangeNotification, object: self)
                 .takeUntil(self.rac_willDeallocSignal())
                 .toSignalProducer()
                 .startWithNext { [unowned self] _ in
-                    self.rac_text.value = self.text
+                    self.rac_text.value = self.text ?? ""
             }
 
-            let property = MutableProperty<String?>(self.text)
+            let property = MutableProperty<String>(self.text ?? "")
             property.producer.startWithNext { [unowned self] newValue in
-                self.text = newValue
+                self.text = newValue ?? ""
             }
             return property
         }
@@ -143,12 +143,12 @@ extension UISegmentedControl {
 }
 
 extension UITextField {
-    public var rac_text: MutableProperty<String?> {
+    public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) {
 
             self.addTarget(self, action: #selector(UITextField.changed), forControlEvents: UIControlEvents.EditingChanged)
 
-            let property = MutableProperty<String?>(self.text)
+            let property = MutableProperty<String>(self.text ?? "")
             property.producer.startWithNext { [unowned self] newValue in
                 self.text = newValue
             }
@@ -157,7 +157,7 @@ extension UITextField {
     }
 
     func changed() {
-        rac_text.value = self.text
+        rac_text.value = self.text ?? ""
     }
 
     public var rac_textColor: MutableProperty<UIColor?> {
