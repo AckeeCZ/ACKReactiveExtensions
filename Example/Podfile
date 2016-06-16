@@ -4,4 +4,9 @@ target 'ACKReactiveExtensions_Example' do
   pod 'ACKReactiveExtensions', :path => '../'
   pod 'ACKReactiveExtensions/Argo', :path => '../'
   pod 'ACKReactiveExtensions/Reachability', :path => '../'
+  
+  target 'ACKReactiveExtensions_Tests' do
+      pod 'Quick', '~> 0.9'
+  end
+  
 end
