@@ -12,7 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		693402381D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693402371D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift */; };
 		93633F05A07E7E137AB05065 /* Pods_ACKReactiveExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482304D33E40D8C0EF1F687B /* Pods_ACKReactiveExtensions_Example.framework */; };
 		E7AF6B155A6030F53856FC10 /* Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA849E88A474C832B5FE7224 /* Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +42,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ACKReactiveExtensions_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACKReactiveExtensions_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		693402371D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensionsThreadingSpec.swift; sourceTree = "<group>"; };
 		AA849E88A474C832B5FE7224 /* Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CB8296538D6AF90E03A00A /* Pods-ACKReactiveExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACKReactiveExtensions_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACKReactiveExtensions_Example/Pods-ACKReactiveExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		EB88D7C0B6B5B432372B98EF /* Pods-ACKReactiveExtensions_Example-ACKReactiveExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACKReactiveExtensions_Example-ACKReactiveExtensions_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACKReactiveExtensions_Example-ACKReactiveExtensions_Tests/Pods-ACKReactiveExtensions_Example-ACKReactiveExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				693402371D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				693402381D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

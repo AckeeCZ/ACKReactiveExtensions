@@ -16,6 +16,7 @@ PODS:
     - ACKReactiveExtensions/Core
     - ReactiveCocoa
   - Argo (3.0.1)
+  - Nimble (4.0.1)
   - Quick (0.9.2)
   - Reachability (3.2)
   - ReactiveCocoa (4.1.0):
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - ACKReactiveExtensions (from `../`)
   - ACKReactiveExtensions/Argo (from `../`)
   - ACKReactiveExtensions/Reachability (from `../`)
+  - Nimble (~> 4.0)
   - Quick (~> 0.9)
 
 EXTERNAL SOURCES:
@@ -44,11 +46,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   ACKReactiveExtensions: 56297f46defdd1bf11a38e4c4bb7cb2de980dfea
   Argo: 22c5d62b7967020a641468c91dc9488bea9523b8
+  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
 
-PODFILE CHECKSUM: 7de3e1a06fc2f0199ec2c2bdf53e7ace424a8ddc
+PODFILE CHECKSUM: 3a480f81e14f4e211ff080237bfada809345f5a0
 
 COCOAPODS: 1.0.1

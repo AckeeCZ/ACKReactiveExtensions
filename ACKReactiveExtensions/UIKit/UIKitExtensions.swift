@@ -207,18 +207,15 @@ private func ensureMainThread(block: Void -> Void) {
         block()
     }
     else {
-        dispatch_sync(dispatch_get_main_queue(), { block() })
+        dispatch_async(dispatch_get_main_queue(), {
+            block()
+        })
     }
 }
 
 func lazyMutablePropertyUiKit<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
     return lazyAssociatedProperty(host, key) {
-
-        var current: T!
-
-        ensureMainThread { current = getter() }
-
-        let property = MutableProperty<T>(current)
+        let property = MutableProperty<T>(getter())
         property.producer
             .startWithNext {
                 newValue in
