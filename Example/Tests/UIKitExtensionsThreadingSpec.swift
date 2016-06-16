@@ -6,35 +6,35 @@ import ReactiveCocoa
 class UIKitExtensionsThreadingSpec: QuickSpec {
 
     override func spec() {
-        let host = UIView()
-        var key: UInt8 = 1
-
         describe("check whether property setters are called on main thread") {
-            let property: MutableProperty<Bool> = lazyMutablePropertyUiKit(host, &key, { _ in
-                expect(NSThread.currentThread().isMainThread).to(beTrue())
-            }) { _ in
-                expect(NSThread.currentThread().isMainThread).to(beTrue())
-                return true
-            }
-
             context("if") {
-                it("it called from main thread") {
-                    if NSThread.currentThread().isMainThread {
-                        property.value = !property.value
-                    }
-                    else {
-                        dispatch_async(dispatch_get_main_queue()) {
-                            property.value = !property.value
-                            expect(true).to(beTrue())
-                        }
-                    }
+                let host = UIView()
+                var key = 0
+                let setter: Bool -> () = { new in
+                    expect(NSThread.currentThread().isMainThread).to(beTrue())
+                    host.hidden = new
                 }
-            }
+                let getter: Void -> Bool = { return host.hidden }
 
-            it("if called from background thread") {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-                    expect(NSThread.currentThread().isMainThread).to(beFalse())
-                    property.value = !property.value
+                it("called from main thread") {
+                    expect(NSThread.currentThread().isMainThread).to(beTrue())
+
+                    let property = lazyMutablePropertyUiKit(host, &key, setter, getter)
+
+                    property.value = !host.hidden
+                }
+
+                it("called from background thread") {
+                    let property = lazyMutablePropertyUiKit(host, &key, setter, getter)
+                    let newValue = !host.hidden
+
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+                        expect(NSThread.currentThread().isMainThread).to(beFalse())
+
+                        property.value = newValue
+                    }
+
+                    expect(property.value).toEventually(be(newValue))
                 }
             }
         }
