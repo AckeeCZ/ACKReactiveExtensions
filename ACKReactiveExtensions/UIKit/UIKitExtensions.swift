@@ -31,56 +31,56 @@ private struct AssociationKey {
 
 extension UIView {
     public var rac_alpha: MutableProperty<CGFloat> {
-        return lazyMutableProperty(self, &AssociationKey.alpha, { [unowned self] in self.alpha = $0 }, { [unowned self] in self.alpha })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.alpha, { [unowned self] in self.alpha = $0 }, { [unowned self] in self.alpha })
     }
 
     public var rac_hidden: MutableProperty<Bool> {
-        return lazyMutableProperty(self, &AssociationKey.hidden, { [unowned self] in self.hidden = $0 }, { [unowned self] in self.hidden })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.hidden, { [unowned self] in self.hidden = $0 }, { [unowned self] in self.hidden })
     }
     public var rac_tintColor: MutableProperty<UIColor?> {
-        return lazyMutableProperty(self, &AssociationKey.tintColor, { [unowned self] in self.tintColor = $0 }, { [unowned self] in self.tintColor })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.tintColor, { [unowned self] in self.tintColor = $0 }, { [unowned self] in self.tintColor })
     }
     public var rac_backgroundColor: MutableProperty<UIColor?> {
-        return lazyMutableProperty(self, &AssociationKey.backgroundColor, { [unowned self] in self.backgroundColor = $0 }, { [unowned self] in self.backgroundColor })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.backgroundColor, { [unowned self] in self.backgroundColor = $0 }, { [unowned self] in self.backgroundColor })
     }
 }
 
 extension CALayer {
     public var rac_borderWidth: MutableProperty<CGFloat> {
-        return lazyMutableProperty(self, &AssociationKey.borderWidth, { [unowned self] in self.borderWidth = $0 }, { [unowned self] in self.borderWidth })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.borderWidth, { [unowned self] in self.borderWidth = $0 }, { [unowned self] in self.borderWidth })
     }
     public var rac_borderColor: MutableProperty<CGColor?> {
-        return lazyMutableProperty(self, &AssociationKey.borderColor, { [unowned self] in self.borderColor = $0 }, { [unowned self] in self.borderColor })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.borderColor, { [unowned self] in self.borderColor = $0 }, { [unowned self] in self.borderColor })
     }
 }
 
 extension UIImageView {
     public var rac_image: MutableProperty<UIImage?> {
-        return lazyMutableProperty(self, &AssociationKey.image, { [unowned self] in self.image = $0 }, { [unowned self] in self.image })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.image, { [unowned self] in self.image = $0 }, { [unowned self] in self.image })
     }
 }
 
 extension UILabel {
     public var rac_text: MutableProperty<String> {
-        return lazyMutableProperty(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text ?? "" })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text ?? "" })
     }
     public var rac_textColor: MutableProperty<UIColor?> {
-        return lazyMutableProperty(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
     }
     public var rac_attributedText: MutableProperty<NSAttributedString?> {
-        return lazyMutableProperty(self, &AssociationKey.attributedText, { [unowned self] in self.attributedText = $0 }, { [unowned self] in self.attributedText })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.attributedText, { [unowned self] in self.attributedText = $0 }, { [unowned self] in self.attributedText })
     }
 }
 
 extension UIProgressView {
     public var rac_progress: MutableProperty<Float> {
-        return lazyMutableProperty(self, &AssociationKey.progress, { [unowned self] in self.progress = $0 }, { [unowned self] in self.progress })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.progress, { [unowned self] in self.progress = $0 }, { [unowned self] in self.progress })
     }
 }
 
 extension UIActivityIndicatorView {
     public var rac_animating: MutableProperty<Bool> {
-        return lazyMutableProperty(self, &AssociationKey.animating, { [unowned self] in $0 ? self.startAnimating() : self.stopAnimating() }, { [unowned self] in self.isAnimating() })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.animating, { [unowned self] in $0 ? self.startAnimating() : self.stopAnimating() }, { [unowned self] in self.isAnimating() })
     }
 }
 
@@ -105,7 +105,7 @@ extension UITextView {
 
 extension UINavigationItem {
     public var rac_title: MutableProperty<String?> {
-        return lazyMutableProperty(self, &AssociationKey.text, { [unowned self] in self.title = $0 }, { [unowned self] in self.title })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.title = $0 }, { [unowned self] in self.title })
     }
 }
 
@@ -113,7 +113,7 @@ extension UINavigationItem {
 
 extension UIButton {
     public var rac_title: MutableProperty<String?> {
-        return lazyMutableProperty(self, &AssociationKey.text, { [unowned self] in self.setTitle($0, forState: .Normal) }, { [unowned self] in self.titleLabel?.text })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.setTitle($0, forState: .Normal) }, { [unowned self] in self.titleLabel?.text })
     }
 }
 
@@ -138,7 +138,7 @@ extension UISwitch {
 
 extension UISegmentedControl {
     public var rac_selectedIndex: MutableProperty<Int> {
-        return lazyMutableProperty(self, &AssociationKey.selected, { [unowned self] in self.selectedSegmentIndex = $0 }, { [unowned self] in self.selectedSegmentIndex })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.selected, { [unowned self] in self.selectedSegmentIndex = $0 }, { [unowned self] in self.selectedSegmentIndex })
     }
 }
 
@@ -161,7 +161,7 @@ extension UITextField {
     }
 
     public var rac_textColor: MutableProperty<UIColor?> {
-        return lazyMutableProperty(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
     }
 
     public var rac_validEmail: SignalProducer<Bool, NoError> {
@@ -184,7 +184,7 @@ extension UIControl: Enablable { }
 extension UIBarButtonItem: Enablable { }
 extension Enablable {
     public var rac_enabled: MutableProperty<Bool> {
-        return lazyMutableProperty(self, &AssociationKey.enabled, { [unowned self] in self.enabled = $0 }, { [unowned self] in self.enabled })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.enabled, { [unowned self] in self.enabled = $0 }, { [unowned self] in self.enabled })
     }
 }
 
@@ -198,6 +198,31 @@ extension UITableViewCell: Selectable { }
 extension UICollectionViewCell: Selectable { }
 extension Selectable {
     public var rac_selected: MutableProperty<Bool> {
-        return lazyMutableProperty(self, &AssociationKey.selected, { [unowned self] in self.selected = $0 }, { [unowned self] in self.selected })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.selected, { [unowned self] in self.selected = $0 }, { [unowned self] in self.selected })
+    }
+}
+
+private func ensureMainThread(block: Void -> Void) {
+    if NSThread.currentThread().isMainThread {
+        block()
+    }
+    else {
+        dispatch_async(dispatch_get_main_queue(), {
+            block()
+        })
+    }
+}
+
+func lazyMutablePropertyUiKit<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
+    return lazyAssociatedProperty(host, key) {
+        let property = MutableProperty<T>(getter())
+        property.producer
+            .startWithNext {
+                newValue in
+                ensureMainThread {
+                    setter(newValue)
+                }
+        }
+        return property
     }
 }
