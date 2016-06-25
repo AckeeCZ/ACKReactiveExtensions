@@ -12,6 +12,10 @@ PODS:
     - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa
+  - ACKReactiveExtensions/SDWebImage (1.1.0):
+    - ACKReactiveExtensions/Core
+    - ReactiveCocoa
+    - SDWebImage
   - ACKReactiveExtensions/UIKit (1.1.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa
@@ -31,27 +35,34 @@ PODS:
     - ReactiveCocoa/Core
     - Result (~> 2.0)
   - Result (2.0.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - ACKReactiveExtensions (from `../`)
   - ACKReactiveExtensions/Argo (from `../`)
   - ACKReactiveExtensions/Reachability (from `../`)
+  - ACKReactiveExtensions/SDWebImage (from `../`)
   - Nimble (~> 4.0)
   - Quick (~> 0.9)
+  - ReactiveCocoa
+  - Result
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
     :path: ../
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 56297f46defdd1bf11a38e4c4bb7cb2de980dfea
+  ACKReactiveExtensions: d467db30b9e247b2309ed3a83cab5cf5f1a69f3d
   Argo: 22c5d62b7967020a641468c91dc9488bea9523b8
   Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 3a480f81e14f4e211ff080237bfada809345f5a0
+PODFILE CHECKSUM: fa769d3f37fec3e8c14c79e1254c7cd117ac5d07
 
 COCOAPODS: 1.0.1
