@@ -14,8 +14,9 @@ pod "ACKReactiveExtensions"
 By using `pod "ACKReactiveExtensions"` you will get only general and UIKit extensions but there are also subspecs you can like/need.
 
 ```ruby
-pod "ACKReactiveExtensions/Argo"
-pod "ACKReactiveExtensions/Reachability"
+pod 'ACKReactiveExtensions/Argo'
+pod 'ACKReactiveExtensions/Reachability'
+pod 'ACKReactiveExtensions/SDWebImage'
 ```
 These subspecs mostly require aditional dependencies (as Argo or Reachability) and you could not need it for your project. That's why it is separated to subspecs.
 
