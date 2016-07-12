@@ -1,17 +1,15 @@
 use_frameworks!
 
 target 'ACKReactiveExtensions_Example' do
-
-pod 'ReactiveCocoa'
-pod 'Result'
-  pod 'ACKReactiveExtensions', :path => '../'
-  pod 'ACKReactiveExtensions/Argo', :path => '../'
-  pod 'ACKReactiveExtensions/Reachability', :path => '../'
-  pod 'ACKReactiveExtensions/SDWebImage', :path => '../'
+    pod 'ReactiveCocoa'
+    pod 'Result'
+    pod 'ACKReactiveExtensions', :path => '../'
+    pod 'ACKReactiveExtensions/Argo', :path => '../'
+    pod 'ACKReactiveExtensions/Reachability', :path => '../'
+    pod 'ACKReactiveExtensions/SDWebImage', :path => '../'
   
-  target 'ACKReactiveExtensions_Tests' do
-      pod 'Quick', '~> 0.9'
-      pod 'Nimble', '~> 4.0'
-  end
-  
+    target 'ACKReactiveExtensions_Tests' do
+        pod 'Quick', '~> 0.9'
+        pod 'Nimble', '~> 4.0'
+    end
 end

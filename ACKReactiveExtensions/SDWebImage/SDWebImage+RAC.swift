@@ -16,13 +16,15 @@ extension UIImageView {
 
 extension SDWebImageDownloader {
     func rac_downloadImageWithURL(url: NSURL, options: SDWebImageDownloaderOptions = SDWebImageDownloaderOptions()) -> SignalProducer<UIImage, NSError> {
-        return SignalProducer { sink, dis in
+        return SignalProducer { sink, disposable in
             let task = self.downloadImageWithURL(url, options: options, progress: nil) { image, _, error, _ in
-                guard let image = image else { sink.sendFailed(error ?? .undefinedError); return }
+                guard let image = image else {
+                    sink.sendFailed(error ?? NSError(domain: "", code: 0, userInfo: nil))
+                    return
+                }
                 sink.sendNext(image); sink.sendCompleted()
             }
-            dis.addDisposable { task.cancel() }
+            disposable.addDisposable { task.cancel() }
         }
     }
 }
-
