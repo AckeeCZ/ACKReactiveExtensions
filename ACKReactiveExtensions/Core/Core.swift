@@ -57,7 +57,7 @@ extension Disposing {
 //MARK: Associated properties
 
 // lazily creates a gettable associated property via the given factory
-func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafePointer<Void>, factory: () -> T) -> T {
+public func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafePointer<Void>, factory: () -> T) -> T {
     var associatedProperty = objc_getAssociatedObject(host, key) as? T
 
     if associatedProperty == nil {
@@ -67,7 +67,7 @@ func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafePointer<
     return associatedProperty!
 }
 
-func lazyMutableProperty<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
+public func lazyMutableProperty<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
     return lazyAssociatedProperty(host, key) {
         let property = MutableProperty<T>(getter())
         property.producer
