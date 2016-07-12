@@ -47,4 +47,10 @@ Pod::Spec.new do |s|
     reachability.source_files = 'ACKReactiveExtensions/Reachability/**/*'
   end
 
+  s.subspec 'SDWebImage' do |sdwebimage|
+    sdwebimage.dependency 'ACKReactiveExtensions/Core'
+    sdwebimage.dependency 'SDWebImage'
+    sdwebimage.source_files = 'ACKReactiveExtensions/SDWebImage/**/*'
+  end
+
 end
