@@ -10,6 +10,8 @@ import Foundation
 import ReactiveCocoa
 import Result
 
+//MARK: ReactiveCocoa
+
 extension SignalProducerType {
     public func ignoreError() -> SignalProducer<Value, NoError> {
         return flatMapError { _ in SignalProducer.empty }
@@ -19,6 +21,26 @@ extension SignalProducerType {
 public func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E> {
     let producers = SignalProducer<SignalProducer<T, E>, E>(values: signals)
     return producers.flatten(.Merge)
+}
+
+extension SignalProducer {
+    static func sideEffect(actions: () -> ()) -> SignalProducer<(), NoError> {
+        return SignalProducer<(), NoError> { sink, _ in
+            actions()
+            sink.sendCompleted()
+        }
+    }
+}
+
+extension SignalProducer {
+    // the autoclosure can still retain self strongly. The compiler will warn you by requiring `self.`.
+    // Dont ignore memory managment! If you need to capture self weekly (or unowned), you cant use autoclosure and must supply a full closure.
+    public init(@autoclosure(escaping) lazyValue: () -> Value) {
+        self.init { observer, _ in
+            observer.sendNext(lazyValue())
+            observer.sendCompleted()
+        }
+    }
 }
 
 //MARK: Disposing
