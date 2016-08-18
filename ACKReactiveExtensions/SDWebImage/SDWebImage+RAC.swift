@@ -24,7 +24,7 @@ extension SDWebImageDownloader {
                 }
                 sink.sendNext(image); sink.sendCompleted()
             }
-            disposable.addDisposable { task.cancel() }
+            disposable.addDisposable { task?.cancel() }
         }
     }
 }
