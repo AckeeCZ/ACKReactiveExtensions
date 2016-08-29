@@ -23,8 +23,8 @@ public func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E>
     return producers.flatten(.Merge)
 }
 
-extension SignalProducer {
-    static func sideEffect(actions: () -> ()) -> SignalProducer<(), NoError> {
+extension SignalProducerType where Value == Void, Error == NoError {
+    public static func sideEffect(actions: () -> ()) -> SignalProducer<(), NoError> {
         return SignalProducer<(), NoError> { sink, _ in
             actions()
             sink.sendCompleted()
