@@ -28,6 +28,7 @@ private struct AssociationKey {
     static var on: UInt8 = 15
     static var animating: UInt8 = 16
     static var textElseHidden: UInt8 = 16
+    static var imageElseHidden: UInt8 = 17
 }
 
 extension UIView {
@@ -52,12 +53,6 @@ extension CALayer {
     }
     public var rac_borderColor: MutableProperty<CGColor?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.borderColor, { [unowned self] in self.borderColor = $0 }, { [unowned self] in self.borderColor })
-    }
-}
-
-extension UIImageView {
-    public var rac_image: MutableProperty<UIImage?> {
-        return lazyMutablePropertyUiKit(self, &AssociationKey.image, { [unowned self] in self.image = $0 }, { [unowned self] in self.image })
     }
 }
 
@@ -256,5 +251,37 @@ public extension TextContainingView {
 public extension TextContainingView where Self: UIView {
     public var rac_textElseHidden: MutableProperty<String?> {
         return rac_textElseHideView(self)
+    }
+}
+
+public protocol ImageContainer: class {
+    var image: UIImage? { get set }
+}
+
+extension UIImageView: ImageContainer { }
+
+public extension ImageContainer {
+    public var rac_image: MutableProperty<UIImage?> {
+        return lazyMutablePropertyUiKit(self, &AssociationKey.image, { [unowned self] in self.image = $0 }, { [unowned self] in self.image })
+    }
+}
+
+public extension ImageContainer {
+    // only call this once per view
+    public func rac_imageElseHideView(view: UIView) -> MutableProperty<UIImage?> {
+        return lazyMutablePropertyUiKit(self, &AssociationKey.textElseHidden, { [unowned self, weak view] in
+            self.image = $0
+            if let _ = $0 {
+                view?.hidden = false
+            } else {
+                view?.hidden = true
+            }
+            }, { [unowned self] in self.image })
+    }
+}
+
+public extension ImageContainer where Self: UIView {
+    public var rac_imageElseHidden: MutableProperty<UIImage?> {
+        return rac_imageElseHideView(self)
     }
 }
