@@ -27,6 +27,7 @@ private struct AssociationKey {
     static var attributedText: UInt8 = 14
     static var on: UInt8 = 15
     static var animating: UInt8 = 16
+    static var textElseHidden: UInt8 = 16
 }
 
 extension UIView {
@@ -61,9 +62,6 @@ extension UIImageView {
 }
 
 extension UILabel {
-    public var rac_text: MutableProperty<String> {
-        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text ?? "" })
-    }
     public var rac_textColor: MutableProperty<UIColor?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
     }
@@ -224,5 +222,39 @@ func lazyMutablePropertyUiKit<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ 
                 }
         }
         return property
+    }
+}
+
+public protocol TextContainingView: class { // dont want to name this TextContainer because it might clash with swift3 version of NSTextContainer
+    var text: String? { get set }
+}
+
+extension UILabel: TextContainingView { }
+//extension UITextView: TextContainingView { } //UITextView's .text is a String! not String?, so this doesnt work. But it might start working with swift3's changes to ImplicitlyUnwrappedOptional so lets keep this around.
+extension UITextField: TextContainingView { }
+
+public extension TextContainingView {
+    public var rac_text: MutableProperty<String> {
+        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text ?? "" })
+    }
+}
+
+public extension TextContainingView {
+    // only call this once per view
+    public func rac_textElseHideView(view: UIView) -> MutableProperty<String?> {
+        return lazyMutablePropertyUiKit(self, &AssociationKey.textElseHidden, { [unowned self, weak view] in
+            self.text = $0
+            if let _ = $0 {
+                view?.hidden = false
+            } else {
+                view?.hidden = true
+            }
+            }, { [unowned self] in self.text })
+    }
+}
+
+public extension TextContainingView where Self: UIView {
+    public var rac_textElseHidden: MutableProperty<String?> {
+        return rac_textElseHideView(self)
     }
 }
