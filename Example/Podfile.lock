@@ -1,22 +1,25 @@
 PODS:
-  - ACKReactiveExtensions (1.1.0):
-    - ACKReactiveExtensions/Core (= 1.1.0)
-    - ACKReactiveExtensions/UIKit (= 1.1.0)
+  - ACKReactiveExtensions (1.2.4):
+    - ACKReactiveExtensions/Core (= 1.2.4)
+    - ACKReactiveExtensions/UIKit (= 1.2.4)
     - ReactiveCocoa
-  - ACKReactiveExtensions/Argo (1.1.0):
+  - ACKReactiveExtensions/Argo (1.2.4):
     - Argo
     - ReactiveCocoa
-  - ACKReactiveExtensions/Core (1.1.0):
+  - ACKReactiveExtensions/Core (1.2.4):
     - ReactiveCocoa
-  - ACKReactiveExtensions/Reachability (1.1.0):
+  - ACKReactiveExtensions/Reachability (1.2.4):
     - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa
-  - ACKReactiveExtensions/SDWebImage (1.1.0):
+  - ACKReactiveExtensions/SDWebImage (1.2.4):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa
     - SDWebImage
-  - ACKReactiveExtensions/UIKit (1.1.0):
+  - ACKReactiveExtensions/UIKit (1.2.4):
+    - ACKReactiveExtensions/Core
+    - ReactiveCocoa
+  - ACKReactiveExtensions/WebKit (1.2.4):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa
   - Argo (3.0.1)
@@ -44,6 +47,7 @@ DEPENDENCIES:
   - ACKReactiveExtensions/Argo (from `../`)
   - ACKReactiveExtensions/Reachability (from `../`)
   - ACKReactiveExtensions/SDWebImage (from `../`)
+  - ACKReactiveExtensions/WebKit (from `../`)
   - Nimble (~> 4.0)
   - Quick (~> 0.9)
   - ReactiveCocoa
@@ -51,10 +55,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: d467db30b9e247b2309ed3a83cab5cf5f1a69f3d
+  ACKReactiveExtensions: da0f3c3a6460f5d558c1adf661a937e706acbc17
   Argo: 22c5d62b7967020a641468c91dc9488bea9523b8
   Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: da8f5ced628fa8cc02618e11c845325a4f7b1bd4
+PODFILE CHECKSUM: bfe0eb3ab462dac80347868787acafe1a39ffa34
 
 COCOAPODS: 1.0.1
