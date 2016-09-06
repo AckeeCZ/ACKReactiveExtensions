@@ -53,4 +53,9 @@ Pod::Spec.new do |s|
     sdwebimage.source_files = 'ACKReactiveExtensions/SDWebImage/**/*'
   end
 
+  s.subspec 'WebKit' do |webkit|
+    webkit.dependency 'ACKReactiveExtensions/Core'
+    webkit.source_files = 'ACKReactiveExtensions/WebKit/**/*'
+  end
+
 end

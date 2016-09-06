@@ -7,6 +7,7 @@ target 'ACKReactiveExtensions_Example' do
     pod 'ACKReactiveExtensions/Argo', :path => '../'
     pod 'ACKReactiveExtensions/Reachability', :path => '../'
     pod 'ACKReactiveExtensions/SDWebImage', :path => '../'
+    pod 'ACKReactiveExtensions/WebKit', :path => '../'
   
     target 'ACKReactiveExtensions_Tests' do
         pod 'Quick', '~> 0.9'
