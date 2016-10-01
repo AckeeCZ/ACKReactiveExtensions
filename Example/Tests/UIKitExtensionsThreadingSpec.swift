@@ -10,27 +10,27 @@ class UIKitExtensionsThreadingSpec: QuickSpec {
             context("if") {
                 let host = UIView()
                 var key = 0
-                let setter: Bool -> () = { new in
-                    expect(NSThread.currentThread().isMainThread).to(beTrue())
-                    host.hidden = new
+                let setter: (Bool) -> () = { new in
+                    expect(Thread.current.isMainThread).to(beTrue())
+                    host.isHidden = new
                 }
-                let getter: Void -> Bool = { return host.hidden }
+                let getter: (Void) -> Bool = { return host.isHidden }
 
                 it("called from main thread") {
-                    expect(NSThread.currentThread().isMainThread).to(beTrue())
+                    expect(Thread.current.isMainThread).to(beTrue())
 
                     let property = lazyMutablePropertyUiKit(host, &key, setter, getter)
 
-                    property.value = !host.hidden
+                    property.value = !host.isHidden
                 }
 
                 it("called from background thread") {
                     let property = lazyMutablePropertyUiKit(host, &key, setter, getter)
-                    let newValue = !host.hidden
-
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-                        expect(NSThread.currentThread().isMainThread).to(beFalse())
-
+                    let newValue = !host.isHidden
+                    
+                    DispatchQueue.global().async {
+                        expect(Thread.current.isMainThread).to(beFalse())
+                        
                         property.value = newValue
                     }
 

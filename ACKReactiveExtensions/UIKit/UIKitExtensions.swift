@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveSwift
 import ReactiveCocoa
 import Result
 
@@ -37,7 +38,7 @@ extension UIView {
     }
 
     public var rac_hidden: MutableProperty<Bool> {
-        return lazyMutablePropertyUiKit(self, &AssociationKey.hidden, { [unowned self] in self.hidden = $0 }, { [unowned self] in self.hidden })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.hidden, { [unowned self] in self.isHidden = $0 }, { [unowned self] in self.isHidden })
     }
     public var rac_tintColor: MutableProperty<UIColor?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.tintColor, { [unowned self] in self.tintColor = $0 }, { [unowned self] in self.tintColor })
@@ -73,22 +74,21 @@ extension UIProgressView {
 
 extension UIActivityIndicatorView {
     public var rac_animating: MutableProperty<Bool> {
-        return lazyMutablePropertyUiKit(self, &AssociationKey.animating, { [unowned self] in $0 ? self.startAnimating() : self.stopAnimating() }, { [unowned self] in self.isAnimating() })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.animating, { [unowned self] in $0 ? self.startAnimating() : self.stopAnimating() }, { [unowned self] in self.isAnimating })
     }
 }
 
 extension UITextView {
     public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) { [unowned self] in
-            NSNotificationCenter.defaultCenter().rac_addObserverForName(UITextViewTextDidChangeNotification, object: self)
-                .takeUntil(self.rac_willDeallocSignal())
-                .toSignalProducer()
-                .startWithNext { [unowned self] _ in
+            NotificationCenter.`default`.rac_notifications(forName: .UITextViewTextDidChange, object: self)
+                .take(until: self.rac_lifetime.ended)
+                .startWithValues { [unowned self] _ in
                     self.rac_text.value = self.text ?? ""
             }
 
             let property = MutableProperty<String>(self.text ?? "")
-            property.producer.startWithNext { [unowned self] newValue in
+            property.producer.startWithValues { [unowned self] newValue in
                 self.text = newValue ?? ""
             }
             return property
@@ -106,7 +106,7 @@ extension UINavigationItem {
 
 extension UIButton {
     public var rac_title: MutableProperty<String?> {
-        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.setTitle($0, forState: .Normal) }, { [unowned self] in self.titleLabel?.text })
+        return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.setTitle($0, for: .normal) }, { [unowned self] in self.titleLabel?.text })
     }
 }
 
@@ -114,18 +114,18 @@ extension UISwitch {
     public var rac_on: MutableProperty<Bool> {
         return lazyAssociatedProperty(self, &AssociationKey.on) {
 
-            self.addTarget(self, action: #selector(UISwitch.changed), forControlEvents: UIControlEvents.ValueChanged)
+            self.addTarget(self, action: #selector(UISwitch.changed), for: UIControlEvents.valueChanged)
 
-            let property = MutableProperty<Bool>(self.on)
-            property.producer.startWithNext { [unowned self] newValue in
-                self.on = newValue
+            let property = MutableProperty<Bool>(self.isOn)
+            property.producer.startWithValues { [unowned self] newValue in
+                self.isOn = newValue
             }
             return property
         }
     }
 
     func changed() {
-        rac_on.value = self.on
+        rac_on.value = self.isOn
     }
 }
 
@@ -139,10 +139,10 @@ extension UITextField {
     public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) {
 
-            self.addTarget(self, action: #selector(UITextField.changed), forControlEvents: UIControlEvents.EditingChanged)
+            self.addTarget(self, action: #selector(UITextField.changed), for: UIControlEvents.editingChanged)
 
             let property = MutableProperty<String>(self.text ?? "")
-            property.producer.startWithNext { [unowned self] newValue in
+            property.producer.startWithValues { [unowned self] newValue in
                 self.text = newValue
             }
             return property
@@ -162,7 +162,7 @@ extension UITextField {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
             let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-            return emailTest.evaluateWithObject($0)
+            return emailTest.evaluate(with: $0)
         }
     }
 }
@@ -195,27 +195,21 @@ extension Selectable {
     }
 }
 
-private func ensureMainThread(block: Void -> Void) {
-    if NSThread.currentThread().isMainThread {
+private func ensureMainThread(block: @escaping (Void) -> Void) {
+    if Thread.current.isMainThread {
         block()
     }
     else {
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async {
             block()
-        })
+        }
     }
 }
 
-func lazyMutablePropertyUiKit<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
+func lazyMutablePropertyUiKit<T>(_ host: AnyObject, _ key: UnsafePointer<Void>, _ setter: @escaping (T) -> (), _ getter: () -> T) -> MutableProperty<T> {
     return lazyAssociatedProperty(host, key) {
         let property = MutableProperty<T>(getter())
-        property.producer
-            .startWithNext {
-                newValue in
-                ensureMainThread {
-                    setter(newValue)
-                }
-        }
+        property.producer.startWithValues { x in ensureMainThread { setter(x) } }
         return property
     }
 }
@@ -240,9 +234,9 @@ public extension TextContainingView {
         return lazyMutablePropertyUiKit(self, &AssociationKey.textElseHidden, { [unowned self, weak view] in
             self.text = $0
             if let _ = $0 {
-                view?.hidden = false
+                view?.isHidden = false
             } else {
-                view?.hidden = true
+                view?.isHidden = true
             }
             }, { [unowned self] in self.text })
     }
@@ -250,7 +244,7 @@ public extension TextContainingView {
 
 public extension TextContainingView where Self: UIView {
     public var rac_textElseHidden: MutableProperty<String?> {
-        return rac_textElseHideView(self)
+        return rac_textElseHideView(view: self)
     }
 }
 
@@ -272,9 +266,9 @@ public extension ImageContainer {
         return lazyMutablePropertyUiKit(self, &AssociationKey.textElseHidden, { [unowned self, weak view] in
             self.image = $0
             if let _ = $0 {
-                view?.hidden = false
+                view?.isHidden = false
             } else {
-                view?.hidden = true
+                view?.isHidden = true
             }
             }, { [unowned self] in self.image })
     }
@@ -282,6 +276,6 @@ public extension ImageContainer {
 
 public extension ImageContainer where Self: UIView {
     public var rac_imageElseHidden: MutableProperty<UIImage?> {
-        return rac_imageElseHideView(self)
+        return rac_imageElseHideView(view: self)
     }
 }
