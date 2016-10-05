@@ -1,5 +1,5 @@
-source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods repo
 source 'git@gitlab.ack.ee:Ackee/AckeePods.git' # Ackee private repo
+source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods repo
 
 use_frameworks!
 
