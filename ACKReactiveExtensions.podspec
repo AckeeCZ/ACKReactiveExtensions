@@ -25,7 +25,8 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Core','UIKit'
 
-  s.dependency 'ReactiveCocoa'
+  s.dependency 'ReactiveSwift'
+  s.dependency 'ReactiveCocoa', '>= 5.0'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/**/*'
@@ -37,7 +38,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Argo' do |argo|
-    argo.dependency 'Argo'
+    argo.dependency 'Argo', '~> 4.0'
     argo.source_files = 'ACKReactiveExtensions/Argo/**/*'
   end
 

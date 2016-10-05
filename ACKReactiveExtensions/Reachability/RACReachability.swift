@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import Result
 import ObjectiveC
 import Reachability
@@ -18,30 +18,31 @@ private struct AssociationKeys {
 
 extension Reachability {
     public var rac_status: SignalProducer<NetworkStatus, NoError> {
-        if let signalProducer = (objc_getAssociatedObject(self, &AssociationKeys.statusKey) as? RACSignal)?.toSignalProducer() {
+        if let signalProducer = (objc_getAssociatedObject(self, &AssociationKeys.statusKey) as? SignalProducer<NetworkStatus, NoError>) {
             return signalProducer
-                .map { NetworkStatus(rawValue: ($0 as! NSNumber).integerValue)! }
-                .ignoreError()
         } else {
             let newProducer = SignalProducer<NetworkStatus, NoError>({ (sink, dis) -> () in
-                sink.sendNext(self.currentReachabilityStatus())
+                sink.send(value: self.currentReachabilityStatus())
                 let oldRBlock = self.reachableBlock
                 self.reachableBlock = { r in
-                    if oldRBlock != nil {
+                    if let oldRBlock = oldRBlock {
                         oldRBlock(r)
                     }
-                    sink.sendNext(r.currentReachabilityStatus())
+                    if let r = r {
+                        sink.send(value: r.currentReachabilityStatus())
+                    }
                 }
                 let oldUnRBlock = self.unreachableBlock
                 self.unreachableBlock = { r in
-                    if oldUnRBlock != nil {
+                    if let oldUnRBlock = oldUnRBlock {
                         oldUnRBlock(r)
                     }
-                    sink.sendNext(r.currentReachabilityStatus())
+                    if let r = r {
+                        sink.send(value: r.currentReachabilityStatus())
+                    }
                 }
             })
-            let racSignal = newProducer.map { NSNumber(integer: $0.rawValue) }.toRACSignal()
-            objc_setAssociatedObject(self, &AssociationKeys.statusKey, racSignal, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociationKeys.statusKey, newProducer, .OBJC_ASSOCIATION_RETAIN)
             return newProducer
         }
     }

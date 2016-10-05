@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import Result
 
 //MARK: ReactiveCocoa
 
-extension SignalProducerType {
+extension SignalProducerProtocol {
     public func ignoreError() -> SignalProducer<Value, NoError> {
         return flatMapError { _ in SignalProducer.empty }
     }
@@ -20,11 +20,11 @@ extension SignalProducerType {
 
 public func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E> {
     let producers = SignalProducer<SignalProducer<T, E>, E>(values: signals)
-    return producers.flatten(.Merge)
+    return producers.flatten(.merge)
 }
 
-extension SignalProducerType where Value == Void, Error == NoError {
-    public static func sideEffect(actions: () -> ()) -> SignalProducer<(), NoError> {
+extension SignalProducerProtocol where Value == Void, Error == NoError {
+    public static func sideEffect(actions: @escaping () -> ()) -> SignalProducer<(), NoError> {
         return SignalProducer<(), NoError> { sink, _ in
             actions()
             sink.sendCompleted()
@@ -35,9 +35,9 @@ extension SignalProducerType where Value == Void, Error == NoError {
 extension SignalProducer {
     // the autoclosure can still retain self strongly. The compiler will warn you by requiring `self.`.
     // Dont ignore memory managment! If you need to capture self weekly (or unowned), you cant use autoclosure and must supply a full closure.
-    public init(@autoclosure(escaping) lazyValue: () -> Value) {
+    public init(lazyValue: @autoclosure(escaping) () -> Value) {
         self.init { observer, _ in
-            observer.sendNext(lazyValue())
+            observer.send(value: lazyValue())
             observer.sendCompleted()
         }
     }
@@ -50,19 +50,10 @@ private struct AssociationKey {
 }
 
 public protocol Disposing: class {
-    var rac_willDeallocSignal: Signal<(), NoError> { get }
+    var rac_lifetime: Lifetime { get }
 }
 
-extension NSObject: Disposing {
-    public var rac_willDeallocSignal: Signal<(), NoError> {
-        var extractedSignal: Signal<(), NoError>!
-        self.rac_willDeallocSignal().toSignalProducer().ignoreError().map { _ in() }
-            .startWithSignal { signal, _ in
-                extractedSignal = signal
-        }
-        return extractedSignal
-    }
-}
+extension NSObject: Disposing { }
 
 extension Disposing {
     private var lifecycleObject: NSObject {
@@ -71,15 +62,15 @@ extension Disposing {
         })
     }
 
-    public var rac_willDeallocSignal: Signal<(), NoError> {
-        return lifecycleObject.rac_willDeallocSignal
+    public var rac_lifetime: Lifetime {
+        return lifecycleObject.rac_lifetime
     }
 }
 
 //MARK: Associated properties
 
 // lazily creates a gettable associated property via the given factory
-public func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafePointer<Void>, factory: () -> T) -> T {
+public func lazyAssociatedProperty<T: AnyObject>(_ host: AnyObject, _ key: UnsafePointer<Void>, factory: () -> T) -> T {
     var associatedProperty = objc_getAssociatedObject(host, key) as? T
 
     if associatedProperty == nil {
@@ -89,14 +80,11 @@ public func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, _ key: UnsafeP
     return associatedProperty!
 }
 
-public func lazyMutableProperty<T>(host: AnyObject, _ key: UnsafePointer<Void>, _ setter: T -> (), _ getter: () -> T) -> MutableProperty<T> {
+public func lazyMutableProperty<T>(_ host: AnyObject, _ key: UnsafePointer<Void>, _ setter: @escaping (T) -> (), _ getter: () -> T) -> MutableProperty<T> {
     return lazyAssociatedProperty(host, key) {
         let property = MutableProperty<T>(getter())
         property.producer
-            .startWithNext {
-                newValue in
-                setter(newValue)
-        }
+            .startWithValues { setter($0) }
         return property
     }
 }

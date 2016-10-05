@@ -1,7 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods repo
+source 'git@gitlab.ack.ee:Ackee/AckeePods.git' # Ackee private repo
+
 use_frameworks!
 
 target 'ACKReactiveExtensions_Example' do
-    pod 'ReactiveCocoa'
     pod 'Result'
     pod 'ACKReactiveExtensions', :path => '../'
     pod 'ACKReactiveExtensions/Argo', :path => '../'
@@ -10,7 +12,7 @@ target 'ACKReactiveExtensions_Example' do
     pod 'ACKReactiveExtensions/WebKit', :path => '../'
   
     target 'ACKReactiveExtensions_Tests' do
-        pod 'Quick', '~> 0.9'
-        pod 'Nimble', '~> 4.0'
+        pod 'Quick', '~> 0.10'
+        pod 'Nimble', '~> 5.0'
     end
 end

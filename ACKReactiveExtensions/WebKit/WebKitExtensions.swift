@@ -1,4 +1,5 @@
 import WebKit
+import ReactiveSwift
 import ReactiveCocoa
 import ACKReactiveExtensions
 
@@ -11,9 +12,9 @@ extension WKWebView {
     /**
      * Property which observes estimated progress of request load.
      */
-    public var rac_estimatedProgress: DynamicProperty {
+    public var rac_estimatedProgress: DynamicProperty<CGFloat> {
         return lazyAssociatedProperty(self, &WebKitKeys.estimatedProgress, factory: { [unowned self] _ in
-            return DynamicProperty(object: self, keyPath: "estimatedProgress")
+            return DynamicProperty<CGFloat>(object: self, keyPath: "estimatedProgress")
         })
     }
 }
