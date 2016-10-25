@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Core','UIKit'
 
-  s.dependency 'ReactiveSwift'
   s.dependency 'ReactiveCocoa', '5.0.0-alpha.2'
 
   s.subspec 'Core' do |core|

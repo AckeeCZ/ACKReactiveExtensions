@@ -1,42 +1,35 @@
 PODS:
-  - ACKReactiveExtensions (1.2.4):
-    - ACKReactiveExtensions/Core (= 1.2.4)
-    - ACKReactiveExtensions/UIKit (= 1.2.4)
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
-  - ACKReactiveExtensions/Argo (1.2.4):
+  - ACKReactiveExtensions (2.0.1):
+    - ACKReactiveExtensions/Core (= 2.0.1)
+    - ACKReactiveExtensions/UIKit (= 2.0.1)
+    - ReactiveCocoa (= 5.0.0-alpha.2)
+  - ACKReactiveExtensions/Argo (2.0.1):
     - Argo (~> 4.0)
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
-  - ACKReactiveExtensions/Core (1.2.4):
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
-  - ACKReactiveExtensions/Reachability (1.2.4):
+    - ReactiveCocoa (= 5.0.0-alpha.2)
+  - ACKReactiveExtensions/Core (2.0.1):
+    - ReactiveCocoa (= 5.0.0-alpha.2)
+  - ACKReactiveExtensions/Reachability (2.0.1):
     - ACKReactiveExtensions/Core
     - Reachability
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
-  - ACKReactiveExtensions/SDWebImage (1.2.4):
+    - ReactiveCocoa (= 5.0.0-alpha.2)
+  - ACKReactiveExtensions/SDWebImage (2.0.1):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
+    - ReactiveCocoa (= 5.0.0-alpha.2)
     - SDWebImage
-  - ACKReactiveExtensions/UIKit (1.2.4):
+  - ACKReactiveExtensions/UIKit (2.0.1):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
-  - ACKReactiveExtensions/WebKit (1.2.4):
+    - ReactiveCocoa (= 5.0.0-alpha.2)
+  - ACKReactiveExtensions/WebKit (2.0.1):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (>= 5.0)
-    - ReactiveSwift
+    - ReactiveCocoa (= 5.0.0-alpha.2)
   - Argo (4.0.0):
     - Runes (>= 4.0.0)
-  - Nimble (5.0.0)
+  - Nimble (5.1.0)
   - Quick (0.10.0)
   - Reachability (3.2)
-  - ReactiveCocoa (5.0.0):
-    - ReactiveSwift (~> 1.0)
-  - ReactiveSwift (1.0.0):
+  - ReactiveCocoa (5.0.0-alpha.2):
+    - ReactiveSwift (~> 1.0.0-alpha.3)
+  - ReactiveSwift (1.0.0-alpha.3):
     - Result (~> 3.0)
   - Result (3.0.0)
   - Runes (4.0.0)
@@ -56,20 +49,20 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 60be6a9ee792440a79561fe8e889b57c610c1d2d
-  Argo: bf23cec88b88b625858d8f56617cff99e58aedaf
-  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  ACKReactiveExtensions: 710dfa248ba4a6401a4031de6072e431e8fa8b3a
+  Argo: e808d20ee2e95c4498276ca1812d75d3b0b00090
+  Nimble: 5ea121a2eda60440287054cde077fc0ad22227b3
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: bb1a021e68682a79ae0b81b644691b5a131ccc35
-  ReactiveSwift: 63a3fa9b2ecabdc6d00f6f024bda07bf468b109d
+  ReactiveCocoa: 14a6358d1009c90c3078bc352ce84c102b78c45e
+  ReactiveSwift: d67b677f9574ba614d94022a88fcf456e77fa515
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
-  Runes: 265b816de21867398b4cd12fb384c72a4d514f4f
+  Runes: 423ee2dac4dedb4626a859c0962c934195ba8433
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
 PODFILE CHECKSUM: a00a15deb8159bac28b625eed9816ad6f45c4d80
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
