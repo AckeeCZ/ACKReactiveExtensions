@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://gitlab.ack.ee/Ackee/ACKReactiveExtensions'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Jan Mísař' => 'misar.jan@gmail.com' }
+  s.author           = { 'Jan Mísař' => 'misar.jan@gmail.com' }
   s.source           = { :git => 'git@gitlab.ack.ee:Ackee/ACKReactiveExtensions.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core','UIKit'
 
   s.dependency 'ReactiveSwift'
-  s.dependency 'ReactiveCocoa', '>= 5.0'
+  s.dependency 'ReactiveCocoa', '5.0.0-alpha.2'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/**/*'
