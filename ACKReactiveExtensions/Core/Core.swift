@@ -8,6 +8,7 @@
 
 import Foundation
 import ReactiveSwift
+import ReactiveCocoa
 import Result
 
 //MARK: ReactiveCocoa
@@ -54,6 +55,12 @@ public protocol Disposing: class {
 }
 
 extension NSObject: Disposing { }
+
+extension Disposing where Self: NSObject {
+    public var rac_lifetime: Lifetime {
+        return (self as NSObject).reactive.lifetime
+    }
+}
 
 extension Disposing {
     private var lifecycleObject: NSObject {
