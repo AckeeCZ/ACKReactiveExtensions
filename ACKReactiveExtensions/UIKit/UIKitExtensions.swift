@@ -36,9 +36,8 @@ extension UIView {
     public var rac_alpha: MutableProperty<CGFloat> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.alpha, { [unowned self] in self.alpha = $0 }, { [unowned self] in self.alpha })
     }
-
-    public var rac_hidden: MutableProperty<Bool> {
-        return lazyMutablePropertyUiKit(self, &AssociationKey.hidden, { [unowned self] in self.isHidden = $0 }, { [unowned self] in self.isHidden })
+    public var rac_hidden: DynamicProperty<Bool> {
+        return lazyAssociatedProperty(self, &AssociationKey.hidden) { [unowned self] in DynamicProperty(object: self, keyPath: "hidden") }
     }
     public var rac_tintColor: MutableProperty<UIColor?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.tintColor, { [unowned self] in self.tintColor = $0 }, { [unowned self] in self.tintColor })
