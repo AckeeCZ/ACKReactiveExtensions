@@ -1,38 +1,38 @@
 PODS:
-  - ACKReactiveExtensions (2.0.1):
-    - ACKReactiveExtensions/Core (= 2.0.1)
-    - ACKReactiveExtensions/UIKit (= 2.0.1)
-    - ReactiveCocoa (= 5.0.0-alpha.2)
-  - ACKReactiveExtensions/Argo (2.0.1):
+  - ACKReactiveExtensions (2.0.4):
+    - ACKReactiveExtensions/Core (= 2.0.4)
+    - ACKReactiveExtensions/UIKit (= 2.0.4)
+    - ReactiveCocoa (~> 5.0.0-rc.1)
+  - ACKReactiveExtensions/Argo (2.0.4):
     - Argo (~> 4.0)
-    - ReactiveCocoa (= 5.0.0-alpha.2)
-  - ACKReactiveExtensions/Core (2.0.1):
-    - ReactiveCocoa (= 5.0.0-alpha.2)
-  - ACKReactiveExtensions/Reachability (2.0.1):
+    - ReactiveCocoa (~> 5.0.0-rc.1)
+  - ACKReactiveExtensions/Core (2.0.4):
+    - ReactiveCocoa (~> 5.0.0-rc.1)
+  - ACKReactiveExtensions/Reachability (2.0.4):
     - ACKReactiveExtensions/Core
     - Reachability
-    - ReactiveCocoa (= 5.0.0-alpha.2)
-  - ACKReactiveExtensions/SDWebImage (2.0.1):
+    - ReactiveCocoa (~> 5.0.0-rc.1)
+  - ACKReactiveExtensions/SDWebImage (2.0.4):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (= 5.0.0-alpha.2)
+    - ReactiveCocoa (~> 5.0.0-rc.1)
     - SDWebImage
-  - ACKReactiveExtensions/UIKit (2.0.1):
+  - ACKReactiveExtensions/UIKit (2.0.4):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (= 5.0.0-alpha.2)
-  - ACKReactiveExtensions/WebKit (2.0.1):
+    - ReactiveCocoa (~> 5.0.0-rc.1)
+  - ACKReactiveExtensions/WebKit (2.0.4):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (= 5.0.0-alpha.2)
-  - Argo (4.0.0):
+    - ReactiveCocoa (~> 5.0.0-rc.1)
+  - Argo (4.1.1):
     - Runes (>= 4.0.0)
-  - Nimble (5.1.0)
+  - Nimble (5.1.1)
   - Quick (0.10.0)
   - Reachability (3.2)
-  - ReactiveCocoa (5.0.0-alpha.2):
-    - ReactiveSwift (~> 1.0.0-alpha.3)
-  - ReactiveSwift (1.0.0-alpha.3):
-    - Result (~> 3.0)
-  - Result (3.0.0)
-  - Runes (4.0.0)
+  - ReactiveCocoa (5.0.0-rc.1):
+    - ReactiveSwift (~> 1.0.0-rc.3)
+  - ReactiveSwift (1.0.0):
+    - Result (~> 3.1)
+  - Result (3.1.0)
+  - Runes (4.0.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -52,17 +52,17 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 710dfa248ba4a6401a4031de6072e431e8fa8b3a
-  Argo: e808d20ee2e95c4498276ca1812d75d3b0b00090
-  Nimble: 5ea121a2eda60440287054cde077fc0ad22227b3
+  ACKReactiveExtensions: 736fbacdb302424329a499686319b5710bbc018d
+  Argo: 014ac072f97462bc1a9b83d302edb351488a532f
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: 14a6358d1009c90c3078bc352ce84c102b78c45e
-  ReactiveSwift: d67b677f9574ba614d94022a88fcf456e77fa515
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
-  Runes: 423ee2dac4dedb4626a859c0962c934195ba8433
+  ReactiveCocoa: 3e9cad4b77fa199d41e03f603cb55d0701ad6ad8
+  ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
 PODFILE CHECKSUM: a00a15deb8159bac28b625eed9816ad6f45c4d80
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.3

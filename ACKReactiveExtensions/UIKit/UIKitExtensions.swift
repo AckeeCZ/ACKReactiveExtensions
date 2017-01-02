@@ -33,12 +33,16 @@ private struct AssociationKey {
 }
 
 extension UIView {
+    @available(*, deprecated, message: "Use native reactive.alpha")
     public var rac_alpha: MutableProperty<CGFloat> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.alpha, { [unowned self] in self.alpha = $0 }, { [unowned self] in self.alpha })
     }
+    
+    @available(*, deprecated, message: "Use native reactive.isHidden")
     public var rac_hidden: DynamicProperty<Bool> {
         return lazyAssociatedProperty(self, &AssociationKey.hidden) { [unowned self] in DynamicProperty(object: self, keyPath: "hidden") }
     }
+    
     public var rac_tintColor: MutableProperty<UIColor?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.tintColor, { [unowned self] in self.tintColor = $0 }, { [unowned self] in self.tintColor })
     }
@@ -57,27 +61,33 @@ extension CALayer {
 }
 
 extension UILabel {
+    @available(*, deprecated, message: "Use native reactive.textColor")
     public var rac_textColor: MutableProperty<UIColor?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.textColor, { [unowned self] in self.textColor = $0 }, { [unowned self] in self.textColor })
     }
+    
+    @available(*, deprecated, message: "Use native reactive.attributedText")
     public var rac_attributedText: MutableProperty<NSAttributedString?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.attributedText, { [unowned self] in self.attributedText = $0 }, { [unowned self] in self.attributedText })
     }
 }
 
 extension UIProgressView {
+    @available(*, deprecated, message: "Use native reactive.progress")
     public var rac_progress: MutableProperty<Float> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.progress, { [unowned self] in self.progress = $0 }, { [unowned self] in self.progress })
     }
 }
 
 extension UIActivityIndicatorView {
+    @available(*, deprecated, message: "Use native reactive.isAnimating")
     public var rac_animating: MutableProperty<Bool> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.animating, { [unowned self] in $0 ? self.startAnimating() : self.stopAnimating() }, { [unowned self] in self.isAnimating })
     }
 }
 
 extension UITextView {
+    @available(*, deprecated, message: "Use native reactive.text, textValues or continuousTextValues")
     public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) { [unowned self] in
             NotificationCenter.default.reactive.notifications(forName: .UITextViewTextDidChange, object: self)
@@ -104,12 +114,14 @@ extension UINavigationItem {
 //MARK: Controls
 
 extension UIButton {
+    @available(*, deprecated, message: "Use native reactive.title")
     public var rac_title: MutableProperty<String?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.setTitle($0, for: .normal) }, { [unowned self] in self.titleLabel?.text })
     }
 }
 
 extension UISwitch {
+    @available(*, deprecated, message: "Use native reactive.isOn")
     public var rac_on: MutableProperty<Bool> {
         return lazyAssociatedProperty(self, &AssociationKey.on) {
 
@@ -129,12 +141,14 @@ extension UISwitch {
 }
 
 extension UISegmentedControl {
+    @available(*, deprecated, message: "Use native reactive.selectedSegmentIndexes")
     public var rac_selectedIndex: MutableProperty<Int> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.selected, { [unowned self] in self.selectedSegmentIndex = $0 }, { [unowned self] in self.selectedSegmentIndex })
     }
 }
 
 extension UITextField {
+    @available(*, deprecated, message: "Use native reactive.text, textValues or continuousTextValues")
     public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) {
 
@@ -175,6 +189,7 @@ public protocol Enablable: class {
 extension UIControl: Enablable { }
 extension UIBarButtonItem: Enablable { }
 extension Enablable {
+    @available(*, deprecated, message: "Use native reactive.isEnabled")
     public var rac_enabled: MutableProperty<Bool> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.enabled, { [unowned self] in self.enabled = $0 }, { [unowned self] in self.enabled })
     }
@@ -189,6 +204,7 @@ extension UIControl: Selectable { }
 extension UITableViewCell: Selectable { }
 extension UICollectionViewCell: Selectable { }
 extension Selectable {
+    @available(*, deprecated, message: "Use native reactive.isSelected")
     public var rac_selected: MutableProperty<Bool> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.selected, { [unowned self] in self.selected = $0 }, { [unowned self] in self.selected })
     }
@@ -222,6 +238,7 @@ extension UILabel: TextContainingView { }
 extension UITextField: TextContainingView { }
 
 public extension TextContainingView {
+    @available(*, deprecated, message: "Use native reactive.text")
     public var rac_text: MutableProperty<String> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.text, { [unowned self] in self.text = $0 }, { [unowned self] in self.text ?? "" })
     }
@@ -254,6 +271,7 @@ public protocol ImageContainer: class {
 extension UIImageView: ImageContainer { }
 
 public extension ImageContainer {
+    @available(*, deprecated, message: "Use native reactive.image")
     public var rac_image: MutableProperty<UIImage?> {
         return lazyMutablePropertyUiKit(self, &AssociationKey.image, { [unowned self] in self.image = $0 }, { [unowned self] in self.image })
     }
