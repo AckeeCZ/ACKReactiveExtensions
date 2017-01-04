@@ -91,7 +91,7 @@ extension UITextView {
     public var rac_text: MutableProperty<String> {
         return lazyAssociatedProperty(self, &AssociationKey.text) { [unowned self] in
             NotificationCenter.default.reactive.notifications(forName: .UITextViewTextDidChange, object: self)
-                .take(until: self.rac_lifetime.ended)
+                .take(during: self.reactive.lifetime)
                 .observeValues { [unowned self] _ in
                     self.rac_text.value = self.text ?? ""
             }
