@@ -49,7 +49,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   ACKReactiveExtensions: 736fbacdb302424329a499686319b5710bbc018d
@@ -65,4 +65,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a00a15deb8159bac28b625eed9816ad6f45c4d80
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.2.0.beta.1

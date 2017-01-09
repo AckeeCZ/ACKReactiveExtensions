@@ -15,7 +15,7 @@ import Result
 
 extension SignalProducerProtocol {
     public func ignoreError() -> SignalProducer<Value, NoError> {
-        return flatMapError { _ in SignalProducer.empty }
+        return flatMapError { _ in .empty }
     }
 }
 
@@ -37,7 +37,7 @@ extension SignalProducerProtocol where Value == Void, Error == NoError {
 extension SignalProducer {
     // the autoclosure can still retain self strongly. The compiler will warn you by requiring `self.`.
     // Dont ignore memory managment! If you need to capture self weekly (or unowned), you cant use autoclosure and must supply a full closure.
-    public init(lazyValue: @autoclosure(escaping) () -> Value) {
+    public init(lazyValue: @autoclosure @escaping () -> Value) {
         self.init { observer, _ in
             observer.send(value: lazyValue())
             observer.sendCompleted()
@@ -51,27 +51,20 @@ private struct AssociationKey {
     static var lifecycleObject: UInt8 = 1
 }
 
-public protocol Disposing: class {
-    var rac_lifetime: Lifetime { get }
-}
+public protocol Disposing: class { }
 
-extension NSObject: Disposing { }
-
-extension Disposing where Self: NSObject {
-    public var rac_lifetime: Lifetime {
-        return (self as NSObject).reactive.lifetime
-    }
-}
 
 extension Disposing {
-    private var lifecycleObject: NSObject {
+    fileprivate var lifecycleObject: NSObject {
         return lazyAssociatedProperty(self, &AssociationKey.lifecycleObject, factory: {
             NSObject()
         })
     }
+}
 
-    public var rac_lifetime: Lifetime {
-        return lifecycleObject.rac_lifetime
+extension Reactive where Base: Disposing {
+    public var lifetime: Lifetime {
+        return base.lifecycleObject.reactive.lifetime
     }
 }
 

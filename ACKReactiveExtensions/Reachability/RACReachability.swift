@@ -12,11 +12,19 @@ import Result
 import ObjectiveC
 import Reachability
 
+extension Reactive where Base: Reachability {
+    public var status: Property<NetworkStatus> {
+        //internally, we use the old SignalProducer implementation, which already sends an initial value, so we skip it.
+        return Property(initial: base.currentReachabilityStatus(), then: base.rac_status.skip(first: 1))
+    }
+}
+
 private struct AssociationKeys {
     static var statusKey: UInt8 = 0
 }
 
 extension Reachability {
+    @available(*, deprecated, renamed: "reactive.status.producer")
     public var rac_status: SignalProducer<NetworkStatus, NoError> {
         if let signalProducer = (objc_getAssociatedObject(self, &AssociationKeys.statusKey) as? SignalProducer<NetworkStatus, NoError>) {
             return signalProducer
