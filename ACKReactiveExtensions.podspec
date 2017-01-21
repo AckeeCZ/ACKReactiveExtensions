@@ -58,4 +58,9 @@ Pod::Spec.new do |s|
     webkit.source_files = 'ACKReactiveExtensions/WebKit/**/*'
   end
 
+  s.subspec 'Realm' do |realm|
+    realm.dependency 'RealmSwift', '~> 2.1'
+    realm.source_files = 'ACKReactiveExtensions/Realm/**/*'
+  end
+
 end
