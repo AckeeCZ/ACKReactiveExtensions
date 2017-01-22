@@ -17,6 +17,8 @@ By using `pod "ACKReactiveExtensions"` you will get only general and UIKit exten
 pod 'ACKReactiveExtensions/Argo'
 pod 'ACKReactiveExtensions/Reachability'
 pod 'ACKReactiveExtensions/SDWebImage'
+pod 'ACKReactiveExtensions/WebKit'
+pod 'ACKReactiveExtensions/Realm'
 ```
 These subspecs mostly require aditional dependencies (as Argo or Reachability) and you could not need it for your project. That's why it is separated to subspecs.
 
