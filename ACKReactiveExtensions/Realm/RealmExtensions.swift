@@ -11,8 +11,8 @@ import ReactiveSwift
 import RealmSwift
 
 public struct RealmError : Error {
-    let underlyingError: NSError
-    init(underlyingError: NSError){
+    public let underlyingError: NSError
+    public init(underlyingError: NSError){
         self.underlyingError = underlyingError
     }
 }
@@ -65,5 +65,45 @@ public extension Reactive where Base: RealmCollection {
     public var property: ReactiveSwift.Property<Base> {
         return ReactiveSwift.Property(initial: self.base, then: values.ignoreError().skip(first: 1) )
     }
+}
+
+//MARK: Saving
+public extension Reactive where Base: Object {
+    
+    public func save(update: Bool = true, writeBlock: ((Realm)->Void)? = nil) -> SignalProducer<Base, RealmError>{
+        return SignalProducer<Base, RealmError> { sink, d in
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    if let writeBlock = writeBlock {
+                        writeBlock(realm)
+                    } else {
+                        realm.add(self.base, update: update)
+                    }
+                }
+                sink.send(value: self.base)
+                sink.sendCompleted()
+            } catch (let e) {
+                sink.send(error: RealmError(underlyingError: e as! NSError) )
+            }
+        }
+        
+    }
+    
+    public func delete() -> SignalProducer<(), RealmError> {
+        return SignalProducer { sink, d in
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(self.base)
+                }
+                sink.send(value: ())
+                sink.sendCompleted()
+            } catch (let e) {
+                sink.send(error: RealmError(underlyingError: e as! NSError) )
+            }
+        }
+    }
+    
 }
 
