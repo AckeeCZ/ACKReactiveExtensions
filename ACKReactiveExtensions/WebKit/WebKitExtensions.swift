@@ -4,7 +4,7 @@ import ReactiveCocoa
 import ACKReactiveExtensions
 
 extension Reactive where Base: WKWebView {
-    var estimatedProgress: Property<CGFloat> {
+    public var estimatedProgress: Property<CGFloat> {
         return Property(base.rac_estimatedProgress.map { $0 ?? 0 })
     }
 }

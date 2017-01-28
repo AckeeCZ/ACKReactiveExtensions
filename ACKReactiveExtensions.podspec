@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '2.1.1'
+  s.version          = '2.2.2'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
 
   s.description      = <<-DESC
@@ -59,6 +59,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Realm' do |realm|
+    realm.dependency 'ACKReactiveExtensions/Core'
     realm.dependency 'RealmSwift', '~> 2.1'
     realm.source_files = 'ACKReactiveExtensions/Realm/**/*'
   end
