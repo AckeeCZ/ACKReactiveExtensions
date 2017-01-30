@@ -1,28 +1,29 @@
 PODS:
-  - ACKReactiveExtensions (2.2.0):
-    - ACKReactiveExtensions/Core (= 2.2.0)
-    - ACKReactiveExtensions/UIKit (= 2.2.0)
+  - ACKReactiveExtensions (2.2.2):
+    - ACKReactiveExtensions/Core (= 2.2.2)
+    - ACKReactiveExtensions/UIKit (= 2.2.2)
     - ReactiveCocoa (~> 5.0.0-rc.1)
-  - ACKReactiveExtensions/Argo (2.2.0):
+  - ACKReactiveExtensions/Argo (2.2.2):
     - Argo (~> 4.0)
     - ReactiveCocoa (~> 5.0.0-rc.1)
-  - ACKReactiveExtensions/Core (2.2.0):
+  - ACKReactiveExtensions/Core (2.2.2):
     - ReactiveCocoa (~> 5.0.0-rc.1)
-  - ACKReactiveExtensions/Reachability (2.2.0):
+  - ACKReactiveExtensions/Reachability (2.2.2):
     - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa (~> 5.0.0-rc.1)
-  - ACKReactiveExtensions/Realm (2.2.0):
+  - ACKReactiveExtensions/Realm (2.2.2):
+    - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0.0-rc.1)
     - RealmSwift (~> 2.1)
-  - ACKReactiveExtensions/SDWebImage (2.2.0):
+  - ACKReactiveExtensions/SDWebImage (2.2.2):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0.0-rc.1)
     - SDWebImage
-  - ACKReactiveExtensions/UIKit (2.2.0):
+  - ACKReactiveExtensions/UIKit (2.2.2):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0.0-rc.1)
-  - ACKReactiveExtensions/WebKit (2.2.0):
+  - ACKReactiveExtensions/WebKit (2.2.2):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0.0-rc.1)
   - Argo (4.1.1):
@@ -58,10 +59,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: b0eb976fd5d54f49671118c607a8e87692141a90
+  ACKReactiveExtensions: c9b0a363ba76fe47dfdb074fb7da40ef988f0bf7
   Argo: 014ac072f97462bc1a9b83d302edb351488a532f
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
@@ -76,4 +77,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1ed247216cfa78d69af7c9aed3f2ed92db7fcd17
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.2.0.rc.1

@@ -25,6 +25,7 @@ class Category: Object {
         self.id = id
         self.name = name
     }
+    
 }
 
 class User: Object {
@@ -32,6 +33,19 @@ class User: Object {
     dynamic var name: String = ""
     let categories = List<Category>()
     convenience init(id: Int, name: String){
+        self.init()
+        self.id = id
+        self.name = name
+    }
+    
+    
+}
+
+class Unicorn: Object {
+    dynamic var id: NSString = "0"
+    dynamic var name: String = ""
+    override static func primaryKey() -> String? { return "id" }
+    convenience init(id: NSString, name: String){
         self.init()
         self.id = id
         self.name = name
@@ -139,7 +153,39 @@ class RealmTest: XCTestCase {
         //The only way I managed to test it was to add breakpoint to update case in changes producer. It should be never called
     }
     
-
+    func testThatObjectIsSaved() {
+        let user = User(id: 102, name: "user102")
+        user.reactive.save(update: false).start()
+        
+        expect(self.realm.objects(User.self).filter("name == 'user102'").first).toNot(beNil())
+    }
+    
+    func testThatObjectIsDeleted() {
+        let user = self.realm.objects(User.self).filter("name == 'user51'").first
+        user?.reactive.delete().start()
+        
+        expect(self.realm.objects(User.self).filter("name == 'user51'").first).to(beNil())
+    }
+    
+    func testThatOrphanedObjectAreDeleted() {
+        
+        try! realm.write {
+            let unicorns = (0..<100).map { id -> Unicorn in Unicorn(id: "\(id)" as NSString, name: "unicorn\(id)") }
+            realm.add(unicorns)
+        }
+        
+        let orphanedQuery = self.realm.objects(Unicorn.self)
+        
+        expect(orphanedQuery.count) == 100
+        
+        let unicorn = Unicorn(id: "1000", name: "unicorn1000")
+        try! realm.write {
+            realm.add([unicorn], deleteOrphanedQuery: orphanedQuery)
+        }
+        
+        expect(orphanedQuery.count) == 1
+    }
+    
     func beUpdate(withCount count: Int) -> MatcherFunc<Change<Results<User>>> {
         return MatcherFunc { expression, message in
             message.postfixMessage = "be update with \(count)"
@@ -150,5 +196,71 @@ class RealmTest: XCTestCase {
             return false
         }
     }
+    
+    class ViewController: UIViewController, RealmTableViewReloading, UITableViewDataSource {
+        typealias Element = User
+        weak var tableView: UITableView!
+        weak var mockTableView: MockTableView!
+        
+        class MockTableView: UITableView {
+            var insertCallback: (([Int]) -> Void)?
+            
+            override func insertRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
+                super.insertRows(at: indexPaths, with: animation)
+                insertCallback?(indexPaths.map { $0.row })
+            }
+        }
+        
+        let query: Results<User>
+        
+        init(query: Results<User>){
+            self.query = query
+            super.init(nibName: nil, bundle: nil)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        override func loadView(){
+            super.loadView()
+            let tableView = MockTableView()
+            tableView.dataSource = self
+            view.addSubview(tableView)
+            self.tableView = tableView
+            self.mockTableView = tableView
+            self.reactive.changes <~ query.reactive.changes.ignoreError()
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            return UITableViewCell()
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return query.count
+        }
+    }
+    
+    
+    func testTableViewIsReloaded() {
+        let controller = ViewController(query: self.realm.objects(User.self).sorted(byProperty: "id", ascending: true))
+        
+        let user = User(id: 101, name: "user101")
+        
+        _ = controller.view
+        
+        var reloadedIndices: [Int]?
+        controller.mockTableView.insertCallback = { indices in
+            reloadedIndices = indices
+        }
+        
+        try! realm.write {
+            realm.add(user)
+        }
+        
+        expect(reloadedIndices?.first).toEventually(equal(100))
+    }
+
+    
     
 }
