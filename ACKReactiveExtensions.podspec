@@ -49,7 +49,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'SDWebImage' do |sdwebimage|
     sdwebimage.dependency 'ACKReactiveExtensions/Core'
-    sdwebimage.dependency 'SDWebImage'
+    sdwebimage.dependency 'SDWebImage', '~> 4.0'
     sdwebimage.source_files = 'ACKReactiveExtensions/SDWebImage/**/*'
   end
 

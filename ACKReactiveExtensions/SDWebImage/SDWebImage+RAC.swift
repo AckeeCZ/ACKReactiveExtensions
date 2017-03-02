@@ -22,7 +22,9 @@ extension Reactive where Base: SDWebImageDownloader {
                 sink.sendCompleted()
             }
             disposable.add({
-                task?.cancel()
+                if let token = task?.downloadOperationCancelToken as? SDWebImageDownloadToken {
+                    self.base.cancel(token)
+                }
             })
         }
     }
@@ -55,7 +57,9 @@ extension SDWebImageDownloader {
                 sink.sendCompleted()
             }
             disposable.add({ 
-                task?.cancel()
+                if let token = task?.downloadOperationCancelToken as? SDWebImageDownloadToken {
+                    self.cancel(token)
+                }
             })
         }
     }
