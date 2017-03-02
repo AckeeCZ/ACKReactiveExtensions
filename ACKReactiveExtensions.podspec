@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '2.2.2'
+  s.version          = '2.3.0'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
 
   s.description      = <<-DESC
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Core','UIKit'
 
-  s.dependency 'ReactiveCocoa', '~> 5.0.0-rc.1'
+  s.dependency 'ReactiveCocoa', '~> 5.0'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/**/*'
