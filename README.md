@@ -31,6 +31,7 @@ pod "ACKReactiveExtensions"
 
 - Xcode 8.x
 - Swift 3.x
+- iOS 8.3 and newer
 
 For Swift 2.x compatible version use ACKReactiveExtensions in 1.2.x version.
 
