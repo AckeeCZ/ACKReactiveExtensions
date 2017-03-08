@@ -27,6 +27,13 @@ ACKReactiveExtensions is available through [CocoaPods](http://cocoapods.org). Si
 pod "ACKReactiveExtensions"
 ```
 
+### Requirements
+
+- Xcode 8.x
+- Swift 3.x
+
+For Swift 2.x compatible version use ACKReactiveExtensions in 1.2.x version.
+
 ## Subspecs
 By using `pod "ACKReactiveExtensions"` you will get only general and UIKit extensions but there are also subspecs you can like/need.
 
