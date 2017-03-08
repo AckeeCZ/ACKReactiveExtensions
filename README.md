@@ -1,10 +1,23 @@
+![ackee|ACKReactiveExtensions](Resources/cover-image.png)
+
+
 # ACKReactiveExtensions
 
-ACKReactiveExtensions contains extensions for views, label, controls and other UIKit classes for simple use with ReactiveCocoa. It also offers extensions for Argo, Reachability and probably much more in the future.
+ACKReactiveExtensions is set of useful extensions for ReactiveCocoa you could use in your apps.
+
+Currently we have extensions for
+- [Argo](https://github.com/thoughtbot/Argo)
+- [Reachability](https://github.com/tonymillion/Reachability)
+- [Realm](https://github.com/realm/realm-cocoa)
+- [SDWebImage](https://github.com/rs/SDWebImage)
+- UIKit
+- WebKit
+
+If you'd love to have more extensions available just open an issue or even better create a pull request!
 
 ## Installation
 
-ACKReactiveExtensions is available through [CocoaPods](http://cocoapods.org). You need to add Ackee private repo to your Cocoapods installation. See https://gitlab.ack.ee/Ackee/AckeePods for details. Then simply add the following line to your Podfile:
+ACKReactiveExtensions is available through [CocoaPods](http://cocoapods.org). Simply add the following line to your Podfile:
 
 ```ruby
 pod "ACKReactiveExtensions"
@@ -16,19 +29,28 @@ By using `pod "ACKReactiveExtensions"` you will get only general and UIKit exten
 ```ruby
 pod 'ACKReactiveExtensions/Argo'
 pod 'ACKReactiveExtensions/Reachability'
+pod 'ACKReactiveExtensions/Realm'
 pod 'ACKReactiveExtensions/SDWebImage'
 pod 'ACKReactiveExtensions/WebKit'
-pod 'ACKReactiveExtensions/Realm'
 ```
 These subspecs mostly require aditional dependencies (as Argo or Reachability) and you could not need it for your project. That's why it is separated to subspecs.
 
 ## Usage
-Code contains only some useful extensions for existing classes, so just look to the code and use it.
+Usage is really simple, ACKReactiveExtensions contains just more extensions for ReactiveSwift's `Reactive` struct so it can be used on more objects.
+
+```swift
+let imageURL: Property<URL> = ...
+let imageView = UIImageView()
+
+imageView.reactive.imageURL <~ imageURL
+```
 
 ## Author
 
-j.m. misar.jan@gmail.com
+[Ackee](https://ackee.cz) team
 
 ## License
 
-ACKReactiveExtensions has no license. We are ackee. Fuck license.
+ACKategories is available under the MIT license. See the LICENSE file for more info.
+
+[1]:	https://twitter.com/AckeeCZ
