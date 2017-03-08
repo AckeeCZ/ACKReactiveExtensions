@@ -1,5 +1,9 @@
 ![ackee|ACKReactiveExtensions](Resources/cover-image.png)
 
+[![CI Status](http://img.shields.io/travis/AckeeCZ/ACKReactiveExtensions.svg?style=flat)](https://travis-ci.org/AckeeCZ/ACKReactiveExtensions)
+[![Version](https://img.shields.io/cocoapods/v/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
+[![License](https://img.shields.io/cocoapods/l/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
+[![Platform](https://img.shields.io/cocoapods/p/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
 
 # ACKReactiveExtensions
 
