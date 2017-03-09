@@ -19,7 +19,7 @@ PODS:
   - ACKReactiveExtensions/SDWebImage (2.3.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
-    - SDWebImage
+    - SDWebImage (~> 4.0)
   - ACKReactiveExtensions/UIKit (2.3.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
@@ -62,7 +62,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 19813af5a953c3d48f6aa553c28350e5730d52c5
+  ACKReactiveExtensions: c0941143cdc7e350df0a2375224c19d02a55cf9a
   Argo: 014ac072f97462bc1a9b83d302edb351488a532f
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
@@ -75,6 +75,6 @@ SPEC CHECKSUMS:
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 1ed247216cfa78d69af7c9aed3f2ed92db7fcd17
+PODFILE CHECKSUM: 956859a104d62bdbc42db08d94465ab0461a558b
 
 COCOAPODS: 1.2.0
