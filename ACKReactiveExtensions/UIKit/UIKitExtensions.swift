@@ -12,33 +12,46 @@ import ReactiveCocoa
 import Result
 
 extension Reactive where Base: UIView {
+    /// Binding that represents tintColor
     public var tintColor: BindingTarget<UIColor?> {
         return makeBindingTarget { $0.tintColor = $1 }
     }
+    
+    /// Binding that represents backgroundColor
     public var backgroundColor: BindingTarget<UIColor?> {
         return makeBindingTarget { $0.backgroundColor = $1 }
     }
 }
 extension Reactive where Base: CALayer {
+    /// Binding that represents borderWidth
     public var borderWidth: BindingTarget<CGFloat> {
         return makeBindingTarget { $0.borderWidth = $1 }
     }
+    
+    /// Binding that represents borderColor
     public var borderColor: BindingTarget<CGColor> {
         return makeBindingTarget { $0.borderColor = $1 }
     }
 }
 
 extension Reactive where Base: UINavigationItem {
+    /// Binding that represents title
     public var title: BindingTarget<String?> {
         return makeBindingTarget { $0.title = $1 }
     }
 }
 
 extension Reactive where Base: UITextField {
+    /// Binding that represents textColor
     public var textColor: BindingTarget<UIColor?> {
         return makeBindingTarget { $0.textColor = $1 }
     }
-    //note that this wont fire on programmatic change of .text
+    
+    /**
+     * Property if field contains valid email
+     * 
+     * Note that this wont fire on programmatic change of .text
+     */
     public var containsValidEmail: Property<Bool> {
         return Property(initial: base.text, then: continuousTextValues)
             .map { $0.map { $0.isValidEmail } ?? false }
