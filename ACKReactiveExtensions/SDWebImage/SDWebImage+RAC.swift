@@ -4,12 +4,21 @@ import SDWebImage
 
 
 extension Reactive where Base: UIImageView {
+    /// Binding target that will download image from given URL using SDWebImage
     public var imageURL: BindingTarget<URL?> {
         return makeBindingTarget { $0.sd_setImage(with: $1, placeholderImage: nil) }
     }
 }
 
 extension Reactive where Base: SDWebImageDownloader {
+    
+    /**
+     * Reactively download image using given URL
+     *
+     * - parameter url: URL of image to be downloaded
+     * - parameter options: options to be passed to SDWebImage
+     * - returns: SignalProducer that will download image
+     */
     public func downloadImage(with url: URL, options: SDWebImageDownloaderOptions = SDWebImageDownloaderOptions()) -> SignalProducer<UIImage, NSError> {
         return SignalProducer { sink, disposable in
             let task = self.base.downloadImage(with: url, options: options, progress: nil) { image, _, error, _ in
@@ -35,6 +44,7 @@ private struct AssosiationKey {
 }
 
 extension UIImageView {
+    /// MutableProperty that will download image from given URL using SDWebImage
     @available(*, deprecated, renamed: "reactive.imageURL")
     public var rac_imageUrl: MutableProperty<URL?> {
         return lazyMutableProperty(self, &AssosiationKey.imageUrl, { [unowned self] url in
@@ -44,6 +54,13 @@ extension UIImageView {
 }
 
 extension SDWebImageDownloader {
+    /**
+     * Reactively download image using given URL
+     *
+     * - parameter url: URL of image to be downloaded
+     * - parameter options: options to be passed to SDWebImage
+     * - returns: SignalProducer that will download image
+     */
     @available(*, deprecated, renamed: "reactive.downloadImage(with:options:)")
     public func rac_downloadImageWithURL(url: URL, options: SDWebImageDownloaderOptions = SDWebImageDownloaderOptions()) -> SignalProducer<UIImage, NSError> {
         return SignalProducer { sink, disposable in
