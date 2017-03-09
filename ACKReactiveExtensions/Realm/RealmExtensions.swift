@@ -10,6 +10,7 @@ import Foundation
 import ReactiveSwift
 import RealmSwift
 
+/// Error return in case of Realm operation failure
 public struct RealmError : Error {
     public let underlyingError: NSError
     public init(underlyingError: NSError){
@@ -17,15 +18,20 @@ public struct RealmError : Error {
     }
 }
 
+/// Enum which represents RealmCollectionChange
 public enum Change<T> {
     typealias Element = T
     
+    /// Initial value
     case initial(T)
+    
+    /// RealmCollection was updated
     case update(T, deletions: [Int], insertions: [Int], modifications: [Int])
 }
 
 public extension Reactive where Base: RealmCollection {
     
+    /// SignalProducer that sends changes as they happen
     public var changes: SignalProducer<Change<Base>, RealmError> {
         var notificationToken: NotificationToken? = nil
         
@@ -51,6 +57,7 @@ public extension Reactive where Base: RealmCollection {
         return producer
     }
     
+    /// SignalProducer that sends the latest value
     public var values: SignalProducer<Base, RealmError> {
         return self.changes.map { changes -> Base in
             switch changes {
@@ -62,6 +69,7 @@ public extension Reactive where Base: RealmCollection {
         }
     }
     
+    /// Property which represents the latest value
     public var property: ReactiveSwift.Property<Base> {
         return ReactiveSwift.Property(initial: self.base, then: values.ignoreError().skip(first: 1) )
     }
@@ -70,6 +78,12 @@ public extension Reactive where Base: RealmCollection {
 //MARK: Saving
 public extension Reactive where Base: Object {
     
+    /**
+     * Reactive save Realm object
+     *
+     * - parameter update: Realm should find existing object using primaryKey() and update it if it exists otherwise create new object
+     * - parameter writeBlock: Closure which allows custom Realm operation instead of default add
+     */
     public func save(update: Bool = true, writeBlock: ((Realm)->Void)? = nil) -> SignalProducer<Base, RealmError>{
         return SignalProducer<Base, RealmError> { sink, d in
             do {
@@ -90,6 +104,9 @@ public extension Reactive where Base: Object {
         
     }
     
+    /**
+     * Reactively delete object
+     */
     public func delete() -> SignalProducer<(), RealmError> {
         return SignalProducer { sink, d in
             do {
@@ -110,14 +127,16 @@ public extension Reactive where Base: Object {
 
 //MARK: Table view
 
+
+/// Protocol which allows UITableView to be reloaded automatically when database changes happen
 public protocol RealmTableViewReloading {
     associatedtype Element: Object
     var tableView: UITableView! { get set }
 }
 
-
 public extension Reactive where Base: UIViewController, Base: RealmTableViewReloading {
     
+    /// Binding target which updates tableView according to received changes
     public var changes: BindingTarget<Change<Results<Base.Element>>> {
         return makeBindingTarget { vc, changes in
             guard let tableView = vc.tableView else { return }
@@ -191,7 +210,7 @@ func ~==(lhs: PrimaryKeyEquatable, rhs: PrimaryKeyEquatable) -> Bool {
 
 extension Realm {
     
-    // Add objects and delete non-present objects from the orphan query
+    /// Add objects and delete non-present objects from the orphan query
     public func add<S: Sequence>(_ objects: S, update: Bool = true, deleteOrphanedQuery: Results<S.Iterator.Element>) where S.Iterator.Element: Object {
         let allObjects = deleteOrphanedQuery.map { $0 }
         //This could be faster with set, but we can't redefine hashable
