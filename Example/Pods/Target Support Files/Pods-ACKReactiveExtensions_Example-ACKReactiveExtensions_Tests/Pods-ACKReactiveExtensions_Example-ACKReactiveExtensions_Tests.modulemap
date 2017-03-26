@@ -1,0 +1,6 @@
+framework module Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests {
+  umbrella header "Pods-ACKReactiveExtensions_Example-ACKReactiveExtensions_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

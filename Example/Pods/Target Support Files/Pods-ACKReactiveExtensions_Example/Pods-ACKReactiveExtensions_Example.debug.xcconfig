@@ -1,0 +1,10 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/ACKReactiveExtensions" "$PODS_CONFIGURATION_BUILD_DIR/Argo" "$PODS_CONFIGURATION_BUILD_DIR/Reachability" "$PODS_CONFIGURATION_BUILD_DIR/ReactiveCocoa" "$PODS_CONFIGURATION_BUILD_DIR/ReactiveSwift" "$PODS_CONFIGURATION_BUILD_DIR/Realm" "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift" "$PODS_CONFIGURATION_BUILD_DIR/Result" "$PODS_CONFIGURATION_BUILD_DIR/Runes" "$PODS_CONFIGURATION_BUILD_DIR/SDWebImage"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/ACKReactiveExtensions/ACKReactiveExtensions.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Argo/Argo.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Reachability/Reachability.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReactiveCocoa/ReactiveCocoa.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReactiveSwift/ReactiveSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Realm/Realm.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift/RealmSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Result/Result.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Runes/Runes.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SDWebImage/SDWebImage.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "ACKReactiveExtensions" -framework "Argo" -framework "Reachability" -framework "ReactiveCocoa" -framework "ReactiveSwift" -framework "Realm" -framework "RealmSwift" -framework "Result" -framework "Runes" -framework "SDWebImage"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods

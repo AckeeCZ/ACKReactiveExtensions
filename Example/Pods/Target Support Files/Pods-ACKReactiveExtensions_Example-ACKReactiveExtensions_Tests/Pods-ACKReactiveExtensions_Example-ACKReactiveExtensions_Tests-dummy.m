@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests : NSObject
+@end
+@implementation PodsDummy_Pods_ACKReactiveExtensions_Example_ACKReactiveExtensions_Tests
+@end
