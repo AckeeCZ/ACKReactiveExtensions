@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
   TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://gitlab.ack.ee/Ackee/ACKReactiveExtensions'
+  s.homepage         = 'https://github.com/AckeeCZ/ACKReactiveExtensions'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Jan Mísař' => 'misar.jan@gmail.com' }
-  s.source           = { :git => 'git@gitlab.ack.ee:Ackee/ACKReactiveExtensions.git', :tag => s.version.to_s }
+  s.author           = { 'Ackee' => 'info@ackee.cz' }
+  s.source           = { :git => 'https://github.com/AckeeCZ/ACKReactiveExtensions.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.3'
 
 #s.source_files = ''
