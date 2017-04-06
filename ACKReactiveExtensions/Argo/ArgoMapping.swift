@@ -36,9 +36,9 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      *
      * - parameter rootKey: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
-            let decoded: Decoded<ResultType> = rootKey.map {
+            let decoded: Decoded<ResultType> = key.map {
             let dict = data as? [String: Any] ?? [:]
             return decode(dict, rootKey: $0)
             } ?? decode(data)
@@ -57,9 +57,9 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      *
      * - parameter rootKey: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
-            let decoded: Decoded<[ResultType]> = rootKey.map {
+            let decoded: Decoded<[ResultType]> = key.map {
                 let dict = data as? [String: Any] ?? [:]
                 return decode(dict, rootKey: $0)
                 } ?? decode(data)
@@ -81,8 +81,8 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      *
      * - parameter rootKey: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponseArgo(rootKey: rootKey) }
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
+        return lift { $0.mapResponseArgo(for: key) }
     }
     
     /**
@@ -90,7 +90,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      *
      * - parameter rootKey: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponseArgo(rootKey: rootKey) }
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
+        return lift { $0.mapResponseArgo(for: key) }
     }
 }
