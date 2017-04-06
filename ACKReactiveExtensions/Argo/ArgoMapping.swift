@@ -34,7 +34,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
     /**
      * Map value as `Decodable` object
      *
-     * - parameter rootKey: If your objects are contained within dictionary pass the key here
+     * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
@@ -55,7 +55,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
     /**
      * Map values as `Decodable` objects
      *
-     * - parameter rootKey: If your objects are contained within dictionary pass the key here
+     * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
@@ -79,7 +79,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
     /**
      * Map value as `Decodable` object
      *
-     * - parameter rootKey: If your objects are contained within dictionary pass the key here
+     * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
         return lift { $0.mapResponseArgo(for: key) }
@@ -88,7 +88,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
     /**
      * Map values as `Decodable` objects
      *
-     * - parameter rootKey: If your objects are contained within dictionary pass the key here
+     * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
         return lift { $0.mapResponseArgo(for: key) }
