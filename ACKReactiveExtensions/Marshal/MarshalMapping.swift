@@ -10,12 +10,12 @@ import Result
 import Marshal
 import ReactiveSwift
 
-protocol MarshalErrorCreatable: Error {
+public protocol MarshalErrorCreatable: Error {
     static func createMarshalError(_ marshalError: MarshalError) -> Self
 }
 
 extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
-    func mapResponse<Model>(for key: KeyType? = nil) -> Signal<Model, Error> where Model: Unmarshaling {
+    public func mapResponseMarshal<Model>(for key: KeyType? = nil) -> Signal<Model, Error> where Model: Unmarshaling {
         return attemptMap { json in
             Result {
                 guard let marshaledJSON = json as? MarshaledObject
@@ -33,7 +33,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
         }
     }
     
-    func mapResponse<Model>(for key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
+    public func mapResponseMarshal<Model>(for key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
         return attemptMap { json in
             Result {
                 if let key = key, let marshaledJSON = json as? MarshaledObject {
@@ -52,7 +52,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
         }
     }
     
-    func mapResponse<Model>(for key: KeyType) -> Signal<Model, Error> where Model: ValueType {
+    public func mapResponseMarshal<Model>(for key: KeyType) -> Signal<Model, Error> where Model: ValueType {
         return attemptMap { json in
             Result {
                 guard let marshaledJSON = json as? MarshaledObject
@@ -68,15 +68,15 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
 }
 
 extension SignalProducerProtocol where Value == Any, Error: MarshalErrorCreatable {
-    func mapResponse<Model>(for key: KeyType? = nil) -> SignalProducer<Model, Error> where Model: Unmarshaling {
-        return lift { $0.mapResponse(for: key) }
+    public func mapResponseMarshal<Model>(for key: KeyType? = nil) -> SignalProducer<Model, Error> where Model: Unmarshaling {
+        return lift { $0.mapResponseMarshal(for: key) }
     }
     
-    func mapResponse<Model>(for key: KeyType? = nil) -> SignalProducer<[Model], Error> where Model: Unmarshaling {
-        return lift { $0.mapResponse(for: key) }
+    public func mapResponseMarshal<Model>(for key: KeyType? = nil) -> SignalProducer<[Model], Error> where Model: Unmarshaling {
+        return lift { $0.mapResponseMarshal(for: key) }
     }
     
-    func mapResponse<Model>(for key: KeyType) -> SignalProducer<Model, Error> where Model: ValueType {
-        return lift { $0.mapResponse(for: key) }
+    public func mapResponseMarshal<Model>(for key: KeyType) -> SignalProducer<Model, Error> where Model: ValueType {
+        return lift { $0.mapResponseMarshal(for: key) }
     }
 }
