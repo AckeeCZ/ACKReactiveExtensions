@@ -10,17 +10,17 @@ import Argo
 import Result
 import ReactiveSwift
 
-public protocol MappingError: Error {
+public protocol DecodeErrorCreatable: Error {
     static func createDecodeError(_ decodeError: DecodeError) -> Self
 }
 
-extension DecodeError: MappingError {
+extension DecodeError: DecodeErrorCreatable {
     public static func createDecodeError(_ decodeError: DecodeError) -> DecodeError {
         return decodeError
     }
 }
 
-extension SignalProtocol where Value == Any, Error: MappingError {
+extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
     public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
             let decoded: Decoded<ResultType> = rootKey.map {
@@ -54,7 +54,7 @@ extension SignalProtocol where Value == Any, Error: MappingError {
     }
 }
 
-extension SignalProducerProtocol where Value == Any, Error: MappingError {
+extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable {
     public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
         return lift { $0.mapResponseArgo(rootKey: rootKey) }
     }

@@ -14,7 +14,7 @@ import Result
 import ReactiveSwift
 import ACKReactiveExtensions
 
-struct ErrorStub: MappingError {
+struct ErrorStub: DecodeErrorCreatable {
     let decodeError: DecodeError
     
     static func createDecodeError(_ decodeError: DecodeError) -> ErrorStub {
