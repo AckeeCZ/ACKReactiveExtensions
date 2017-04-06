@@ -3,16 +3,16 @@
   "version": "2.3.0",
   "summary": "Useful extensions for ReactiveCocoa.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://gitlab.ack.ee/Ackee/ACKReactiveExtensions",
+  "homepage": "https://github.com/AckeeCZ/ACKReactiveExtensions",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Jan Mísař": "misar.jan@gmail.com"
+    "Ackee": "info@ackee.cz"
   },
   "source": {
-    "git": "git@gitlab.ack.ee:Ackee/ACKReactiveExtensions.git",
+    "git": "https://github.com/AckeeCZ/ACKReactiveExtensions.git",
     "tag": "2.3.0"
   },
   "platforms": {

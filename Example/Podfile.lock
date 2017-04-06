@@ -26,7 +26,7 @@ PODS:
   - ACKReactiveExtensions/WebKit (2.3.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
-  - Argo (4.1.1):
+  - Argo (4.1.2):
     - Runes (>= 4.0.0)
   - Nimble (5.1.1)
   - Quick (0.10.0)
@@ -62,8 +62,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: c0941143cdc7e350df0a2375224c19d02a55cf9a
-  Argo: 014ac072f97462bc1a9b83d302edb351488a532f
+  ACKReactiveExtensions: c6eda8e127f803b81b3fdaa8891ae57ba557f0c7
+  Argo: 5db06502fc1222d83011f574243089dab25202ff
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
