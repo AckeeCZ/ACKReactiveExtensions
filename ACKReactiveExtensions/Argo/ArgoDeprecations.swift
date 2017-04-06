@@ -16,7 +16,7 @@ import Argo
  * - parameter object: Source object to decode
  * - returns: SignalProducer that sends decoded object
  */
-@available(*, deprecated, message: "Use extension mapResponse() on SignalProducer<Any,DecodeErrorCreatable>")
+@available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
 public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<T, DecodeError> {
     return SignalProducer { sink, disposable in
         
@@ -37,7 +37,7 @@ public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObj
  * - parameter object: Source object to decode
  * - returns: SignalProducer that sends decoded array
  */
-@available(*, deprecated, message: "Use extension mapResponse() on SignalProducer<Any,DecodeErrorCreatable>")
+@available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
 public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<[T], DecodeError> {
     return SignalProducer { sink, disposable in
         
@@ -60,7 +60,7 @@ public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObj
  * - parameter object: Source object to decode
  * - returns: SignalProducer that sends decoded array
  */
-@available(*, deprecated, message: "Use extension mapResponse() on SignalProducer<Any,DecodeErrorCreatable>")
+@available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
 public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (rootKey: String, object: AnyObject) -> SignalProducer<[T], DecodeError> {
     return SignalProducer { sink, disposable in
         
@@ -88,7 +88,7 @@ public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (roo
  * - parameter object: Source object to decode
  * - returns: SignalProducer that sends decoded object
  */
-@available(*, deprecated, message: "Use extension mapResponse() on SignalProducer<Any,DecodeErrorCreatable>")
+@available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
 public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (rootKey: String, object: AnyObject) -> SignalProducer<T, DecodeError> {
     return SignalProducer { sink, disposable in
         
@@ -116,7 +116,7 @@ public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (roo
  * - parameter object: Source object to decode
  * - returns: SignalProducer that sends decoded array one by one
  */
-@available(*, deprecated, message: "Use extension mapResponse() on SignalProducer<Any,DecodeErrorCreatable>")
+@available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
 public func rac_decodeByOne < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<T, DecodeError> {
     return SignalProducer { sink, disposable in
         
