@@ -35,7 +35,8 @@ You also need some model object so you have something you can map to right:
 struct Car {
     let manufacturer: String
     let model: String
-}```
+}
+```
 
 Now in your API calls you just call `mapResponse()` method and you get what you want.
 
@@ -45,3 +46,5 @@ func fetchCars() -> SignalProducer<[Car], MyError> {
     return apiCall.mapResponse()
 }
 ```
+
+That's nicer than using various `map`s and `flatMap`s in your every single call, isn't it?
