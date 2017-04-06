@@ -57,6 +57,10 @@ let imageView = UIImageView()
 imageView.reactive.imageURL <~ imageURL
 ```
 
+### Detailed usage
+
+- [Marshal extensions](Docs/Marshal.md)
+
 ## Author
 
 [Ackee](https://ackee.cz) team
