@@ -48,3 +48,39 @@ func fetchCars() -> SignalProducer<[Car], MyError> {
 ```
 
 That's nicer than using various `map`s and `flatMap`s in your every single call, isn't it?
+
+### Advanced usage
+
+In some cases you might need to perform some other transformations with you objects. This might occasionally become little tricky because the compiler needs to know which object should be mapped. In the previous sample the final type of expression was determined by the return type of `fetchCars()` function, but in some cases it isn't as straightforward.
+
+Just assume the you are just interested in fetching just manufacturers of all cars:
+```swift
+func fetchManufacturers() -> SignalProducer<[String], MyError> {
+    let apiCall: SignalProducer<Any, MyError> = ... // make your api call just like you did before
+    return apiCall
+        .mapResponse() // ambiguous use of mapResponse()
+        .map { $0.map { $0.manufacturer } }
+}
+```
+
+Now you end up with ambiguity. How so? It's simple, now the compiler doesn't know that you want to map `[Car]` and the solution is simple, you just tell him:
+
+```swift
+func fetchManufacturers() -> SignalProducer<[String], MyError> {
+    let apiCall: SignalProducer<Any, MyError> = ... // make your api call just like you did before
+    return apiCall
+        .mapResponse()
+        .map { (cars: [Car]) in
+            return cars.map { $0.manufacturer }
+        }
+}
+```
+
+Now you're all set and ready. The same issue arises if you don't return you `SignalProducer` directly but save him into local variable. The solution is the same:
+```swift
+func fetchCars() -> SignalProducer<[Car], MyError> {
+    let apiCall: SignalProducer<Any, MyError> = ... // make your api call
+    let carsProducer: SignalProducer<[Car], MyError> = apiCall.mapResponse()
+    return carsProducer
+}
+```
