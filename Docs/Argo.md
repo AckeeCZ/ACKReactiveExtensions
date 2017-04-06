@@ -49,7 +49,20 @@ func fetchCars() -> SignalProducer<[Car], MyError> {
 
 That's nicer than using various `map`s and `flatMap`s in your every single call, isn't it?
 
-### Advanced usage
+## Advanced usage
+
+### Use root key
+
+In case your data aren't always root objects of your API response you can use `rootKey` parameter of `mapResponse()` method.
+
+```swift
+func fetchCars() -> SignalProducer<[Car], MyError> {
+    let apiCall: SignalProducer<Any, MyError> = ... // make your api call
+    return apiCall.mapResponse(rootKey: "data")
+}
+```
+
+### Object transformations and ambiguity
 
 In some cases you might need to perform some other transformations with you objects. This might occasionally become little tricky because the compiler needs to know which object should be mapped. In the previous sample the final type of expression was determined by the return type of `fetchCars()` function, but in some cases it isn't as straightforward.
 
