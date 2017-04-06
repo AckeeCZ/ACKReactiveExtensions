@@ -20,9 +20,8 @@ extension DecodeError: MappingError {
     }
 }
 
-extension SignalProducerProtocol where Value == Any, Error: MappingError {
-    
-    func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
+extension SignalProtocol where Value == Any, Error: MappingError {
+    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
             let decoded: Decoded<ResultType> = rootKey.map {
             let dict = data as? [String: Any] ?? [:]
@@ -38,7 +37,7 @@ extension SignalProducerProtocol where Value == Any, Error: MappingError {
         }
     }
     
-    func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
+    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
             let decoded: Decoded<[ResultType]> = rootKey.map {
                 let dict = data as? [String: Any] ?? [:]
@@ -52,5 +51,15 @@ extension SignalProducerProtocol where Value == Any, Error: MappingError {
                 return Result.failure(Error.createDecodeError(error))
             }
         }
+    }
+}
+
+extension SignalProducerProtocol where Value == Any, Error: MappingError {
+    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
+        return lift { $0.mapResponseArgo(rootKey: rootKey) }
+    }
+    
+    public func mapResponseArgo<ResultType: Decodable>(rootKey: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
+        return lift { $0.mapResponseArgo(rootKey: rootKey) }
     }
 }

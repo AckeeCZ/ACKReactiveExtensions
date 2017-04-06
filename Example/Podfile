@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'ACKReactiveExtensions_Example' do
-    pod 'Result'
+    pod 'Result', '~> 3.1'
     pod 'ACKReactiveExtensions', :path => '../'
     pod 'ACKReactiveExtensions/Argo', :path => '../'
     pod 'ACKReactiveExtensions/Reachability', :path => '../'
@@ -12,5 +12,6 @@ target 'ACKReactiveExtensions_Example' do
     target 'ACKReactiveExtensions_Tests' do
         pod 'Quick', '~> 0.10'
         pod 'Nimble', '~> 5.0'
+        pod 'Curry', '~> 3.0'
     end
 end

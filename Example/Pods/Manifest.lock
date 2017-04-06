@@ -28,6 +28,7 @@ PODS:
     - ReactiveCocoa (~> 5.0)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
+  - Curry (3.0.0)
   - Nimble (5.1.1)
   - Quick (0.10.0)
   - Reachability (3.2)
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - ACKReactiveExtensions/Realm (from `../`)
   - ACKReactiveExtensions/SDWebImage (from `../`)
   - ACKReactiveExtensions/WebKit (from `../`)
+  - Curry
   - Nimble (~> 5.0)
   - Quick (~> 0.10)
   - Result
@@ -64,6 +66,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   ACKReactiveExtensions: f1116fa43f95f1271dc059b9b2dfb38eb5a5ea48
   Argo: 5db06502fc1222d83011f574243089dab25202ff
+  Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -75,6 +78,6 @@ SPEC CHECKSUMS:
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 6c1b7d05f93f381c4bd7338de6c376b1606452db
+PODFILE CHECKSUM: a0398120d2fe073a22a4a96d9256f896190a9cb5
 
 COCOAPODS: 1.2.0
