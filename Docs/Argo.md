@@ -53,12 +53,12 @@ That's nicer than using various `map`s and `flatMap`s in your every single call,
 
 ### Use root key
 
-In case your data aren't always root objects of your API response you can use `rootKey` parameter of `mapResponse()` method.
+In case your data aren't always root objects of your API response you can use `key` parameter of `mapResponse()` method.
 
 ```swift
 func fetchCars() -> SignalProducer<[Car], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call
-    return apiCall.mapResponse(rootKey: "data")
+    return apiCall.mapResponse(for: "data")
 }
 ```
 
