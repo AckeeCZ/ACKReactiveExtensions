@@ -51,9 +51,11 @@ class ArgoMappingTests: XCTestCase {
         let object = createObject()
         
         // producer completes synchronously
-        producer(for: object).mapResponseArgo().startWithResult { (result: Result<ModelStub, ErrorStub>) in
-            XCTAssertEqual(result.value, object)
-            XCTAssertNil(result.error)
+        producer(for: object)
+            .mapResponseArgo()
+            .startWithResult { (result: Result<ModelStub, ErrorStub>) in
+                XCTAssertEqual(result.value, object)
+                XCTAssertNil(result.error)
         }
     }
     
@@ -62,9 +64,11 @@ class ArgoMappingTests: XCTestCase {
         let objects = (0...numberOfObjects).map { _ in createObject() }
         
         // producer completes synchronously
-        producer(for: objects).mapResponseArgo().startWithResult { (result: Result<[ModelStub], ErrorStub>) in
-            XCTAssertEqual(result.value!, objects)
-            XCTAssertNil(result.error)
+        producer(for: objects)
+            .mapResponseArgo()
+            .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
+                XCTAssertEqual(result.value!, objects)
+                XCTAssertNil(result.error)
         }
     }
     
@@ -73,9 +77,11 @@ class ArgoMappingTests: XCTestCase {
         let objects = (0...numberOfObjects).map { _ in createObject() }
         
         // producer completes synchronously
-        invalidProducer(for: objects).mapResponseArgo().startWithResult { (result: Result<[ModelStub], ErrorStub>) in
-            XCTAssertNil(result.value)
-            XCTAssertNotNil(result.error)
+        invalidProducer(for: objects)
+            .mapResponseArgo()
+            .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
+                XCTAssertNil(result.value)
+                XCTAssertNotNil(result.error)
         }
     }
     
@@ -83,11 +89,70 @@ class ArgoMappingTests: XCTestCase {
         let object = createObject()
         
         // producer completes synchronously
-        invalidProducer(for: object).mapResponseArgo().startWithResult { (result: Result<ModelStub, ErrorStub>) in
-            XCTAssertNil(result.value)
-            XCTAssertNotNil(result.error)
+        invalidProducer(for: object)
+            .mapResponseArgo()
+            .startWithResult { (result: Result<ModelStub, ErrorStub>) in
+                XCTAssertNil(result.value)
+                XCTAssertNotNil(result.error)
         }
     }
+    
+    func testObjectWithRootKeyIsMapped() {
+        let object = createObject()
+        let key = "key"
+        
+        producer(for: object)
+            .map { [key: $0] }
+            .mapResponseArgo(rootKey: key)
+            .startWithResult { (result: Result<ModelStub, ErrorStub>) in
+                XCTAssertEqual(result.value, object)
+                XCTAssertNil(result.error)
+        }
+    }
+    
+    func testArrayOfObjectsWithRootKeyIsMapped() {
+        let numberOfObjects = Int(arc4random() % 20) + 10
+        let objects = (0...numberOfObjects).map { _ in createObject() }
+        let key = "key"
+        
+        // producer completes synchronously
+        producer(for: objects)
+            .map { [key: $0] }
+            .mapResponseArgo(rootKey: key)
+            .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
+                XCTAssertEqual(result.value!, objects)
+                XCTAssertNil(result.error)
+        }
+    }
+    
+    func testObjectWithRootKeyError() {
+        let object = createObject()
+        let key = "key"
+        
+        invalidProducer(for: object)
+            .map { [key: $0] }
+            .mapResponseArgo(rootKey: key)
+            .startWithResult { (result: Result<ModelStub, ErrorStub>) in
+                XCTAssertNil(result.value)
+                XCTAssertNotNil(result.error)
+        }
+    }
+    
+    func testArrayOfObjectsWithRootKeyError() {
+        let numberOfObjects = Int(arc4random() % 20) + 10
+        let objects = (0...numberOfObjects).map { _ in createObject() }
+        let key = "key"
+        
+        // producer completes synchronously
+        invalidProducer(for: objects)
+            .map { [key: $0] }
+            .mapResponseArgo(rootKey: key)
+            .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
+                XCTAssertNil(result.value)
+                XCTAssertNotNil(result.error)
+        }
+    }
+
     
     // MARK: Private helpers
     
