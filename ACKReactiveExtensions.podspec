@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Argo' do |argo|
-    argo.dependency 'Argo', '~> 4.0'
+    argo.dependency 'Argo', '>= 4.1.2', '< 5.0'
     argo.source_files = 'ACKReactiveExtensions/Argo/**/*'
   end
 

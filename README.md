@@ -57,6 +57,10 @@ let imageView = UIImageView()
 imageView.reactive.imageURL <~ imageURL
 ```
 
+### Detailed usage
+
+- [Argo extensions](Docs/Argo.md)
+
 ## Author
 
 [Ackee](https://ackee.cz) team
