@@ -59,6 +59,7 @@ imageView.reactive.imageURL <~ imageURL
 
 ### Detailed usage
 
+- [Argo extensions](Docs/Argo.md)
 - [Marshal extensions](Docs/Marshal.md)
 
 ## Author

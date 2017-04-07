@@ -4,7 +4,7 @@ PODS:
     - ACKReactiveExtensions/UIKit (= 2.3.0)
     - ReactiveCocoa (~> 5.0)
   - ACKReactiveExtensions/Argo (2.3.0):
-    - Argo (~> 4.0)
+    - Argo (< 5.0, >= 4.1.2)
     - ReactiveCocoa (~> 5.0)
   - ACKReactiveExtensions/Core (2.3.0):
     - ReactiveCocoa (~> 5.0)
@@ -32,6 +32,7 @@ PODS:
     - ReactiveCocoa (~> 5.0)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
+  - Curry (3.0.0)
   - Marshal (1.2.4)
   - Nimble (5.1.1)
   - Quick (0.10.0)
@@ -59,17 +60,19 @@ DEPENDENCIES:
   - ACKReactiveExtensions/Realm (from `../`)
   - ACKReactiveExtensions/SDWebImage (from `../`)
   - ACKReactiveExtensions/WebKit (from `../`)
+  - Curry (~> 3.0)
   - Nimble (~> 5.0)
   - Quick (~> 0.10)
-  - Result
+  - Result (~> 3.1)
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 78ed5e35371468e9044343f931ca17ab431c6d27
+  ACKReactiveExtensions: f35f2afcd9e5b324d92883c94b4c3d724118781f
   Argo: 5db06502fc1222d83011f574243089dab25202ff
+  Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
@@ -82,6 +85,6 @@ SPEC CHECKSUMS:
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 45b6f00e1fff1c6f028528ca3b875410a921da66
+PODFILE CHECKSUM: 1d0475767d76bb45cefcaceddd19be37d22fedc7
 
 COCOAPODS: 1.2.0
