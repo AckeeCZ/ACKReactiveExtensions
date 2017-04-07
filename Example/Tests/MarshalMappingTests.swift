@@ -12,37 +12,39 @@ import Marshal
 import ReactiveSwift
 import ACKReactiveExtensions
 
-struct ErrorStub: MarshalErrorCreatable {
-    let marshalError: MarshalError
-    
-    static func createMarshalError(_ marshalError: MarshalError) -> ErrorStub {
-        return ErrorStub(marshalError: marshalError)
-    }
-}
 
-struct ModelStub: Equatable {
-    let value: Int
-    
-    var dictionary: [String: Any] {
-        return ["value": value]
-    }
-    
-    var invalidDictionary: [String: Any] {
-        return ["val": value]
-    }
-    
-    static func==(lhs: ModelStub, rhs: ModelStub) -> Bool {
-        return lhs.value == rhs.value
-    }
-}
-
-extension ModelStub: Unmarshaling {
+extension MarshalMappingTests.ModelStub: Unmarshaling {
     init(object: MarshaledObject) throws {
         value = try object.value(for: "value")
     }
 }
 
 class MarshalMappingTests: XCTestCase {
+    struct ErrorStub: MarshalErrorCreatable {
+        let marshalError: MarshalError
+        
+        static func createMarshalError(_ marshalError: MarshalError) -> ErrorStub {
+            return ErrorStub(marshalError: marshalError)
+        }
+    }
+    
+    struct ModelStub: Equatable {
+        let value: Int
+        
+        var dictionary: [String: Any] {
+            return ["value": value]
+        }
+        
+        var invalidDictionary: [String: Any] {
+            return ["val": value]
+        }
+        
+        static func==(lhs: ModelStub, rhs: ModelStub) -> Bool {
+            return lhs.value == rhs.value
+        }
+    }
+
+    
     
     // MARK: Tests
     

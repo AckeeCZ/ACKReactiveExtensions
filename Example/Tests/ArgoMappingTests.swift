@@ -14,36 +14,36 @@ import Result
 import ReactiveSwift
 import ACKReactiveExtensions
 
-struct ErrorStub: DecodeErrorCreatable {
-    let decodeError: DecodeError
-    
-    static func createDecodeError(_ decodeError: DecodeError) -> ErrorStub {
-        return ErrorStub(decodeError: decodeError)
-    }
-}
-
-struct ModelStub: Decodable, Equatable {
-    let value: Int
-    
-    var dictionary: [String: Any] {
-        return ["value": value]
-    }
-    
-    var invalidDictionary: [String: Any] {
-        return ["val": value]
-    }
-    
-    static func decode(_ json: JSON) -> Decoded<ModelStub> {
-        return curry(self.init)
-            <^> json <| "value"
-    }
-    
-    static func==(lhs: ModelStub, rhs: ModelStub) -> Bool {
-        return lhs.value == rhs.value
-    }
-}
-
 class ArgoMappingTests: XCTestCase {
+    struct ErrorStub: DecodeErrorCreatable {
+        let decodeError: DecodeError
+        
+        static func createDecodeError(_ decodeError: DecodeError) -> ErrorStub {
+            return ErrorStub(decodeError: decodeError)
+        }
+    }
+    
+    struct ModelStub: Decodable, Equatable {
+        let value: Int
+        
+        var dictionary: [String: Any] {
+            return ["value": value]
+        }
+        
+        var invalidDictionary: [String: Any] {
+            return ["val": value]
+        }
+        
+        static func decode(_ json: JSON) -> Decoded<ModelStub> {
+            return curry(self.init)
+                <^> json <| "value"
+        }
+        
+        static func==(lhs: ModelStub, rhs: ModelStub) -> Bool {
+            return lhs.value == rhs.value
+        }
+    }
+
     
     // MARK: Tests
     
