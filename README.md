@@ -11,6 +11,7 @@ ACKReactiveExtensions is set of useful extensions for ReactiveCocoa you could us
 
 Currently we have extensions for
 - [Argo](https://github.com/thoughtbot/Argo)
+- [Marshal](https://github.com/utahiosmac/Marshal)
 - [Reachability](https://github.com/tonymillion/Reachability)
 - [Realm](https://github.com/realm/realm-cocoa)
 - [SDWebImage](https://github.com/rs/SDWebImage)
@@ -40,6 +41,7 @@ By using `pod "ACKReactiveExtensions"` you will get only general and UIKit exten
 
 ```ruby
 pod 'ACKReactiveExtensions/Argo'
+pod 'ACKReactiveExtensions/Marshal'
 pod 'ACKReactiveExtensions/Reachability'
 pod 'ACKReactiveExtensions/Realm'
 pod 'ACKReactiveExtensions/SDWebImage'
