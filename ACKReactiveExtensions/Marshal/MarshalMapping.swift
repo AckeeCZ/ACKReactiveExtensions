@@ -65,8 +65,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
                     return try marshaledJSON.value(for: key)
                 }
                 else if let marshaledArray = json as? [MarshaledObject] {
-                    let dummyKey = "dummyKey"
-                    return try [dummyKey: marshaledArray].value(for: dummyKey)
+                    return try marshaledArray.map(Model.init)
                 }
                 else {
                     throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
