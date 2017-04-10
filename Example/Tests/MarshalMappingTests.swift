@@ -104,7 +104,7 @@ class MarshalMappingTests: XCTestCase {
         
         producer(for: object)
             .map { [key: $0] }
-            .mapResponseMarshal(for: key)
+            .mapResponseMarshal(forKey: key)
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertEqual(result.value, object)
                 XCTAssertNil(result.error)
@@ -119,7 +119,7 @@ class MarshalMappingTests: XCTestCase {
         // producer completes synchronously
         producer(for: objects)
             .map { [key: $0] }
-            .mapResponseMarshal(for: key)
+            .mapResponseMarshal(forKey: key)
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertEqual(result.value!, objects)
                 XCTAssertNil(result.error)
@@ -132,7 +132,7 @@ class MarshalMappingTests: XCTestCase {
         
         invalidProducer(for: object)
             .map { [key: $0] }
-            .mapResponseMarshal(for: key)
+            .mapResponseMarshal(forKey: key)
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -147,7 +147,7 @@ class MarshalMappingTests: XCTestCase {
         // producer completes synchronously
         invalidProducer(for: objects)
             .map { [key: $0] }
-            .mapResponseMarshal(for: key)
+            .mapResponseMarshal(forKey: key)
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
