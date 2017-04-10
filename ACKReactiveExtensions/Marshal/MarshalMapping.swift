@@ -36,7 +36,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
      *
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseMarshal<Model>(forKey key: KeyType? = nil) -> Signal<Model, Error> where Model: Unmarshaling {
+    public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<Model, Error> where Model: Unmarshaling {
         return attemptMap { json in
             Result {
                 guard let marshaledJSON = json as? MarshaledObject
@@ -58,7 +58,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
      *
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseMarshal<Model>(forKey key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
+    public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
         return attemptMap { json in
             Result {
                 if let key = key, let marshaledJSON = json as? MarshaledObject {
@@ -81,7 +81,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
      *
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseMarshal<Model>(forKey key: KeyType) -> Signal<Model, Error> where Model: ValueType {
+    public func mapResponse<Model>(forKey key: KeyType) -> Signal<Model, Error> where Model: ValueType {
         return attemptMap { json in
             Result {
                 guard let marshaledJSON = json as? MarshaledObject
@@ -101,8 +101,8 @@ extension SignalProducerProtocol where Value == Any, Error: MarshalErrorCreatabl
      *
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseMarshal<Model>(forKey key: KeyType? = nil) -> SignalProducer<Model, Error> where Model: Unmarshaling {
-        return lift { $0.mapResponseMarshal(forKey: key) }
+    public func mapResponse<Model>(forKey key: KeyType? = nil) -> SignalProducer<Model, Error> where Model: Unmarshaling {
+        return lift { $0.mapResponse(forKey: key) }
     }
     
     /**
@@ -110,8 +110,8 @@ extension SignalProducerProtocol where Value == Any, Error: MarshalErrorCreatabl
      *
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseMarshal<Model>(forKey key: KeyType? = nil) -> SignalProducer<[Model], Error> where Model: Unmarshaling {
-        return lift { $0.mapResponseMarshal(forKey: key) }
+    public func mapResponse<Model>(forKey key: KeyType? = nil) -> SignalProducer<[Model], Error> where Model: Unmarshaling {
+        return lift { $0.mapResponse(forKey: key) }
     }
     
     /**
@@ -119,7 +119,7 @@ extension SignalProducerProtocol where Value == Any, Error: MarshalErrorCreatabl
      *
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
-    public func mapResponseMarshal<Model>(forKey key: KeyType) -> SignalProducer<Model, Error> where Model: ValueType {
-        return lift { $0.mapResponseMarshal(forKey: key) }
+    public func mapResponse<Model>(forKey key: KeyType) -> SignalProducer<Model, Error> where Model: ValueType {
+        return lift { $0.mapResponse(forKey: key) }
     }
 }
