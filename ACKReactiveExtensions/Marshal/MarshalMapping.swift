@@ -41,8 +41,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
             Result {
                 guard let marshaledJSON = json as? MarshaledObject
                     else {
-                        assertionFailure("json isn't any of the known MarshaledObject types (Dictionary or Array)")
-                        throw NSError(domain: "", code: 0, userInfo: nil)
+                        throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
                 }
                 if let key = key {
                     return try marshaledJSON.value(for: key)
@@ -70,8 +69,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
                     return try [dummyKey: marshaledArray].value(for: dummyKey)
                 }
                 else {
-                    assertionFailure("json isn't any of the known MarshaledObject types (Dictionary or Array)")
-                    throw NSError(domain: "", code: 0, userInfo: nil)
+                    throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
                 }
                 }
                 .mapError { Error.createMarshalError($0) }
@@ -88,8 +86,7 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
             Result {
                 guard let marshaledJSON = json as? MarshaledObject
                     else {
-                        assertionFailure("json isn't any of the known MarshaledObject types (Dictionary or Array)")
-                        throw NSError(domain: "", code: 0, userInfo: nil)
+                        throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
                 }
                 return try marshaledJSON.value(for: key)
                 }
