@@ -1,29 +1,33 @@
 //
-//  ArgoMappingTests.swift
+//  MarshalMappingTests.swift
 //  ACKReactiveExtensions
 //
 //  Created by Jakub Olejník on 06/04/2017.
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-import Argo
-import Curry
-import Runes
 import XCTest
 import Result
+import Marshal
 import ReactiveSwift
 import ACKReactiveExtensions
 
-class ArgoMappingTests: XCTestCase {
-    struct ErrorStub: DecodeErrorCreatable {
-        let decodeError: DecodeError
+extension MarshalMappingTests.ModelStub: Unmarshaling {
+    init(object: MarshaledObject) throws {
+        value = try object.value(for: "value")
+    }
+}
+
+class MarshalMappingTests: XCTestCase {
+    struct ErrorStub: MarshalErrorCreatable {
+        let marshalError: MarshalError
         
-        static func createDecodeError(_ decodeError: DecodeError) -> ErrorStub {
-            return ErrorStub(decodeError: decodeError)
+        static func createMarshalError(_ marshalError: MarshalError) -> ErrorStub {
+            return ErrorStub(marshalError: marshalError)
         }
     }
     
-    struct ModelStub: Decodable, Equatable {
+    struct ModelStub: Equatable {
         let value: Int
         
         var dictionary: [String: Any] {
@@ -34,16 +38,10 @@ class ArgoMappingTests: XCTestCase {
             return ["val": value]
         }
         
-        static func decode(_ json: JSON) -> Decoded<ModelStub> {
-            return curry(self.init)
-                <^> json <| "value"
-        }
-        
         static func==(lhs: ModelStub, rhs: ModelStub) -> Bool {
             return lhs.value == rhs.value
         }
     }
-
     
     // MARK: Tests
     
@@ -52,7 +50,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         producer(for: object)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertEqual(result.value, object)
                 XCTAssertNil(result.error)
@@ -65,7 +63,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         producer(for: objects)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertEqual(result.value!, objects)
                 XCTAssertNil(result.error)
@@ -78,7 +76,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         invalidProducer(for: objects)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -90,7 +88,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         invalidProducer(for: object)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -103,7 +101,7 @@ class ArgoMappingTests: XCTestCase {
         
         producer(for: object)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(forKey: key)
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertEqual(result.value, object)
                 XCTAssertNil(result.error)
@@ -118,7 +116,7 @@ class ArgoMappingTests: XCTestCase {
         // producer completes synchronously
         producer(for: objects)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(forKey: key)
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertEqual(result.value!, objects)
                 XCTAssertNil(result.error)
@@ -131,7 +129,7 @@ class ArgoMappingTests: XCTestCase {
         
         invalidProducer(for: object)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(forKey: key)
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -146,13 +144,12 @@ class ArgoMappingTests: XCTestCase {
         // producer completes synchronously
         invalidProducer(for: objects)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(forKey: key)
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
         }
     }
-
     
     // MARK: Private helpers
     

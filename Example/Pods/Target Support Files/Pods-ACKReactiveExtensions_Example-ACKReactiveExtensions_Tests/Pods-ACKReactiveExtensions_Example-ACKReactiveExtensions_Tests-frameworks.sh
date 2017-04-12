@@ -91,6 +91,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ACKReactiveExtensions/ACKReactiveExtensions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Argo/Argo.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Marshal/Marshal.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Reachability/Reachability.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveSwift/ReactiveSwift.framework"
@@ -106,6 +107,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ACKReactiveExtensions/ACKReactiveExtensions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Argo/Argo.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Marshal/Marshal.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Reachability/Reachability.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveSwift/ReactiveSwift.framework"

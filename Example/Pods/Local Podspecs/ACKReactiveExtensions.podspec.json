@@ -95,6 +95,18 @@
         ]
       },
       "source_files": "ACKReactiveExtensions/Realm/**/*"
+    },
+    {
+      "name": "Marshal",
+      "dependencies": {
+        "ACKReactiveExtensions/Core": [
+
+        ],
+        "Marshal": [
+          "~> 1.2"
+        ]
+      },
+      "source_files": "ACKReactiveExtensions/Marshal/**/*"
     }
   ]
 }
