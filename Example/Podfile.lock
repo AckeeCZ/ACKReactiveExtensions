@@ -1,33 +1,33 @@
 PODS:
-  - ACKReactiveExtensions (2.3.0):
-    - ACKReactiveExtensions/Core (= 2.3.0)
-    - ACKReactiveExtensions/UIKit (= 2.3.0)
+  - ACKReactiveExtensions (2.4.0):
+    - ACKReactiveExtensions/Core (= 2.4.0)
+    - ACKReactiveExtensions/UIKit (= 2.4.0)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Argo (2.3.0):
+  - ACKReactiveExtensions/Argo (2.4.0):
     - Argo (< 5.0, >= 4.1.2)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Core (2.3.0):
+  - ACKReactiveExtensions/Core (2.4.0):
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Marshal (2.3.0):
+  - ACKReactiveExtensions/Marshal (2.4.0):
     - ACKReactiveExtensions/Core
     - Marshal (~> 1.2)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Reachability (2.3.0):
+  - ACKReactiveExtensions/Reachability (2.4.0):
     - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Realm (2.3.0):
+  - ACKReactiveExtensions/Realm (2.4.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
     - RealmSwift (~> 2.1)
-  - ACKReactiveExtensions/SDWebImage (2.3.0):
+  - ACKReactiveExtensions/SDWebImage (2.4.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
     - SDWebImage (~> 4.0)
-  - ACKReactiveExtensions/UIKit (2.3.0):
+  - ACKReactiveExtensions/UIKit (2.4.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/WebKit (2.3.0):
+  - ACKReactiveExtensions/WebKit (2.4.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
   - Argo (4.1.2):
@@ -37,16 +37,16 @@ PODS:
   - Nimble (5.1.1)
   - Quick (0.10.0)
   - Reachability (3.2)
-  - ReactiveCocoa (5.0.1):
+  - ReactiveCocoa (5.0.3):
     - ReactiveSwift (~> 1.1)
-  - ReactiveSwift (1.1.0):
-    - Result (~> 3.1)
-  - Realm (2.1.2):
-    - Realm/Headers (= 2.1.2)
-  - Realm/Headers (2.1.2)
-  - RealmSwift (2.1.2):
-    - Realm (= 2.1.2)
-  - Result (3.1.0)
+  - ReactiveSwift (1.1.1):
+    - Result (~> 3.2)
+  - Realm (2.5.1):
+    - Realm/Headers (= 2.5.1)
+  - Realm/Headers (2.5.1)
+  - RealmSwift (2.5.1):
+    - Realm (= 2.5.1)
+  - Result (3.2.1)
   - Runes (4.0.1)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
@@ -70,21 +70,21 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: f35f2afcd9e5b324d92883c94b4c3d724118781f
+  ACKReactiveExtensions: 7200292deb4ee34bf1381952ae2362dc23ddcfc6
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: f577006aa6c7b0b08020109ebaae3b77ada00adc
-  ReactiveSwift: 2f4e4a02e5a5c87ea63f5fe667163ce2a67cbb57
-  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
-  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
-  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  ReactiveCocoa: 066a855f613fb72f68258771095805fdb10312d2
+  ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
+  Realm: 32f86104d37c8521f864d4274050b38ba6190733
+  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
 PODFILE CHECKSUM: 1d0475767d76bb45cefcaceddd19be37d22fedc7
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
