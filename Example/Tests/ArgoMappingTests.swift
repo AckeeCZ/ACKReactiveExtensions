@@ -52,7 +52,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         producer(for: object)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertEqual(result.value, object)
                 XCTAssertNil(result.error)
@@ -65,7 +65,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         producer(for: objects)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertEqual(result.value!, objects)
                 XCTAssertNil(result.error)
@@ -78,7 +78,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         invalidProducer(for: objects)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -90,7 +90,7 @@ class ArgoMappingTests: XCTestCase {
         
         // producer completes synchronously
         invalidProducer(for: object)
-            .mapResponseArgo()
+            .mapResponse()
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -103,7 +103,7 @@ class ArgoMappingTests: XCTestCase {
         
         producer(for: object)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(for: key)
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertEqual(result.value, object)
                 XCTAssertNil(result.error)
@@ -118,7 +118,7 @@ class ArgoMappingTests: XCTestCase {
         // producer completes synchronously
         producer(for: objects)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(for: key)
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertEqual(result.value!, objects)
                 XCTAssertNil(result.error)
@@ -131,7 +131,7 @@ class ArgoMappingTests: XCTestCase {
         
         invalidProducer(for: object)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(for: key)
             .startWithResult { (result: Result<ModelStub, ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
@@ -146,7 +146,7 @@ class ArgoMappingTests: XCTestCase {
         // producer completes synchronously
         invalidProducer(for: objects)
             .map { [key: $0] }
-            .mapResponseArgo(for: key)
+            .mapResponse(for: key)
             .startWithResult { (result: Result<[ModelStub], ErrorStub>) in
                 XCTAssertNil(result.value)
                 XCTAssertNotNil(result.error)
