@@ -38,12 +38,12 @@ struct Car {
 }
 ```
 
-Now in your API calls you just call `mapResponseArgo()` method and you get what you want.
+Now in your API calls you just call `mapResponse()` method and you get what you want.
 
 ```swift
 func fetchCars() -> SignalProducer<[Car], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call
-    return apiCall.mapResponseArgo()
+    return apiCall.mapResponse()
 }
 ```
 
@@ -53,12 +53,12 @@ That's nicer than using various `map`s and `flatMap`s in your every single call,
 
 ### Use root key
 
-In case your data aren't always root objects of your API response you can use `key` parameter of `mapResponseArgo()` method.
+In case your data aren't always root objects of your API response you can use `key` parameter of `mapResponse()` method.
 
 ```swift
 func fetchCars() -> SignalProducer<[Car], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call
-    return apiCall.mapResponseArgo(for: "data")
+    return apiCall.mapResponse(for: "data")
 }
 ```
 
@@ -71,7 +71,7 @@ Just assume the you are just interested in fetching just manufacturers of all ca
 func fetchManufacturers() -> SignalProducer<[String], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call just like you did before
     return apiCall
-        .mapResponseArgo() // ambiguous use of mapResponseArgo()
+        .mapResponse() // ambiguous use of mapResponse()
         .map { $0.map { $0.manufacturer } }
 }
 ```
@@ -82,7 +82,7 @@ Now you end up with ambiguity. How so? It's simple, now the compiler doesn't kno
 func fetchManufacturers() -> SignalProducer<[String], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call just like you did before
     return apiCall
-        .mapResponseArgo()
+        .mapResponse()
         .map { (cars: [Car]) in
             return cars.map { $0.manufacturer }
         }
@@ -93,7 +93,7 @@ Now you're all set and ready. The same issue arises if you don't return you `Sig
 ```swift
 func fetchCars() -> SignalProducer<[Car], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call
-    let carsProducer: SignalProducer<[Car], MyError> = apiCall.mapResponseArgo()
+    let carsProducer: SignalProducer<[Car], MyError> = apiCall.mapResponse()
     return carsProducer
 }
 ```
