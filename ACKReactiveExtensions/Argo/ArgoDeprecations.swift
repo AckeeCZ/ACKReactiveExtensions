@@ -18,7 +18,7 @@ import Result
  * - returns: SignalProducer that sends decoded object
  */
 @available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
-public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<T, DecodeError> {
+public func rac_decode < T: Decodable> (object: AnyObject) -> SignalProducer<T, DecodeError> where T == T.DecodedType  {
     return SignalProducer { sink, disposable in
         
         let decoded: Decoded<T> = decode(object)
@@ -39,7 +39,7 @@ public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObj
  * - returns: SignalProducer that sends decoded array
  */
 @available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
-public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<[T], DecodeError> {
+public func rac_decode < T: Decodable> (object: AnyObject) -> SignalProducer<[T], DecodeError> where T == T.DecodedType  {
     return SignalProducer { sink, disposable in
         
         let decoded: Decoded<[T]> = decode(object)
@@ -62,7 +62,7 @@ public func rac_decode < T: Decodable where T == T.DecodedType > (object: AnyObj
  * - returns: SignalProducer that sends decoded array
  */
 @available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
-public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (rootKey: String, object: AnyObject) -> SignalProducer<[T], DecodeError> {
+public func rac_decodeWithRootKey < T: Decodable> (rootKey: String, object: AnyObject) -> SignalProducer<[T], DecodeError> where T == T.DecodedType  {
     return SignalProducer { sink, disposable in
         
         guard let object = object as? [String: AnyObject] else {
@@ -90,7 +90,7 @@ public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (roo
  * - returns: SignalProducer that sends decoded object
  */
 @available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
-public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (rootKey: String, object: AnyObject) -> SignalProducer<T, DecodeError> {
+public func rac_decodeWithRootKey < T: Decodable> (rootKey: String, object: AnyObject) -> SignalProducer<T, DecodeError> where T == T.DecodedType  {
     return SignalProducer { sink, disposable in
         
         guard let object = object as? [String: AnyObject] else {
@@ -118,7 +118,7 @@ public func rac_decodeWithRootKey < T: Decodable where T == T.DecodedType > (roo
  * - returns: SignalProducer that sends decoded array one by one
  */
 @available(*, deprecated, message: "Use extension mapResponseArgo() on SignalProducer<Any,DecodeErrorCreatable>")
-public func rac_decodeByOne < T: Decodable where T == T.DecodedType > (object: AnyObject) -> SignalProducer<T, DecodeError> {
+public func rac_decodeByOne < T: Decodable> (object: AnyObject) -> SignalProducer<T, DecodeError> where T == T.DecodedType  {
     return SignalProducer { sink, disposable in
         
         let decoded: Decoded<[T]> = decode(object)
