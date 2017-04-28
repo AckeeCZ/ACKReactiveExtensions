@@ -58,7 +58,7 @@ In case your data aren't always root objects of your API response you can use `k
 ```swift
 func fetchCars() -> SignalProducer<[Car], MyError> {
     let apiCall: SignalProducer<Any, MyError> = ... // make your api call
-    return apiCall.mapResponse(for: "data")
+    return apiCall.mapResponse(forKey: "data")
 }
 ```
 
