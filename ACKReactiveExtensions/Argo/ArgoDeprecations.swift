@@ -9,6 +9,7 @@
 import Foundation
 import ReactiveSwift
 import Argo
+import Result
 
 /**
  * Reactively decode an object
@@ -131,5 +132,52 @@ public func rac_decodeByOne < T: Decodable where T == T.DecodedType > (object: A
             sink.send(error: e)
             break
         }
+    }
+}
+
+
+extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
+    
+    /**
+     * Map value as `Decodable` object
+     *
+     * - parameter key: If your objects are contained within dictionary pass the key here
+     */
+    @available(*, renamed: "mapResponse(forKey:)")
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
+        return mapResponse(forKey: key)
+    }
+    
+    /**
+     * Map values as `Decodable` objects
+     *
+     * - parameter key: If your objects are contained within dictionary pass the key here
+     */
+    @available(*, renamed: "mapResponse(forKey:)")
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
+        return mapResponse(forKey: key)
+    }
+}
+
+extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable {
+    
+    /**
+     * Map value as `Decodable` object
+     *
+     * - parameter key: If your objects are contained within dictionary pass the key here
+     */
+    @available(*, renamed: "mapResponse(forKey:)")
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
+        return lift { $0.mapResponseArgo(for: key) }
+    }
+    
+    /**
+     * Map values as `Decodable` objects
+     *
+     * - parameter key: If your objects are contained within dictionary pass the key here
+     */
+    @available(*, renamed: "mapResponse(forKey:)")
+    public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
+        return lift { $0.mapResponseArgo(for: key) }
     }
 }
