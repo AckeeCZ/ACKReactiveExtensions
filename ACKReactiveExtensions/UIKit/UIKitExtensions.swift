@@ -16,11 +16,6 @@ extension Reactive where Base: UIView {
     public var tintColor: BindingTarget<UIColor?> {
         return makeBindingTarget { $0.tintColor = $1 }
     }
-    
-    /// Binding that represents backgroundColor
-    public var backgroundColor: BindingTarget<UIColor?> {
-        return makeBindingTarget { $0.backgroundColor = $1 }
-    }
 }
 extension Reactive where Base: CALayer {
     /// Binding that represents borderWidth
