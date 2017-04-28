@@ -95,7 +95,7 @@ extension Reactive where Base: Disposing {
  * - parameter factory: Factory that actually creates the object to be associated
  * - returns: Newly created property
  */
-public func lazyAssociatedProperty<T: AnyObject>(_ host: AnyObject, _ key: UnsafeRawPointer, factory: () -> T) -> T {
+public func lazyAssociatedProperty<T: Any>(_ host: Any, _ key: UnsafeRawPointer, factory: () -> T) -> T {
     var associatedProperty = objc_getAssociatedObject(host, key) as? T
 
     if associatedProperty == nil {
