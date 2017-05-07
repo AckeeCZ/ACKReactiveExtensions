@@ -12,4 +12,4 @@ before_install:
 - pod install --project-directory=Example --repo-update
 script:
 - set -o pipefail && xcodebuild clean -workspace Example/ACKReactiveExtensions.xcworkspace/ -scheme ACKReactiveExtensions-Example && xcodebuild test -workspace Example/ACKReactiveExtensions.xcworkspace -scheme ACKReactiveExtensions-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.3' ONLY_ACTIVE_ARCH=NO | xcpretty
-- travis_wait 120 pod lib lint --allow-warnings
+#- travis_wait 120 pod lib lint --allow-warnings
