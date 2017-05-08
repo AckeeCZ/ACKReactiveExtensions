@@ -68,7 +68,7 @@ ACKReactiveExtensions contains reactive mapping extensions for following librari
 
 #### Mapping configuration
 
-In general we are agains mapping objects on main thread, but you know, you only live once so we still give you the opportunity to do so. By default our mapping extensions allow this behavior but if you want to restrict that, you can do that by setting a configuration variable.
+In general we are against mapping objects on main thread (and you should be too), but you know, you only live once so we still give you the opportunity to do so. By default our mapping extensions allow this behavior but if you want to restrict that, you can do that by setting a configuration variable.
 
 ```swift
 ACKReactiveExtensionsConfiguration.allowMappingOnMainThread = false
