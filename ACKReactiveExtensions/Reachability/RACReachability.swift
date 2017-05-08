@@ -15,13 +15,38 @@ import Reachability
 extension Reactive where Base: Reachability {
     /// Current network status property
     public var status: Property<NetworkStatus> {
-        //internally, we use the old SignalProducer implementation, which already sends an initial value, so we skip it.
-        return Property(initial: base.currentReachabilityStatus(), then: base.rac_status.skip(first: 1))
+        return Property(initial: base.currentReachabilityStatus(), then: statusSignal)
+    }
+    
+    private var statusSignal: SignalProducer<NetworkStatus, NoError> {
+        return lazyAssociatedProperty(base, &AssociationKeys.statusSignalKey) {
+            SignalProducer<NetworkStatus, NoError> { [unowned base = self.base] observer, _ in
+                let oldReachableBlock = base.reachableBlock
+                base.reachableBlock = { reachability in
+                    oldReachableBlock?(reachability)
+                    
+                    if let reachability = reachability {
+                        observer.send(value: reachability.currentReachabilityStatus())
+                    }
+                }
+                
+                let oldUnreachableBlock = base.unreachableBlock
+                base.unreachableBlock = { reachability in
+                    oldUnreachableBlock?(reachability)
+                    
+                    if let reachability = reachability {
+                        observer.send(value: reachability.currentReachabilityStatus())
+                    }
+                }
+                }.on(started: { [weak base = self.base] in base?.startNotifier() },
+                     terminated: { [weak base = self.base] in base?.stopNotifier() })
+        }
     }
 }
 
 private struct AssociationKeys {
     static var statusKey: UInt8 = 0
+    static var statusSignalKey: UInt8 = 1
 }
 
 extension Reachability {

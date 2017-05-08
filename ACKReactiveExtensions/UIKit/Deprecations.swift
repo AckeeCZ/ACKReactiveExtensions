@@ -99,7 +99,7 @@ extension UITextView {
             
             let property = MutableProperty<String>(self.text ?? "")
             property.producer.startWithValues { [unowned self] newValue in
-                self.text = newValue ?? ""
+                self.text = newValue
             }
             return property
         }
@@ -225,7 +225,7 @@ private func ensureMainThread(block: @escaping (Void) -> Void) {
     }
 }
 
-func lazyMutablePropertyUiKit<T>(_ host: AnyObject, _ key: UnsafePointer<Void>, _ setter: @escaping (T) -> (), _ getter: () -> T) -> MutableProperty<T> {
+func lazyMutablePropertyUiKit<T>(_ host: AnyObject, _ key: UnsafeRawPointer, _ setter: @escaping (T) -> (), _ getter: () -> T) -> MutableProperty<T> {
     return lazyAssociatedProperty(host, key) {
         let property = MutableProperty<T>(getter())
         property.producer.startWithValues { x in ensureMainThread { setter(x) } }

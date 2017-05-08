@@ -98,7 +98,7 @@ public extension Reactive where Base: Object {
                 sink.send(value: self.base)
                 sink.sendCompleted()
             } catch (let e) {
-                sink.send(error: RealmError(underlyingError: e as! NSError) )
+                sink.send(error: RealmError(underlyingError: e as NSError) )
             }
         }
         
@@ -117,7 +117,7 @@ public extension Reactive where Base: Object {
                 sink.send(value: ())
                 sink.sendCompleted()
             } catch (let e) {
-                sink.send(error: RealmError(underlyingError: e as! NSError) )
+                sink.send(error: RealmError(underlyingError: e as NSError) )
             }
         }
     }
