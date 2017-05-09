@@ -39,6 +39,10 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
     public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<Model, Error> where Model: Unmarshaling {
         return attemptMap { json in
             Result {
+                if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
+                    assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
+                }
+                
                 guard let marshaledJSON = json as? MarshaledObject
                     else {
                         throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
@@ -61,6 +65,10 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
     public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
         return attemptMap { json in
             Result {
+                if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
+                    assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
+                }
+                
                 if let key = key, let marshaledJSON = json as? MarshaledObject {
                     return try marshaledJSON.value(for: key)
                 }
@@ -83,6 +91,10 @@ extension SignalProtocol where Value == Any, Error: MarshalErrorCreatable {
     public func mapResponse<Model>(forKey key: KeyType) -> Signal<Model, Error> where Model: ValueType {
         return attemptMap { json in
             Result {
+                if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
+                    assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
+                }
+                
                 guard let marshaledJSON = json as? MarshaledObject
                     else {
                         throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))

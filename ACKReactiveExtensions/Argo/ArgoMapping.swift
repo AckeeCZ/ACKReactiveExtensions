@@ -38,6 +38,10 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
+            if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
+                assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
+            }
+            
             let decoded: Decoded<ResultType> = key.map {
             let dict = data as? [String: Any] ?? [:]
             return decode(dict, rootKey: $0)
@@ -59,6 +63,10 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
         return attemptMap { data in
+            if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
+                assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
+            }
+            
             let decoded: Decoded<[ResultType]> = key.map {
                 let dict = data as? [String: Any] ?? [:]
                 return decode(dict, rootKey: $0)
