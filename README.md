@@ -73,7 +73,7 @@ In general we are against mapping objects on main thread (and you should be too)
 ```swift
 ACKReactiveExtensionsConfiguration.allowMappingOnMainThread = false
 ```
-From now on the mapping extensions will expect to be called on background thread, but don't worry to check that we use asserts so your production users are safe from crashing if somehow things go as good as expected.
+From now on the mapping extensions will expect to be called on background thread, but don't worry, we use asserts so your production users are safe from crashing if somehow things don't go as good as expected.
 
 
 ## Author
