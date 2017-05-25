@@ -16,6 +16,15 @@ extension Reactive where Base: UIView {
     public var tintColor: BindingTarget<UIColor?> {
         return makeBindingTarget { $0.tintColor = $1 }
     }
+    
+    /// Binding that represents isHidden
+    var isHiddenProperty: Property<Bool> {
+        return Property(initial: base.isHidden, then: isHiddenSignal)
+    }
+    
+    private var isHiddenSignal: Signal<Bool, NoError> {
+        return signal(forKeyPath: "hidden").map { $0 as? Bool }.skipNil()
+    }
 }
 extension Reactive where Base: CALayer {
     /// Binding that represents borderWidth
