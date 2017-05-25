@@ -18,7 +18,7 @@ extension Reactive where Base: UIView {
     }
     
     /// Binding that represents isHidden
-    var isHiddenProperty: Property<Bool> {
+    public var isHiddenProperty: Property<Bool> {
         return Property(initial: base.isHidden, then: isHiddenSignal)
     }
     
@@ -45,22 +45,22 @@ extension Reactive where Base: UINavigationItem {
     }
     
     /// Binding that represents rightBarButtonItems
-    var rightBarButtonItem: BindingTarget<UIBarButtonItem?> {
+    public var rightBarButtonItem: BindingTarget<UIBarButtonItem?> {
         return makeBindingTarget { $0.rightBarButtonItem = $1 }
     }
     
     /// Binding that represents rightBarButtonItems
-    var rightBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
+    public var rightBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
         return makeBindingTarget { $0.rightBarButtonItems = $1 }
     }
     
     /// Binding that represents leftBarButtonItem
-    var leftBarButtonItem: BindingTarget<UIBarButtonItem?> {
+    public var leftBarButtonItem: BindingTarget<UIBarButtonItem?> {
         return makeBindingTarget { $0.leftBarButtonItem = $1 }
     }
     
     /// Binding that represents leftBarButtonItems
-    var leftBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
+    public var leftBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
         return makeBindingTarget { $0.leftBarButtonItems = $1 }
     }
 }
@@ -95,7 +95,7 @@ extension String {
 extension Reactive where Base: UIStackView {
     
     /// Switch arranged subviews reactively
-    var arrangedSubviews: BindingTarget<[UIView]> {
+    public var arrangedSubviews: BindingTarget<[UIView]> {
         return makeBindingTarget { base, views in
             base.arrangedSubviews.forEach {
                 base.removeArrangedSubview($0)
