@@ -1,33 +1,33 @@
 PODS:
-  - ACKReactiveExtensions (2.4.0):
-    - ACKReactiveExtensions/Core (= 2.4.0)
-    - ACKReactiveExtensions/UIKit (= 2.4.0)
+  - ACKReactiveExtensions (2.5.0):
+    - ACKReactiveExtensions/Core (= 2.5.0)
+    - ACKReactiveExtensions/UIKit (= 2.5.0)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Argo (2.4.0):
+  - ACKReactiveExtensions/Argo (2.5.0):
     - Argo (< 5.0, >= 4.1.2)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Core (2.4.0):
+  - ACKReactiveExtensions/Core (2.5.0):
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Marshal (2.4.0):
+  - ACKReactiveExtensions/Marshal (2.5.0):
     - ACKReactiveExtensions/Core
     - Marshal (~> 1.2)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Reachability (2.4.0):
+  - ACKReactiveExtensions/Reachability (2.5.0):
     - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Realm (2.4.0):
+  - ACKReactiveExtensions/Realm (2.5.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
     - RealmSwift (~> 2.1)
-  - ACKReactiveExtensions/SDWebImage (2.4.0):
+  - ACKReactiveExtensions/SDWebImage (2.5.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
     - SDWebImage (~> 4.0)
-  - ACKReactiveExtensions/UIKit (2.4.0):
+  - ACKReactiveExtensions/UIKit (2.5.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/WebKit (2.4.0):
+  - ACKReactiveExtensions/WebKit (2.5.0):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
   - Argo (4.1.2):
@@ -70,7 +70,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: 7200292deb4ee34bf1381952ae2362dc23ddcfc6
+  ACKReactiveExtensions: ec4eafc9f23714b942a1e6799e03b680ebed40a9
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
