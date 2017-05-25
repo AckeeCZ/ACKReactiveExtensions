@@ -16,6 +16,15 @@ extension Reactive where Base: UIView {
     public var tintColor: BindingTarget<UIColor?> {
         return makeBindingTarget { $0.tintColor = $1 }
     }
+    
+    /// Binding that represents isHidden
+    public var isHiddenProperty: Property<Bool> {
+        return Property(initial: base.isHidden, then: isHiddenSignal)
+    }
+    
+    private var isHiddenSignal: Signal<Bool, NoError> {
+        return signal(forKeyPath: "hidden").map { $0 as? Bool }.skipNil()
+    }
 }
 extension Reactive where Base: CALayer {
     /// Binding that represents borderWidth
@@ -33,6 +42,26 @@ extension Reactive where Base: UINavigationItem {
     /// Binding that represents title
     public var title: BindingTarget<String?> {
         return makeBindingTarget { $0.title = $1 }
+    }
+    
+    /// Binding that represents rightBarButtonItems
+    public var rightBarButtonItem: BindingTarget<UIBarButtonItem?> {
+        return makeBindingTarget { $0.rightBarButtonItem = $1 }
+    }
+    
+    /// Binding that represents rightBarButtonItems
+    public var rightBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
+        return makeBindingTarget { $0.rightBarButtonItems = $1 }
+    }
+    
+    /// Binding that represents leftBarButtonItem
+    public var leftBarButtonItem: BindingTarget<UIBarButtonItem?> {
+        return makeBindingTarget { $0.leftBarButtonItem = $1 }
+    }
+    
+    /// Binding that represents leftBarButtonItems
+    public var leftBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
+        return makeBindingTarget { $0.leftBarButtonItems = $1 }
     }
 }
 
@@ -62,3 +91,18 @@ extension String {
     }
 }
 
+@available(iOS 9.0, *)
+extension Reactive where Base: UIStackView {
+    
+    /// Switch arranged subviews reactively
+    public var arrangedSubviews: BindingTarget<[UIView]> {
+        return makeBindingTarget { base, views in
+            base.arrangedSubviews.forEach {
+                base.removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
+            
+            views.forEach { base.addArrangedSubview($0) }
+        }
+    }
+}
