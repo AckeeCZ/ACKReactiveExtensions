@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '2.4.0'
+  s.version          = '2.5.0'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
 
   s.description      = <<-DESC
-  TODO: Add long description of the pod here.
+  Use ReactiveCocoa with various iOS components.
                        DESC
 
   s.homepage         = 'https://github.com/AckeeCZ/ACKReactiveExtensions'
