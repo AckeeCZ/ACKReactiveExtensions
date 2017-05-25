@@ -34,6 +34,26 @@ extension Reactive where Base: UINavigationItem {
     public var title: BindingTarget<String?> {
         return makeBindingTarget { $0.title = $1 }
     }
+    
+    /// Binding that represents rightBarButtonItems
+    var rightBarButtonItem: BindingTarget<UIBarButtonItem?> {
+        return makeBindingTarget { $0.rightBarButtonItem = $1 }
+    }
+    
+    /// Binding that represents rightBarButtonItems
+    var rightBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
+        return makeBindingTarget { $0.rightBarButtonItems = $1 }
+    }
+    
+    /// Binding that represents leftBarButtonItem
+    var leftBarButtonItem: BindingTarget<UIBarButtonItem?> {
+        return makeBindingTarget { $0.leftBarButtonItem = $1 }
+    }
+    
+    /// Binding that represents leftBarButtonItems
+    var leftBarButtonItems: BindingTarget<[UIBarButtonItem]?> {
+        return makeBindingTarget { $0.leftBarButtonItems = $1 }
+    }
 }
 
 extension Reactive where Base: UITextField {
@@ -64,6 +84,8 @@ extension String {
 
 @available(iOS 9.0, *)
 extension Reactive where Base: UIStackView {
+    
+    /// Switch arranged subviews reactively
     var arrangedSubviews: BindingTarget<[UIView]> {
         return makeBindingTarget { base, views in
             base.arrangedSubviews.forEach {
