@@ -62,3 +62,16 @@ extension String {
     }
 }
 
+@available(iOS 9.0, *)
+extension Reactive where Base: UIStackView {
+    var arrangedSubviews: BindingTarget<[UIView]> {
+        return makeBindingTarget { base, views in
+            base.arrangedSubviews.forEach {
+                base.removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
+            
+            views.forEach { base.addArrangedSubview($0) }
+        }
+    }
+}
