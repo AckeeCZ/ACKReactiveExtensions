@@ -38,12 +38,7 @@ extension Reactive where Base: CALayer {
     }
 }
 
-extension Reactive where Base: UINavigationItem {
-    /// Binding that represents title
-    public var title: BindingTarget<String?> {
-        return makeBindingTarget { $0.title = $1 }
-    }
-    
+extension Reactive where Base: UINavigationItem {    
     /// Binding that represents rightBarButtonItems
     public var rightBarButtonItem: BindingTarget<UIBarButtonItem?> {
         return makeBindingTarget { $0.rightBarButtonItem = $1 }
