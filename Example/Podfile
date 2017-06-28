@@ -1,4 +1,5 @@
 use_frameworks!
+inhibit_all_warnings!
 
 target 'ACKReactiveExtensions_Example' do
     pod 'Result', '~> 3.1'

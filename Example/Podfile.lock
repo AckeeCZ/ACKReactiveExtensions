@@ -1,33 +1,34 @@
 PODS:
-  - ACKReactiveExtensions (2.5.0):
-    - ACKReactiveExtensions/Core (= 2.5.0)
-    - ACKReactiveExtensions/UIKit (= 2.5.0)
+  - ACKReactiveExtensions (2.5.1):
+    - ACKReactiveExtensions/Core (= 2.5.1)
+    - ACKReactiveExtensions/UIKit (= 2.5.1)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Argo (2.5.0):
+  - ACKReactiveExtensions/Argo (2.5.1):
+    - ACKReactiveExtensions/Core
     - Argo (< 5.0, >= 4.1.2)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Core (2.5.0):
+  - ACKReactiveExtensions/Core (2.5.1):
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Marshal (2.5.0):
+  - ACKReactiveExtensions/Marshal (2.5.1):
     - ACKReactiveExtensions/Core
     - Marshal (~> 1.2)
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Reachability (2.5.0):
+  - ACKReactiveExtensions/Reachability (2.5.1):
     - ACKReactiveExtensions/Core
     - Reachability
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Realm (2.5.0):
+  - ACKReactiveExtensions/Realm (2.5.1):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
     - RealmSwift (~> 2.1)
-  - ACKReactiveExtensions/SDWebImage (2.5.0):
+  - ACKReactiveExtensions/SDWebImage (2.5.1):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
     - SDWebImage (~> 4.0)
-  - ACKReactiveExtensions/UIKit (2.5.0):
+  - ACKReactiveExtensions/UIKit (2.5.1):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/WebKit (2.5.0):
+  - ACKReactiveExtensions/WebKit (2.5.1):
     - ACKReactiveExtensions/Core
     - ReactiveCocoa (~> 5.0)
   - Argo (4.1.2):
@@ -70,7 +71,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: ec4eafc9f23714b942a1e6799e03b680ebed40a9
+  ACKReactiveExtensions: d1c9ba87e1ee565f475b48b77a201303a51a1117
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
@@ -85,6 +86,6 @@ SPEC CHECKSUMS:
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 1d0475767d76bb45cefcaceddd19be37d22fedc7
+PODFILE CHECKSUM: fc63d1a64b6584dc624c98953220120ca6314a1a
 
 COCOAPODS: 1.2.1

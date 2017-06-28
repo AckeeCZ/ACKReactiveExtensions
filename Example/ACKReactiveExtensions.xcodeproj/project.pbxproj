@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		693402381D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693402371D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift */; };
 		694A0C341EB3726C00F67BDC /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A0C331EB3726C00F67BDC /* ConfigurationTests.swift */; };
+		6998703C1F03BD7A005137A2 /* TextFieldBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998703A1F03BD53005137A2 /* TextFieldBindingTests.swift */; };
 		69FDE6F71E965C56004FD0D7 /* ArgoMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDE6F51E965C32004FD0D7 /* ArgoMappingTests.swift */; };
 		69FDE6F91E966111004FD0D7 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDE6F81E966111004FD0D7 /* TestHelpers.swift */; };
 		69FDE6FD1E968255004FD0D7 /* MarshalMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDE6FC1E968255004FD0D7 /* MarshalMappingTests.swift */; };
@@ -49,6 +50,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		693402371D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensionsThreadingSpec.swift; sourceTree = "<group>"; };
 		694A0C331EB3726C00F67BDC /* ConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
+		6998703A1F03BD53005137A2 /* TextFieldBindingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBindingTests.swift; sourceTree = "<group>"; };
 		69FDE6F51E965C32004FD0D7 /* ArgoMappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoMappingTests.swift; sourceTree = "<group>"; };
 		69FDE6F81E966111004FD0D7 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		69FDE6FC1E968255004FD0D7 /* MarshalMappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarshalMappingTests.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				69FDE6F51E965C32004FD0D7 /* ArgoMappingTests.swift */,
 				69FDE6F81E966111004FD0D7 /* TestHelpers.swift */,
 				694A0C331EB3726C00F67BDC /* ConfigurationTests.swift */,
+				6998703A1F03BD53005137A2 /* TextFieldBindingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				693402381D1296C3004F1FFB /* UIKitExtensionsThreadingSpec.swift in Sources */,
 				ACF37BD01E26CED900FE04FF /* RealmTest.swift in Sources */,
 				694A0C341EB3726C00F67BDC /* ConfigurationTests.swift in Sources */,
+				6998703C1F03BD7A005137A2 /* TextFieldBindingTests.swift in Sources */,
 				69FDE6FD1E968255004FD0D7 /* MarshalMappingTests.swift in Sources */,
 				69FDE6F71E965C56004FD0D7 /* ArgoMappingTests.swift in Sources */,
 				69FDE6F91E966111004FD0D7 /* TestHelpers.swift in Sources */,
