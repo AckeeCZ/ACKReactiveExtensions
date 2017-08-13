@@ -1,36 +1,36 @@
 PODS:
-  - ACKReactiveExtensions (2.5.1):
-    - ACKReactiveExtensions/Core (= 2.5.1)
-    - ACKReactiveExtensions/UIKit (= 2.5.1)
-    - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Argo (2.5.1):
+  - ACKReactiveExtensions (2.5.2):
+    - ACKReactiveExtensions/Core (= 2.5.2)
+    - ACKReactiveExtensions/UIKit (= 2.5.2)
+    - ReactiveCocoa (~> 6.0)
+  - ACKReactiveExtensions/Argo (2.5.2):
     - ACKReactiveExtensions/Core
     - Argo (< 5.0, >= 4.1.2)
-    - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Core (2.5.1):
-    - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Marshal (2.5.1):
+    - ReactiveCocoa (~> 6.0)
+  - ACKReactiveExtensions/Core (2.5.2):
+    - ReactiveCocoa (~> 6.0)
+  - ACKReactiveExtensions/Marshal (2.5.2):
     - ACKReactiveExtensions/Core
     - Marshal (~> 1.2)
-    - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Reachability (2.5.1):
+    - ReactiveCocoa (~> 6.0)
+  - ACKReactiveExtensions/Reachability (2.5.2):
     - ACKReactiveExtensions/Core
     - Reachability
-    - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/Realm (2.5.1):
+    - ReactiveCocoa (~> 6.0)
+  - ACKReactiveExtensions/Realm (2.5.2):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 5.0)
+    - ReactiveCocoa (~> 6.0)
     - RealmSwift (~> 2.1)
-  - ACKReactiveExtensions/SDWebImage (2.5.1):
+  - ACKReactiveExtensions/SDWebImage (2.5.2):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 5.0)
+    - ReactiveCocoa (~> 6.0)
     - SDWebImage (~> 4.0)
-  - ACKReactiveExtensions/UIKit (2.5.1):
+  - ACKReactiveExtensions/UIKit (2.5.2):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 5.0)
-  - ACKReactiveExtensions/WebKit (2.5.1):
+    - ReactiveCocoa (~> 6.0)
+  - ACKReactiveExtensions/WebKit (2.5.2):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 5.0)
+    - ReactiveCocoa (~> 6.0)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
   - Curry (3.0.0)
@@ -38,20 +38,20 @@ PODS:
   - Nimble (5.1.1)
   - Quick (0.10.0)
   - Reachability (3.2)
-  - ReactiveCocoa (5.0.3):
-    - ReactiveSwift (~> 1.1)
-  - ReactiveSwift (1.1.1):
+  - ReactiveCocoa (6.0.0):
+    - ReactiveSwift (~> 2.0)
+  - ReactiveSwift (2.0.0):
     - Result (~> 3.2)
-  - Realm (2.5.1):
-    - Realm/Headers (= 2.5.1)
-  - Realm/Headers (2.5.1)
-  - RealmSwift (2.5.1):
-    - Realm (= 2.5.1)
-  - Result (3.2.1)
-  - Runes (4.0.1)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - Realm (2.9.1):
+    - Realm/Headers (= 2.9.1)
+  - Realm/Headers (2.9.1)
+  - RealmSwift (2.9.1):
+    - Realm (= 2.9.1)
+  - Result (3.2.3)
+  - Runes (4.1.0)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
   - ACKReactiveExtensions (from `../`)
@@ -68,24 +68,24 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ACKReactiveExtensions:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: d1c9ba87e1ee565f475b48b77a201303a51a1117
+  ACKReactiveExtensions: e6965d2608936d2146035af00c685d648108f28f
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: 066a855f613fb72f68258771095805fdb10312d2
-  ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
-  Realm: 32f86104d37c8521f864d4274050b38ba6190733
-  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  ReactiveCocoa: ca689e37b6a922f0273918220d735c43368de550
+  ReactiveSwift: 36339167e571774d936482d0f6512f5118a74731
+  Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
+  RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
 PODFILE CHECKSUM: fc63d1a64b6584dc624c98953220120ca6314a1a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

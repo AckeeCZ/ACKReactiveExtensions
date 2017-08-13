@@ -17,7 +17,7 @@ extension SignalProducerProtocol {
     
     /// Ignore errors and return SignalProducer that completes instead of error
     public func ignoreError() -> SignalProducer<Value, NoError> {
-        return flatMapError { _ in .empty }
+        return producer.flatMapError { _ in .empty }
     }
 }
 

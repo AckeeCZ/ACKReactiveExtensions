@@ -37,7 +37,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return attemptMap { data in
+        return signal.attemptMap { data in
             if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                 assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
             }
@@ -62,7 +62,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return attemptMap { data in
+        return signal.attemptMap { data in
             if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                 assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
             }
@@ -90,7 +90,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponse(forKey: key) }
+        return producer.lift { $0.mapResponse(forKey: key) }
     }
     
     /**
@@ -99,6 +99,6 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponse(forKey: key) }
+        return producer.producer.lift { $0.mapResponse(forKey: key) }
     }
 }

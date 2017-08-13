@@ -168,7 +168,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      */
     @available(*, renamed: "mapResponse(forKey:)")
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponseArgo(for: key) }
+        return producer.lift { $0.mapResponseArgo(for: key) }
     }
     
     /**
@@ -178,6 +178,6 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      */
     @available(*, renamed: "mapResponse(forKey:)")
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponseArgo(for: key) }
+        return producer.lift { $0.mapResponseArgo(for: key) }
     }
 }
