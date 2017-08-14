@@ -75,6 +75,25 @@ ACKReactiveExtensionsConfiguration.allowMappingOnMainThread = false
 ```
 From now on the mapping extensions will expect to be called on background thread, but don't worry, we use asserts so your production users are safe from crashing if somehow things don't go as good as expected.
 
+### UITextField/UITextView two way binding
+
+ACKReactiveExtensions contains special `<~>` two way binding operator which will create binding between `MutableProperty` and your `UITextField`/`UITextView`.
+
+Until now all those bindings looked like this
+```swift
+let textProperty: MutableProperty<String?> ...
+let textField: UITextField ...
+
+textField.reactive.text <~ textProperty
+textProperty <~ textField.reactive.continousTextValues
+```
+
+From now on you can use the `<~>` operator
+```swift
+textProperty <~> textField
+```
+
+The `<~>` operator is commutative so the order of operands doesn't matter.
 
 ## Author
 
