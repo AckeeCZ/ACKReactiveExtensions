@@ -10,6 +10,7 @@ import Foundation
 import ReactiveSwift
 import Argo
 import Result
+import protocol Argo.Decodable
 
 /**
  * Reactively decode an object

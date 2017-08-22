@@ -14,6 +14,8 @@ import Result
 import ReactiveSwift
 import ACKReactiveExtensions
 
+import protocol Argo.Decodable
+
 class ArgoMappingTests: XCTestCase {
     struct ErrorStub: DecodeErrorCreatable {
         let decodeError: DecodeError

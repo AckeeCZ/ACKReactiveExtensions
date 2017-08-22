@@ -13,7 +13,7 @@ target 'ACKReactiveExtensions_Example' do
     
     target 'ACKReactiveExtensions_Tests' do
         pod 'Quick', '~> 0.10'
-        pod 'Nimble', '~> 5.0'
+        pod 'Nimble', '~> 7.0'
         pod 'Curry', '~> 3.0'
     end
 end
