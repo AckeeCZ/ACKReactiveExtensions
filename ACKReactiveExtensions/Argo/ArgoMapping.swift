@@ -29,7 +29,7 @@ extension DecodeError: DecodeErrorCreatable {
     }
 }
 
-extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
+extension Signal where Value == Any, Error: DecodeErrorCreatable {
     
     /**
      * Map value as `Decodable` object
@@ -37,7 +37,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> Signal<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return signal.attemptMap { data in
+        return attemptMap { data in
             if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                 assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
             }
@@ -62,7 +62,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> Signal<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return signal.attemptMap { data in
+        return attemptMap { data in
             if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                 assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
             }
@@ -82,7 +82,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
     }
 }
 
-extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable {
+extension SignalProducer where Value == Any, Error: DecodeErrorCreatable {
     
     /**
      * Map value as `Decodable` object
@@ -90,7 +90,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return producer.lift { $0.mapResponse(forKey: key) }
+        return lift { $0.mapResponse(forKey: key) }
     }
     
     /**
@@ -99,6 +99,6 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return producer.producer.lift { $0.mapResponse(forKey: key) }
+        return producer.lift { $0.mapResponse(forKey: key) }
     }
 }

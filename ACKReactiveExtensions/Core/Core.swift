@@ -13,11 +13,11 @@ import Result
 
 //MARK: ReactiveCocoa
 
-extension SignalProducerProtocol {
+extension SignalProducer {
     
     /// Ignore errors and return SignalProducer that completes instead of error
     public func ignoreError() -> SignalProducer<Value, NoError> {
-        return producer.flatMapError { _ in .empty }
+        return flatMapError { _ in .empty }
     }
 }
 
@@ -28,7 +28,7 @@ public func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E>
     return producers.flatten(.merge)
 }
 
-extension SignalProducerProtocol where Value == Void, Error == NoError {
+extension SignalProducer where Value == Void, Error == NoError {
     /// Perform side effect
     public static func sideEffect(actions: @escaping () -> ()) -> SignalProducer<(), NoError> {
         return SignalProducer<(), NoError> { sink, _ in

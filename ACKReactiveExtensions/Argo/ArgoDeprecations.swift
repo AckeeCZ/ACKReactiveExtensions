@@ -136,7 +136,7 @@ public func rac_decodeByOne < T: Decodable> (object: AnyObject) -> SignalProduce
 }
 
 
-extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
+extension Signal where Value == Any, Error: DecodeErrorCreatable {
     
     /**
      * Map value as `Decodable` object
@@ -159,7 +159,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
     }
 }
 
-extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable {
+extension SignalProducer where Value == Any, Error: DecodeErrorCreatable {
     
     /**
      * Map value as `Decodable` object
@@ -168,7 +168,7 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      */
     @available(*, renamed: "mapResponse(forKey:)")
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<ResultType, Error> where ResultType.DecodedType == ResultType {
-        return producer.lift { $0.mapResponseArgo(for: key) }
+        return lift { $0.mapResponseArgo(for: key) }
     }
     
     /**
@@ -178,6 +178,6 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      */
     @available(*, renamed: "mapResponse(forKey:)")
     public func mapResponseArgo<ResultType: Decodable>(for key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return producer.lift { $0.mapResponseArgo(for: key) }
+        return lift { $0.mapResponseArgo(for: key) }
     }
 }

@@ -38,9 +38,9 @@ PODS:
   - Nimble (5.1.1)
   - Quick (0.10.0)
   - Reachability (3.2)
-  - ReactiveCocoa (6.0.0):
+  - ReactiveCocoa (6.0.1):
     - ReactiveSwift (~> 2.0)
-  - ReactiveSwift (2.0.0):
+  - ReactiveSwift (2.0.1):
     - Result (~> 3.2)
   - Realm (2.9.1):
     - Realm/Headers (= 2.9.1)
@@ -78,8 +78,8 @@ SPEC CHECKSUMS:
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: ca689e37b6a922f0273918220d735c43368de550
-  ReactiveSwift: 36339167e571774d936482d0f6512f5118a74731
+  ReactiveCocoa: cf6595131c832c468fe3f84a2d7f74ed68eb3058
+  ReactiveSwift: 60a29ff35988a964fd2bb759755cb6594de523fc
   Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
   RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
