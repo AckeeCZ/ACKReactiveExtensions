@@ -29,7 +29,7 @@ extension DecodeError: DecodeErrorCreatable {
     }
 }
 
-extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
+extension Signal where Value == Any, Error: DecodeErrorCreatable {
     
     /**
      * Map value as `Decodable` object
@@ -82,7 +82,7 @@ extension SignalProtocol where Value == Any, Error: DecodeErrorCreatable {
     }
 }
 
-extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable {
+extension SignalProducer where Value == Any, Error: DecodeErrorCreatable {
     
     /**
      * Map value as `Decodable` object
@@ -99,6 +99,6 @@ extension SignalProducerProtocol where Value == Any, Error: DecodeErrorCreatable
      * - parameter key: If your objects are contained within dictionary pass the key here
      */
     public func mapResponse<ResultType: Decodable>(forKey key: String? = nil) -> SignalProducer<[ResultType], Error> where ResultType.DecodedType == ResultType {
-        return lift { $0.mapResponse(forKey: key) }
+        return producer.lift { $0.mapResponse(forKey: key) }
     }
 }

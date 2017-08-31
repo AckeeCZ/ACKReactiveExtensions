@@ -22,7 +22,7 @@ extension Reactive where Base: SDWebImageManager {
                 sink.send(value: image)
                 sink.sendCompleted()
             }
-            disposable.add {
+            disposable.observeEnded {
                 task?.cancel()
             }
         }
