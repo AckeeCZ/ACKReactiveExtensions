@@ -18,8 +18,8 @@ public typealias NoError = Result.NoError
 import ACKReactiveExtensions
 
 class Category: Object {
-    dynamic var id: Int = 0
-    dynamic var name: String = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
     convenience init(id: Int, name: String){
         self.init()
         self.id = id
@@ -29,8 +29,8 @@ class Category: Object {
 }
 
 class User: Object {
-    dynamic var id: Int = 0
-    dynamic var name: String = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
     let categories = List<Category>()
     convenience init(id: Int, name: String){
         self.init()
@@ -42,8 +42,8 @@ class User: Object {
 }
 
 class Unicorn: Object {
-    dynamic var id: NSString = "0"
-    dynamic var name: String = ""
+    @objc dynamic var id: NSString = "0"
+    @objc dynamic var name: String = ""
     override static func primaryKey() -> String? { return "id" }
     convenience init(id: NSString, name: String){
         self.init()
