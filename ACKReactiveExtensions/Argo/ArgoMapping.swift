@@ -9,6 +9,7 @@
 import Argo
 import Result
 import ReactiveSwift
+import protocol Argo.Decodable
 
 /**
  * Protocol that allows creation of custom Decode errors
