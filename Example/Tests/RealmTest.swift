@@ -243,7 +243,7 @@ class RealmTest: XCTestCase {
     
     
     func testTableViewIsReloaded() {
-        let controller = ViewController(query: self.realm.objects(User.self).sorted(byProperty: "id", ascending: true))
+        let controller = ViewController(query: self.realm.objects(User.self).sorted(byKeyPath: "id", ascending: true))
         
         let user = User(id: 101, name: "user101")
         

@@ -1,57 +1,57 @@
 PODS:
-  - ACKReactiveExtensions (2.5.2):
-    - ACKReactiveExtensions/Core (= 2.5.2)
-    - ACKReactiveExtensions/UIKit (= 2.5.2)
-    - ReactiveCocoa (~> 6.0)
-  - ACKReactiveExtensions/Argo (2.5.2):
+  - ACKReactiveExtensions (3.0.0):
+    - ACKReactiveExtensions/Core (= 3.0.0)
+    - ACKReactiveExtensions/UIKit (= 3.0.0)
+    - ReactiveCocoa (~> 7.0)
+  - ACKReactiveExtensions/Argo (3.0.0):
     - ACKReactiveExtensions/Core
     - Argo (< 5.0, >= 4.1.2)
-    - ReactiveCocoa (~> 6.0)
-  - ACKReactiveExtensions/Core (2.5.2):
-    - ReactiveCocoa (~> 6.0)
-  - ACKReactiveExtensions/Marshal (2.5.2):
+    - ReactiveCocoa (~> 7.0)
+  - ACKReactiveExtensions/Core (3.0.0):
+    - ReactiveCocoa (~> 7.0)
+  - ACKReactiveExtensions/Marshal (3.0.0):
     - ACKReactiveExtensions/Core
     - Marshal (~> 1.2)
-    - ReactiveCocoa (~> 6.0)
-  - ACKReactiveExtensions/Reachability (2.5.2):
+    - ReactiveCocoa (~> 7.0)
+  - ACKReactiveExtensions/Reachability (3.0.0):
     - ACKReactiveExtensions/Core
     - Reachability
-    - ReactiveCocoa (~> 6.0)
-  - ACKReactiveExtensions/Realm (2.5.2):
+    - ReactiveCocoa (~> 7.0)
+  - ACKReactiveExtensions/Realm (3.0.0):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 6.0)
-    - RealmSwift (~> 2.1)
-  - ACKReactiveExtensions/SDWebImage (2.5.2):
+    - ReactiveCocoa (~> 7.0)
+    - RealmSwift (~> 3.0)
+  - ACKReactiveExtensions/SDWebImage (3.0.0):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 6.0)
+    - ReactiveCocoa (~> 7.0)
     - SDWebImage (~> 4.0)
-  - ACKReactiveExtensions/UIKit (2.5.2):
+  - ACKReactiveExtensions/UIKit (3.0.0):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 6.0)
-  - ACKReactiveExtensions/WebKit (2.5.2):
+    - ReactiveCocoa (~> 7.0)
+  - ACKReactiveExtensions/WebKit (3.0.0):
     - ACKReactiveExtensions/Core
-    - ReactiveCocoa (~> 6.0)
+    - ReactiveCocoa (~> 7.0)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
   - Curry (3.0.0)
   - Marshal (1.2.4)
-  - Nimble (7.0.1)
+  - Nimble (7.0.2)
   - Quick (0.10.0)
   - Reachability (3.2)
-  - ReactiveCocoa (6.0.1):
-    - ReactiveSwift (~> 2.0)
-  - ReactiveSwift (2.0.1):
+  - ReactiveCocoa (7.0.0):
+    - ReactiveSwift (~> 3.0)
+  - ReactiveSwift (3.0.0):
     - Result (~> 3.2)
-  - Realm (2.9.1):
-    - Realm/Headers (= 2.9.1)
-  - Realm/Headers (2.9.1)
-  - RealmSwift (2.9.1):
-    - Realm (= 2.9.1)
-  - Result (3.2.3)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - Result (3.2.4)
   - Runes (4.1.0)
-  - SDWebImage (4.1.0):
-    - SDWebImage/Core (= 4.1.0)
-  - SDWebImage/Core (4.1.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
 
 DEPENDENCIES:
   - ACKReactiveExtensions (from `../`)
@@ -71,20 +71,20 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ACKReactiveExtensions: e6965d2608936d2146035af00c685d648108f28f
+  ACKReactiveExtensions: 001b341e3719256ec71691d25b72b1e44fe57285
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
-  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: cf6595131c832c468fe3f84a2d7f74ed68eb3058
-  ReactiveSwift: 60a29ff35988a964fd2bb759755cb6594de523fc
-  Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
-  RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
-  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  ReactiveCocoa: 06a54796a36dfc346f082498d08e7a8fb50c4e2f
+  ReactiveSwift: d9fe0db33c1aaabecb092e8de83cf52875c0de6f
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
-  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
 PODFILE CHECKSUM: 86f449d0246a6ce09a2ee78b3f0aff18cd7f2e59
 

@@ -36,7 +36,7 @@ public extension Reactive where Base: RealmCollection {
         var notificationToken: NotificationToken? = nil
         
         let producer: SignalProducer<Change<Base>, RealmError> = SignalProducer { sink, d in
-            notificationToken = self.base.addNotificationBlock { (changes) in
+            notificationToken = self.base.observe { (changes) in
                 switch changes {
                 case .initial(let initial):
                     sink.send(value: Change.initial(initial))
@@ -47,10 +47,10 @@ public extension Reactive where Base: RealmCollection {
                 }
             }
         }.on(terminated: {
-            notificationToken?.stop()
+            notificationToken?.invalidate()
             notificationToken = nil
         }, disposed: {
-            notificationToken?.stop()
+            notificationToken?.invalidate()
             notificationToken = nil
         })
         
