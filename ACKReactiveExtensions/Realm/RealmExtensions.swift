@@ -36,16 +36,31 @@ public extension Reactive where Base: RealmCollection {
         var notificationToken: NotificationToken? = nil
         
         let producer: SignalProducer<Change<Base>, RealmError> = SignalProducer { sink, d in
-            notificationToken = self.base.observe { (changes) in
-                switch changes {
-                case .initial(let initial):
-                    sink.send(value: Change.initial(initial))
-                case .update(let updates, let deletions, let insertions, let modifications):
-                    sink.send(value: Change.update(updates, deletions: deletions, insertions: insertions, modifications: modifications))
-                case .error(let e):
-                    sink.send(error: RealmError(underlyingError: e as NSError))
+            func registerObserver() -> NotificationToken? {
+                guard let realm = self.base.realm else {
+                    print("Cannot observe object without Realm")
+                    return nil
+                }
+                
+                realm.refresh()
+                
+                if realm.isInWriteTransaction {
+                    return registerObserver() // hopefully write transaction ends some time
+                }
+                
+                return self.base.observe { (changes) in
+                    switch changes {
+                    case .initial(let initial):
+                        sink.send(value: Change.initial(initial))
+                    case .update(let updates, let deletions, let insertions, let modifications):
+                        sink.send(value: Change.update(updates, deletions: deletions, insertions: insertions, modifications: modifications))
+                    case .error(let e):
+                        sink.send(error: RealmError(underlyingError: e as NSError))
+                    }
                 }
             }
+            
+            notificationToken = registerObserver()
         }.on(terminated: {
             notificationToken?.invalidate()
             notificationToken = nil
@@ -88,6 +103,7 @@ public extension Reactive where Base: Object {
         return SignalProducer<Base, RealmError> { sink, d in
             do {
                 let realm = try Realm()
+                realm.refresh()
                 try realm.write {
                     if let writeBlock = writeBlock {
                         writeBlock(realm)
@@ -111,6 +127,7 @@ public extension Reactive where Base: Object {
         return SignalProducer { sink, d in
             do {
                 let realm = try Realm()
+                realm.refresh()
                 try realm.write {
                     realm.delete(self.base)
                 }
