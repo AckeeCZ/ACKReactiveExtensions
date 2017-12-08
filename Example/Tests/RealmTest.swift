@@ -261,6 +261,18 @@ class RealmTest: XCTestCase {
         expect(reloadedIndices?.first).toEventually(equal(100))
     }
 
-    
+    func testInTransaction() {
+        async { expectation in
+            try! self.realm.write {
+                _ = self.realm.objects(User.self).reactive.property
+                sleep(2)
+                expectation.fulfill()
+            }
+        }
+        
+        
+        
+        
+    }
     
 }

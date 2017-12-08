@@ -36,18 +36,12 @@ public extension Reactive where Base: RealmCollection {
         var notificationToken: NotificationToken? = nil
         
         let producer: SignalProducer<Change<Base>, RealmError> = SignalProducer { sink, d in
-            func registerObserver() -> NotificationToken? {
-                guard let realm = self.base.realm else {
-                    print("Cannot observe object without Realm")
-                    return nil
-                }
-                
-                realm.refresh()
-                
-                if realm.isInWriteTransaction {
-                    return registerObserver() // hopefully write transaction ends some time
-                }
-                
+            guard let realm = self.base.realm else {
+                print("Cannot observe object without Realm")
+                return
+            }
+            
+            func observe() -> NotificationToken? {
                 return self.base.observe { (changes) in
                     switch changes {
                     case .initial(let initial):
@@ -60,14 +54,36 @@ public extension Reactive where Base: RealmCollection {
                 }
             }
             
-            notificationToken = registerObserver()
-        }.on(terminated: {
-            notificationToken?.invalidate()
-            notificationToken = nil
-        }, disposed: {
-            notificationToken?.invalidate()
-            notificationToken = nil
-        })
+            let registerObserverIfPossible: () -> (Bool, NotificationToken?) = {
+                if !realm.isInWriteTransaction { return (true, observe()) }
+                return (false, nil)
+            }
+            
+            var counter = 0
+            let maxRetries = 10
+            
+            func registerWhileNotSuccessful(queue: DispatchQueue) {
+                let (registered, token) = registerObserverIfPossible()
+                
+                guard !registered, counter < maxRetries else { notificationToken = token; return  }
+                
+                counter += 1
+                
+                queue.async { registerWhileNotSuccessful(queue: queue) }
+            }
+            
+            if let opQueue = OperationQueue.current, let dispatchQueue = opQueue.underlyingQueue {
+                registerWhileNotSuccessful(queue: dispatchQueue)
+            } else {
+                notificationToken = observe()
+            }
+            }.on(terminated: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            }, disposed: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            })
         
         return producer
     }
@@ -200,9 +216,9 @@ func ~==(lhs: PrimaryKeyEquatable, rhs: PrimaryKeyEquatable) -> Bool {
     }
     
     guard let primaryKey = type(of: lhs).primaryKey(), let lValue = lhs[primaryKey],
-    let rValue = rhs[primaryKey] else {
-        assertionFailure("Trying to compare object that has no primary key");
-        return false
+        let rValue = rhs[primaryKey] else {
+            assertionFailure("Trying to compare object that has no primary key");
+            return false
     }
     
     if let l = lValue as? String, let r = rValue as? String {
