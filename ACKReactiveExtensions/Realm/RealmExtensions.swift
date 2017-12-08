@@ -155,8 +155,72 @@ public extension Reactive where Base: Object {
         }
     }
     
+    public var changes: SignalProducer<ObjectChange, RealmError> {
+        var notificationToken: NotificationToken? = nil
+        
+        let producer: SignalProducer<ObjectChange, RealmError> = SignalProducer { sink, d in
+            guard let realm = self.base.realm else {
+                print("Cannot observe object without Realm")
+                return
+            }
+            
+            func observe() -> NotificationToken? {
+                return self.base.observe { change in
+                    switch change {
+                    case .error(let e):
+                        sink.send(error: RealmError(underlyingError: e))
+                    default:
+                        sink.send(value: change)
+                    }
+                }
+            }
+            
+            let registerObserverIfPossible: () -> (Bool, NotificationToken?) = {
+                if !realm.isInWriteTransaction { return (true, observe()) }
+                return (false, nil)
+            }
+            
+            var counter = 0
+            let maxRetries = 10
+            
+            func registerWhileNotSuccessful(queue: DispatchQueue) {
+                let (registered, token) = registerObserverIfPossible()
+                
+                guard !registered, counter < maxRetries else { notificationToken = token; return  }
+                
+                counter += 1
+                
+                queue.async { registerWhileNotSuccessful(queue: queue) }
+            }
+            
+            if let opQueue = OperationQueue.current, let dispatchQueue = opQueue.underlyingQueue {
+                registerWhileNotSuccessful(queue: dispatchQueue)
+            } else {
+                notificationToken = observe()
+            }
+            }.on(terminated: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            }, disposed: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            })
+        
+        return producer
+    }
+    
+    public var values: SignalProducer<Base, RealmError> {
+        return self.changes
+            .filter { if case .deleted = $0 { return false }; return true }
+            .map { _ in
+                return self.base
+        }
+    }
+    
+    public var property: ReactiveSwift.Property<Base> {
+        return ReactiveSwift.Property(initial: base, then: values.ignoreError() )
+    }
 }
-
 
 //MARK: Table view
 
