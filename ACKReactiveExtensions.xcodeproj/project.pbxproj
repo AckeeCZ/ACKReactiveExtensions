@@ -32,9 +32,13 @@
 		699B590E1FF52F8100FFDC91 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B590C1FF52F8100FFDC91 /* Runes.framework */; };
 		699B59111FF52FE100FFDC91 /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59101FF52FE100FFDC91 /* Marshal.framework */; };
 		699B59141FF5301600FFDC91 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59131FF5301600FFDC91 /* SDWebImage.framework */; };
-		699B59181FF5305F00FFDC91 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59161FF5305F00FFDC91 /* RealmSwift.framework */; };
 		699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59171FF5305F00FFDC91 /* Realm.framework */; };
 		699B591C1FF53A0900FFDC91 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B591B1FF53A0800FFDC91 /* Reachability.framework */; };
+		699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
+		699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59161FF5305F00FFDC91 /* RealmSwift.framework */; };
+		699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
+		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */,
 				699B58F81FF52F0600FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */,
 				699B58F91FF52F0E00FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +202,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B59181FF5305F00FFDC91 /* RealmSwift.framework in Frameworks */,
+				699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */,
+				699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */,
+				699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */,
 				699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */,
 				699B59071FF52F5100FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
@@ -487,7 +495,6 @@
 				699B583B1FF526A000FFDC91 /* Frameworks */,
 				699B583C1FF526A000FFDC91 /* Headers */,
 				699B583D1FF526A000FFDC91 /* Resources */,
-				699B58EE1FF52DE700FFDC91 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -544,7 +551,6 @@
 				699B58631FF526C300FFDC91 /* Frameworks */,
 				699B58641FF526C300FFDC91 /* Headers */,
 				699B58651FF526C300FFDC91 /* Resources */,
-				699B590F1FF52F8700FFDC91 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -564,7 +570,6 @@
 				699B58701FF526CB00FFDC91 /* Frameworks */,
 				699B58711FF526CB00FFDC91 /* Headers */,
 				699B58721FF526CB00FFDC91 /* Resources */,
-				699B59121FF52FE700FFDC91 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -584,7 +589,6 @@
 				699B587D1FF526D900FFDC91 /* Frameworks */,
 				699B587E1FF526D900FFDC91 /* Headers */,
 				699B587F1FF526D900FFDC91 /* Resources */,
-				699B59151FF5301F00FFDC91 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -604,7 +608,6 @@
 				699B588A1FF526F800FFDC91 /* Frameworks */,
 				699B588B1FF526F800FFDC91 /* Headers */,
 				699B588C1FF526F800FFDC91 /* Resources */,
-				699B591A1FF5306400FFDC91 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -770,93 +773,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		699B58EE1FF52DE700FFDC91 /* Carthage stuff */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-			);
-			name = "Carthage stuff";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		699B590F1FF52F8700FFDC91 /* Carthage stuff */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
-			);
-			name = "Carthage stuff";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Argo.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Runes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		699B59121FF52FE700FFDC91 /* Carthage stuff */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Marshal.framework",
-			);
-			name = "Carthage stuff";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Marshal.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		699B59151FF5301F00FFDC91 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		699B591A1FF5306400FFDC91 /* Carthage stuff */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-			);
-			name = "Carthage stuff";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		699B591D1FF53A2F00FFDC91 /* Carthage stuff */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1186,6 +1102,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1261,6 +1181,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1329,6 +1253,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1404,6 +1332,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
