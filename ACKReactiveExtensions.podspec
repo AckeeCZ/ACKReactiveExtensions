@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
     realm.dependency 'RealmSwift', '~> 3.0'
     realm.source_files = 'ACKReactiveExtensions/Realm/**/*'
   end
-  
+
   s.subspec 'Marshal' do |marshal|
     marshal.dependency 'ACKReactiveExtensions/Core'
     marshal.dependency 'Marshal', '~> 1.2'

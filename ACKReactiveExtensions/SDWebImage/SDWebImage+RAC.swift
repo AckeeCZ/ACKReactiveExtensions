@@ -1,7 +1,7 @@
 import UIKit
-import ReactiveSwift
 import SDWebImage
-
+import ReactiveCocoa
+import ReactiveSwift
 
 extension Reactive where Base: UIImageView {
     /// Binding target that will download image from given URL using SDWebImage

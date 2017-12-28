@@ -10,6 +10,10 @@ import Result
 import Marshal
 import ReactiveSwift
 
+#if !COCOAPODS
+    import ACKReactiveExtensionsCore
+#endif
+
 /**
  * Protocol that allows creation of custom Marshal errors
  */
