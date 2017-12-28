@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "699B588D1FF526F800FFDC91"
-               BuildableName = "ACKReactiveExtensionsRealm.framework"
-               BlueprintName = "Realm"
+               BlueprintIdentifier = "699B589A1FF5270100FFDC91"
+               BuildableName = "ACKReactiveExtensionsReachability.framework"
+               BlueprintName = "Reachability"
                ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "699B588D1FF526F800FFDC91"
-            BuildableName = "ACKReactiveExtensionsRealm.framework"
-            BlueprintName = "Realm"
+            BlueprintIdentifier = "699B589A1FF5270100FFDC91"
+            BuildableName = "ACKReactiveExtensionsReachability.framework"
+            BlueprintName = "Reachability"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "699B588D1FF526F800FFDC91"
-            BuildableName = "ACKReactiveExtensionsRealm.framework"
-            BlueprintName = "Realm"
+            BlueprintIdentifier = "699B589A1FF5270100FFDC91"
+            BuildableName = "ACKReactiveExtensionsReachability.framework"
+            BlueprintName = "Reachability"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

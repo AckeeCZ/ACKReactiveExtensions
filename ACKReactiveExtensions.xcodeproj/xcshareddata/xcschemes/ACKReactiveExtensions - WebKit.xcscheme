@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "699B58591FF526B900FFDC91"
-               BuildableName = "WebKit.framework"
+               BuildableName = "ACKReactiveExtensionsWebKit.framework"
                BlueprintName = "WebKit"
                ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699B58591FF526B900FFDC91"
-            BuildableName = "WebKit.framework"
+            BuildableName = "ACKReactiveExtensionsWebKit.framework"
             BlueprintName = "WebKit"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699B58591FF526B900FFDC91"
-            BuildableName = "WebKit.framework"
+            BuildableName = "ACKReactiveExtensionsWebKit.framework"
             BlueprintName = "WebKit"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>

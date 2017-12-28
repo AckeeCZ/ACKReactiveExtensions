@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "699B58801FF526D900FFDC91"
-               BuildableName = "SDWebImage.framework"
+               BuildableName = "ACKReactiveExtensionsSDWebImage.framework"
                BlueprintName = "SDWebImage"
                ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699B58801FF526D900FFDC91"
-            BuildableName = "SDWebImage.framework"
+            BuildableName = "ACKReactiveExtensionsSDWebImage.framework"
             BlueprintName = "SDWebImage"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699B58801FF526D900FFDC91"
-            BuildableName = "SDWebImage.framework"
+            BuildableName = "ACKReactiveExtensionsSDWebImage.framework"
             BlueprintName = "SDWebImage"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>

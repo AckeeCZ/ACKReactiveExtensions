@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "699B584C1FF526B100FFDC91"
-               BuildableName = "UIKit.framework"
+               BuildableName = "ACKReactiveExtensionsUIKit.framework"
                BlueprintName = "UIKit"
                ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699B584C1FF526B100FFDC91"
-            BuildableName = "UIKit.framework"
+            BuildableName = "ACKReactiveExtensionsUIKit.framework"
             BlueprintName = "UIKit"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699B584C1FF526B100FFDC91"
-            BuildableName = "UIKit.framework"
+            BuildableName = "ACKReactiveExtensionsUIKit.framework"
             BlueprintName = "UIKit"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
