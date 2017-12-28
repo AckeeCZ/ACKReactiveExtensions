@@ -19,4 +19,4 @@ script:
 - set -o pipefail && xcodebuild -scheme ACKReactiveExtensionsSDWebImage -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
 - set -o pipefail && xcodebuild -scheme ACKReactiveExtensionsReachability -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
 - set -o pipefail && xcodebuild -scheme ACKReactiveExtensionsRealm -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
-- travis_wait 60 pod lib lint
+- travis_wait 60 pod lib lint --allow-warnings
