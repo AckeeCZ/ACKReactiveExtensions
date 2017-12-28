@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Reachability' do |reachability|
     reachability.dependency 'ACKReactiveExtensions/Core'
-    reachability.dependency 'Reachability'
+    reachability.dependency 'ReachabilitySwift', '~> 4.1'
     reachability.source_files = 'ACKReactiveExtensions/Reachability/*.swift'
   end
 
