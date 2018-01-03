@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '3.1.0'
+  s.version          = '3.1.1'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
 
   s.description      = <<-DESC
