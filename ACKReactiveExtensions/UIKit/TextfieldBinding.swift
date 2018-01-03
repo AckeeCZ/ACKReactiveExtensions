@@ -13,13 +13,13 @@ infix operator <~> : BindingPrecedence
 
 /// Binds given `property` to continousValues of given `textField`
 public func <~> (property: MutableProperty<String?>, textField: UITextField) {
-    textField.reactive.text <~ property.producer.skipRepeats()
+    textField.reactive.text <~ property.producer.skipRepeats { $0 == $1 }
     property <~ textField.reactive.continuousTextValues
 }
 
 /// Binds given `property` to continousValues of given `textField`
 public func <~> (textField: UITextField, property: MutableProperty<String?>) {
-    textField.reactive.text <~ property.producer.skipRepeats()
+    textField.reactive.text <~ property.producer.skipRepeats { $0 == $1 }
     property <~ textField.reactive.continuousTextValues
 }
 
@@ -39,13 +39,13 @@ public func <~> (textField: UITextField, property: MutableProperty<String>) {
 
 /// Binds given `property` to continousValues of given `textView`
 public func <~> (property: MutableProperty<String?>, textView: UITextView) {
-    textView.reactive.text <~ property.producer.skipRepeats()
+    textView.reactive.text <~ property.producer.skipRepeats { $0 == $1 }
     property <~ textView.reactive.continuousTextValues
 }
 
 /// Binds given `property` to continousValues of given `textView`
 public func <~> (textView: UITextView, property: MutableProperty<String?>) {
-    textView.reactive.text <~ property.producer.skipRepeats()
+    textView.reactive.text <~ property.producer.skipRepeats { $0 == $1 }
     property <~ textView.reactive.continuousTextValues
 }
 
