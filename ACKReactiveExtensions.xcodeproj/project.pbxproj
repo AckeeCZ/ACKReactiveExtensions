@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
 		699B58DA1FF5285600FFDC91 /* ArgoMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58D81FF5285600FFDC91 /* ArgoMapping.swift */; };
 		699B58DE1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58DC1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift */; };
 		699B58DF1FF5286700FFDC91 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58DD1FF5286700FFDC91 /* Core.swift */; };
@@ -93,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69470C63200763C00013A386 /* ActionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtensions.swift; sourceTree = "<group>"; };
 		699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		699B584D1FF526B100FFDC91 /* ACKReactiveExtensionsUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		699B585A1FF526B900FFDC91 /* ACKReactiveExtensionsWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				699B58DC1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift */,
+				69470C63200763C00013A386 /* ActionExtensions.swift */,
 				699B58DD1FF5286700FFDC91 /* Core.swift */,
 				699B58D21FF5279C00FFDC91 /* Supporting files */,
 			);
@@ -795,6 +798,7 @@
 			files = (
 				699B58DF1FF5286700FFDC91 /* Core.swift in Sources */,
 				699B58DE1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift in Sources */,
+				69470C64200763C00013A386 /* ActionExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
