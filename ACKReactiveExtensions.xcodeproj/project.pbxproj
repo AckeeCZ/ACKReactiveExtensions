@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		699B58DA1FF5285600FFDC91 /* ArgoMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58D81FF5285600FFDC91 /* ArgoMapping.swift */; };
-		699B58DB1FF5285600FFDC91 /* ArgoDeprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58D91FF5285600FFDC91 /* ArgoDeprecations.swift */; };
 		699B58DE1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58DC1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift */; };
 		699B58DF1FF5286700FFDC91 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58DD1FF5286700FFDC91 /* Core.swift */; };
 		699B58E11FF5287900FFDC91 /* MarshalMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E01FF5287900FFDC91 /* MarshalMapping.swift */; };
@@ -119,7 +118,6 @@
 		699B58BA1FF5273C00FFDC91 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		699B58BB1FF5273C00FFDC91 /* WebKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebKit.h; sourceTree = "<group>"; };
 		699B58D81FF5285600FFDC91 /* ArgoMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoMapping.swift; sourceTree = "<group>"; };
-		699B58D91FF5285600FFDC91 /* ArgoDeprecations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoDeprecations.swift; sourceTree = "<group>"; };
 		699B58DC1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACKReactiveExtensionsConfiguration.swift; sourceTree = "<group>"; };
 		699B58DD1FF5286700FFDC91 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		699B58E01FF5287900FFDC91 /* MarshalMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarshalMapping.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 		699B58A41FF5273C00FFDC91 /* Argo */ = {
 			isa = PBXGroup;
 			children = (
-				699B58D91FF5285600FFDC91 /* ArgoDeprecations.swift */,
 				699B58D81FF5285600FFDC91 /* ArgoMapping.swift */,
 				699B58D31FF527A600FFDC91 /* Supporting files */,
 			);
@@ -823,7 +820,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				699B58DA1FF5285600FFDC91 /* ArgoMapping.swift in Sources */,
-				699B58DB1FF5285600FFDC91 /* ArgoDeprecations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
