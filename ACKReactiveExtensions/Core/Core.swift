@@ -116,3 +116,37 @@ public func lazyMutableProperty<T>(_ host: AnyObject, _ key: UnsafeRawPointer, _
         return property
     }
 }
+
+extension Signal {
+    /**
+     * Debounce value only if given condition is fulfilled.
+     *
+     * - parameter timeInterval: Time to debounce
+     * - parameter scheduler: Scheduler on which to send values
+     * - parameter if: Closure to determine if we should debounce given value
+     * - returns: Conditionally debounced signal
+     */
+    func debounce(_ timeInterval: TimeInterval, on scheduler: DateScheduler, if condition: @escaping (Value) -> Bool) -> Signal<Value, Error> {
+        return flatMap(.latest) { value -> SignalProducer<Value, Error> in
+            if condition(value) {
+                return SignalProducer(value: value).delay(timeInterval, on: scheduler)
+            }
+            
+            return SignalProducer(value: value).observe(on: scheduler)
+        }
+    }
+}
+
+extension SignalProducer {
+    /**
+     * Debounce value only if given condition is fulfilled.
+     *
+     * - parameter timeInterval: Time to debounce
+     * - parameter scheduler: Scheduler on which to send values
+     * - parameter if: Closure to determine if we should debounce given value
+     * - returns: Conditionally debounced producer
+     */
+    func debounce(_ timeInterval: TimeInterval, on scheduler: DateScheduler, if condition: @escaping (Value) -> Bool) -> SignalProducer<Value, Error> {
+        return lift { $0.debounce(timeInterval, on: scheduler, if: condition) }
+    }
+}
