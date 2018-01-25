@@ -39,6 +39,8 @@
 		699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		69BDC496201A477800591992 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 69BDC494201A477700591992 /* Cartfile */; };
+		69BDC497201A477800591992 /* ACKReactiveExtensions.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		699B59161FF5305F00FFDC91 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		699B59171FF5305F00FFDC91 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		699B591B1FF53A0800FFDC91 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
+		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 		690B9FAF1FF526770098BEC6 = {
 			isa = PBXGroup;
 			children = (
+				69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */,
+				69BDC494201A477700591992 /* Cartfile */,
 				699B58A31FF5273C00FFDC91 /* ACKReactiveExtensions */,
 				699B58401FF526A000FFDC91 /* Products */,
 				699B58EF1FF52E2D00FFDC91 /* Frameworks */,
@@ -718,6 +724,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BDC496201A477800591992 /* Cartfile in Resources */,
+				69BDC497201A477800591992 /* ACKReactiveExtensions.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
