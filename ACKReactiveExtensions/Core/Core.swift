@@ -27,6 +27,14 @@ extension SignalProducer {
     }
 }
 
+extension Signal {
+    public static func interrupted() -> Signal<Value, Error> {
+        return Signal<Value, Error> { observer, _ in
+            observer.sendInterrupted()
+        }
+    }
+}
+
 extension SignalProducer where Value == Void, Error == NoError {
     /// Perform side effect
     public static func sideEffect(actions: @escaping () -> ()) -> SignalProducer<(), NoError> {
