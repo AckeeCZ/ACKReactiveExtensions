@@ -14,10 +14,16 @@ import Result
 //MARK: ReactiveCocoa
 
 extension SignalProducer {
-    
     /// Ignore errors and return SignalProducer that completes instead of error
     public func ignoreError() -> SignalProducer<Value, NoError> {
         return flatMapError { _ in .empty }
+    }
+    
+    /// Create interrupted producer
+    public static func interrupted() -> Signal<Value, Error> {
+        return Signal<Value, Error> { observer, _ in
+            observer.sendInterrupted()
+        }
     }
 }
 
