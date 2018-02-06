@@ -23,7 +23,7 @@
 		699B58E51FF5289A00FFDC91 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */; };
 		699B58E71FF528AA00FFDC91 /* SDWebImage+RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E61FF528AA00FFDC91 /* SDWebImage+RAC.swift */; };
 		699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */; };
-		699B58ED1FF52DD700FFDC91 /* WebKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58EC1FF52DD600FFDC91 /* WebKitExtensions.swift */; };
+		699B58ED1FF52DD700FFDC91 /* WKWebViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58EC1FF52DD600FFDC91 /* WKWebViewExtensions.swift */; };
 		699B58F31FF52E2D00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B58F41FF52E2D00FFDC91 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
 		699B58F51FF52E2D00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
@@ -142,7 +142,7 @@
 		699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
 		699B58E61FF528AA00FFDC91 /* SDWebImage+RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDWebImage+RAC.swift"; sourceTree = "<group>"; };
 		699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldBinding.swift; sourceTree = "<group>"; };
-		699B58EC1FF52DD600FFDC91 /* WebKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebKitExtensions.swift; sourceTree = "<group>"; };
+		699B58EC1FF52DD600FFDC91 /* WKWebViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewExtensions.swift; sourceTree = "<group>"; };
 		699B58F01FF52E2D00FFDC91 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
@@ -354,7 +354,7 @@
 		699B58B91FF5273C00FFDC91 /* WebKit */ = {
 			isa = PBXGroup;
 			children = (
-				699B58EC1FF52DD600FFDC91 /* WebKitExtensions.swift */,
+				699B58EC1FF52DD600FFDC91 /* WKWebViewExtensions.swift */,
 				699B58CC1FF5276E00FFDC91 /* Supporting files */,
 			);
 			path = WebKit;
@@ -846,7 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B58ED1FF52DD700FFDC91 /* WebKitExtensions.swift in Sources */,
+				699B58ED1FF52DD700FFDC91 /* WKWebViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
