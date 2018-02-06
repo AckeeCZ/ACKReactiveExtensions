@@ -21,13 +21,6 @@ extension SignalProducer {
     }
 }
 
-/// Merge array of producers to a single SignalProducer
-@available(*, deprecated, message: "Use native SignalProducer.merge()")
-public func merge<T, E>(signals: [SignalProducer<T, E>]) -> SignalProducer<T, E> {
-    let producers = SignalProducer<SignalProducer<T, E>, E>(signals)
-    return producers.flatten(.merge)
-}
-
 extension SignalProducer where Value == Void, Error == NoError {
     /// Perform side effect
     public static func sideEffect(actions: @escaping () -> ()) -> SignalProducer<(), NoError> {

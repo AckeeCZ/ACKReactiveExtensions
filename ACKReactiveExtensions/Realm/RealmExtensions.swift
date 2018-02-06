@@ -6,9 +6,13 @@
 //  Copyright © 2015 Ackee s.r.o. All rights reserved.
 //
 
-import Foundation
-import ReactiveSwift
+import UIKit
 import RealmSwift
+import ReactiveSwift
+
+#if !COCOAPODS
+    import ACKReactiveExtensionsCore
+#endif
 
 /// Error return in case of Realm operation failure
 public struct RealmError : Error {

@@ -11,6 +11,10 @@ import Result
 import ReactiveSwift
 import protocol Argo.Decodable
 
+#if !COCOAPODS
+ import ACKReactiveExtensionsCore
+#endif
+
 /**
  * Protocol that allows creation of custom Decode errors
  */

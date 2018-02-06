@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '3.0.0'
+  s.version          = '3.1.2'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
 
   s.description      = <<-DESC
@@ -28,47 +28,47 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveCocoa', '~> 7.0'
 
   s.subspec 'Core' do |core|
-    core.source_files = 'ACKReactiveExtensions/Core/**/*'
+    core.source_files = 'ACKReactiveExtensions/Core/*.swift'
   end
 
   s.subspec 'UIKit' do |uikit|
     uikit.dependency 'ACKReactiveExtensions/Core'
-    uikit.source_files = 'ACKReactiveExtensions/UIKit/**/*'
+    uikit.source_files = 'ACKReactiveExtensions/UIKit/*.swift'
   end
 
   s.subspec 'Argo' do |argo|
     argo.dependency 'ACKReactiveExtensions/Core'
-    argo.dependency 'Argo', '>= 4.1.2', '< 5.0'
-    argo.source_files = 'ACKReactiveExtensions/Argo/**/*'
+    argo.dependency 'Argo', '~> 4.1'
+    argo.source_files = 'ACKReactiveExtensions/Argo/*.swift'
   end
 
   s.subspec 'Reachability' do |reachability|
     reachability.dependency 'ACKReactiveExtensions/Core'
-    reachability.dependency 'Reachability'
-    reachability.source_files = 'ACKReactiveExtensions/Reachability/**/*'
+    reachability.dependency 'ReachabilitySwift', '~> 4.1'
+    reachability.source_files = 'ACKReactiveExtensions/Reachability/*.swift'
   end
 
   s.subspec 'SDWebImage' do |sdwebimage|
     sdwebimage.dependency 'ACKReactiveExtensions/Core'
     sdwebimage.dependency 'SDWebImage', '~> 4.0'
-    sdwebimage.source_files = 'ACKReactiveExtensions/SDWebImage/**/*'
+    sdwebimage.source_files = 'ACKReactiveExtensions/SDWebImage/*.swift'
   end
 
   s.subspec 'WebKit' do |webkit|
     webkit.dependency 'ACKReactiveExtensions/Core'
-    webkit.source_files = 'ACKReactiveExtensions/WebKit/**/*'
+    webkit.source_files = 'ACKReactiveExtensions/WebKit/*.swift'
   end
 
   s.subspec 'Realm' do |realm|
     realm.dependency 'ACKReactiveExtensions/Core'
     realm.dependency 'RealmSwift', '~> 3.0'
-    realm.source_files = 'ACKReactiveExtensions/Realm/**/*'
+    realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
   end
-  
+
   s.subspec 'Marshal' do |marshal|
     marshal.dependency 'ACKReactiveExtensions/Core'
     marshal.dependency 'Marshal', '~> 1.2'
-    marshal.source_files = 'ACKReactiveExtensions/Marshal/**/*'
+    marshal.source_files = 'ACKReactiveExtensions/Marshal/*.swift'
   end
 
 end
