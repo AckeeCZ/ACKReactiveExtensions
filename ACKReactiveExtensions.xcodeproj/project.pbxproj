@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
+		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
+		698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88002029AE3C0099B8FB /* CALayerExtensions.swift */; };
+		698F88032029B3310099B8FB /* UINavigationItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88022029B3310099B8FB /* UINavigationItemExtensions.swift */; };
+		698F88052029B3760099B8FB /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88042029B3760099B8FB /* UITextFieldExtensions.swift */; };
+		698F88072029B3A10099B8FB /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88062029B3A10099B8FB /* UIStackViewExtensions.swift */; };
 		699B58DA1FF5285600FFDC91 /* ArgoMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58D81FF5285600FFDC91 /* ArgoMapping.swift */; };
 		699B58DE1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58DC1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift */; };
 		699B58DF1FF5286700FFDC91 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58DD1FF5286700FFDC91 /* Core.swift */; };
@@ -15,7 +20,6 @@
 		699B58E31FF5289000FFDC91 /* RACReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E21FF5289000FFDC91 /* RACReachability.swift */; };
 		699B58E51FF5289A00FFDC91 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */; };
 		699B58E71FF528AA00FFDC91 /* SDWebImage+RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E61FF528AA00FFDC91 /* SDWebImage+RAC.swift */; };
-		699B58EA1FF52DCC00FFDC91 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E81FF52DCC00FFDC91 /* UIKitExtensions.swift */; };
 		699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */; };
 		699B58ED1FF52DD700FFDC91 /* WebKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58EC1FF52DD600FFDC91 /* WebKitExtensions.swift */; };
 		699B58F31FF52E2D00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
@@ -97,6 +101,11 @@
 
 /* Begin PBXFileReference section */
 		69470C63200763C00013A386 /* ActionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtensions.swift; sourceTree = "<group>"; };
+		698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		698F88002029AE3C0099B8FB /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
+		698F88022029B3310099B8FB /* UINavigationItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItemExtensions.swift; sourceTree = "<group>"; };
+		698F88042029B3760099B8FB /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		698F88062029B3A10099B8FB /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
 		699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		699B584D1FF526B100FFDC91 /* ACKReactiveExtensionsUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		699B585A1FF526B900FFDC91 /* ACKReactiveExtensionsWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +137,6 @@
 		699B58E21FF5289000FFDC91 /* RACReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACReachability.swift; sourceTree = "<group>"; };
 		699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
 		699B58E61FF528AA00FFDC91 /* SDWebImage+RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDWebImage+RAC.swift"; sourceTree = "<group>"; };
-		699B58E81FF52DCC00FFDC91 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldBinding.swift; sourceTree = "<group>"; };
 		699B58EC1FF52DD600FFDC91 /* WebKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebKitExtensions.swift; sourceTree = "<group>"; };
 		699B58F01FF52E2D00FFDC91 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -327,7 +335,11 @@
 			isa = PBXGroup;
 			children = (
 				699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */,
-				699B58E81FF52DCC00FFDC91 /* UIKitExtensions.swift */,
+				698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */,
+				698F88002029AE3C0099B8FB /* CALayerExtensions.swift */,
+				698F88022029B3310099B8FB /* UINavigationItemExtensions.swift */,
+				698F88042029B3760099B8FB /* UITextFieldExtensions.swift */,
+				698F88062029B3A10099B8FB /* UIStackViewExtensions.swift */,
 				699B58CD1FF5277600FFDC91 /* Supporting files */,
 			);
 			path = UIKit;
@@ -814,7 +826,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B58EA1FF52DCC00FFDC91 /* UIKitExtensions.swift in Sources */,
+				698F88032029B3310099B8FB /* UINavigationItemExtensions.swift in Sources */,
+				698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */,
+				698F88052029B3760099B8FB /* UITextFieldExtensions.swift in Sources */,
+				698F88072029B3A10099B8FB /* UIStackViewExtensions.swift in Sources */,
+				698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */,
 				699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
