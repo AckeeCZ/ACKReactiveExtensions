@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
+		691F8594202A0E8000DA4FAD /* RealmObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8593202A0E8000DA4FAD /* RealmObjectExtensions.swift */; };
 		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
 		698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88002029AE3C0099B8FB /* CALayerExtensions.swift */; };
 		698F88032029B3310099B8FB /* UINavigationItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88022029B3310099B8FB /* UINavigationItemExtensions.swift */; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		69470C63200763C00013A386 /* ActionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtensions.swift; sourceTree = "<group>"; };
+		691F8593202A0E8000DA4FAD /* RealmObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectExtensions.swift; sourceTree = "<group>"; };
 		698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		698F88002029AE3C0099B8FB /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
 		698F88022029B3310099B8FB /* UINavigationItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItemExtensions.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */,
+				691F8593202A0E8000DA4FAD /* RealmObjectExtensions.swift */,
 				699B58CF1FF5278300FFDC91 /* Supporting files */,
 			);
 			path = Realm;
@@ -871,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691F8594202A0E8000DA4FAD /* RealmObjectExtensions.swift in Sources */,
 				699B58E51FF5289A00FFDC91 /* RealmExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
