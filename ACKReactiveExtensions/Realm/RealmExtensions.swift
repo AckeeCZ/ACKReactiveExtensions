@@ -40,23 +40,54 @@ public extension Reactive where Base: RealmCollection {
         var notificationToken: NotificationToken? = nil
         
         let producer: SignalProducer<Change<Base>, RealmError> = SignalProducer { sink, d in
-            notificationToken = self.base.observe { (changes) in
-                switch changes {
-                case .initial(let initial):
-                    sink.send(value: Change.initial(initial))
-                case .update(let updates, let deletions, let insertions, let modifications):
-                    sink.send(value: Change.update(updates, deletions: deletions, insertions: insertions, modifications: modifications))
-                case .error(let e):
-                    sink.send(error: RealmError(underlyingError: e as NSError))
+            guard let realm = self.base.realm else {
+                print("Cannot observe object without Realm")
+                return
+            }
+            
+            func observe() -> NotificationToken? {
+                return self.base.observe { (changes) in
+                    switch changes {
+                    case .initial(let initial):
+                        sink.send(value: Change.initial(initial))
+                    case .update(let updates, let deletions, let insertions, let modifications):
+                        sink.send(value: Change.update(updates, deletions: deletions, insertions: insertions, modifications: modifications))
+                    case .error(let e):
+                        sink.send(error: RealmError(underlyingError: e as NSError))
+                    }
                 }
             }
-        }.on(terminated: {
-            notificationToken?.invalidate()
-            notificationToken = nil
-        }, disposed: {
-            notificationToken?.invalidate()
-            notificationToken = nil
-        })
+            
+            let registerObserverIfPossible: () -> (Bool, NotificationToken?) = {
+                if !realm.isInWriteTransaction { return (true, observe()) }
+                return (false, nil)
+            }
+            
+            var counter = 0
+            let maxRetries = 10
+            
+            func registerWhileNotSuccessful(queue: DispatchQueue) {
+                let (registered, token) = registerObserverIfPossible()
+                
+                guard !registered, counter < maxRetries else { notificationToken = token; return  }
+                
+                counter += 1
+                
+                queue.async { registerWhileNotSuccessful(queue: queue) }
+            }
+            
+            if let opQueue = OperationQueue.current, let dispatchQueue = opQueue.underlyingQueue {
+                registerWhileNotSuccessful(queue: dispatchQueue)
+            } else {
+                notificationToken = observe()
+            }
+            }.on(terminated: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            }, disposed: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            })
         
         return producer
     }
@@ -92,6 +123,7 @@ public extension Reactive where Base: Object {
         return SignalProducer<Base, RealmError> { sink, d in
             do {
                 let realm = try Realm()
+                realm.refresh()
                 try realm.write {
                     if let writeBlock = writeBlock {
                         writeBlock(realm)
@@ -115,6 +147,7 @@ public extension Reactive where Base: Object {
         return SignalProducer { sink, d in
             do {
                 let realm = try Realm()
+                realm.refresh()
                 try realm.write {
                     realm.delete(self.base)
                 }
@@ -126,8 +159,72 @@ public extension Reactive where Base: Object {
         }
     }
     
+    public var changes: SignalProducer<ObjectChange, RealmError> {
+        var notificationToken: NotificationToken? = nil
+        
+        let producer: SignalProducer<ObjectChange, RealmError> = SignalProducer { sink, d in
+            guard let realm = self.base.realm else {
+                print("Cannot observe object without Realm")
+                return
+            }
+            
+            func observe() -> NotificationToken? {
+                return self.base.observe { change in
+                    switch change {
+                    case .error(let e):
+                        sink.send(error: RealmError(underlyingError: e))
+                    default:
+                        sink.send(value: change)
+                    }
+                }
+            }
+            
+            let registerObserverIfPossible: () -> (Bool, NotificationToken?) = {
+                if !realm.isInWriteTransaction { return (true, observe()) }
+                return (false, nil)
+            }
+            
+            var counter = 0
+            let maxRetries = 10
+            
+            func registerWhileNotSuccessful(queue: DispatchQueue) {
+                let (registered, token) = registerObserverIfPossible()
+                
+                guard !registered, counter < maxRetries else { notificationToken = token; return  }
+                
+                counter += 1
+                
+                queue.async { registerWhileNotSuccessful(queue: queue) }
+            }
+            
+            if let opQueue = OperationQueue.current, let dispatchQueue = opQueue.underlyingQueue {
+                registerWhileNotSuccessful(queue: dispatchQueue)
+            } else {
+                notificationToken = observe()
+            }
+            }.on(terminated: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            }, disposed: {
+                notificationToken?.invalidate()
+                notificationToken = nil
+            })
+        
+        return producer
+    }
+    
+    public var values: SignalProducer<Base, RealmError> {
+        return self.changes
+            .filter { if case .deleted = $0 { return false }; return true }
+            .map { _ in
+                return self.base
+        }
+    }
+    
+    public var property: ReactiveSwift.Property<Base> {
+        return ReactiveSwift.Property(initial: base, then: values.ignoreError() )
+    }
 }
-
 
 //MARK: Table view
 
@@ -187,9 +284,9 @@ func ~==(lhs: PrimaryKeyEquatable, rhs: PrimaryKeyEquatable) -> Bool {
     }
     
     guard let primaryKey = type(of: lhs).primaryKey(), let lValue = lhs[primaryKey],
-    let rValue = rhs[primaryKey] else {
-        assertionFailure("Trying to compare object that has no primary key");
-        return false
+        let rValue = rhs[primaryKey] else {
+            assertionFailure("Trying to compare object that has no primary key");
+            return false
     }
     
     if let l = lValue as? String, let r = rValue as? String {
