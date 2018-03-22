@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		691F8594202A0E8000DA4FAD /* RealmObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8593202A0E8000DA4FAD /* RealmObjectExtensions.swift */; };
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
 		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
@@ -854,7 +853,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				691F8594202A0E8000DA4FAD /* RealmObjectExtensions.swift in Sources */,
 				699B58E51FF5289A00FFDC91 /* RealmExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
