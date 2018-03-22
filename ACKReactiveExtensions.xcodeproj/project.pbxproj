@@ -45,8 +45,6 @@
 		699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
-		69BDC496201A477800591992 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 69BDC494201A477700591992 /* Cartfile */; };
-		69BDC497201A477800591992 /* ACKReactiveExtensions.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -651,7 +649,6 @@
 				699B58971FF5270100FFDC91 /* Frameworks */,
 				699B58981FF5270100FFDC91 /* Headers */,
 				699B58991FF5270100FFDC91 /* Resources */,
-				699B591D1FF53A2F00FFDC91 /* Carthage stuff */,
 			);
 			buildRules = (
 			);
@@ -742,8 +739,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69BDC496201A477800591992 /* Cartfile in Resources */,
-				69BDC497201A477800591992 /* ACKReactiveExtensions.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,25 +792,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		699B591D1FF53A2F00FFDC91 /* Carthage stuff */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
-			);
-			name = "Carthage stuff";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reachability.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		699B583A1FF526A000FFDC91 /* Sources */ = {
