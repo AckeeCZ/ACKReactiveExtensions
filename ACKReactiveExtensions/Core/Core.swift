@@ -20,8 +20,8 @@ extension SignalProducer {
     }
     
     /// Create interrupted producer
-    public static func interrupted() -> Signal<Value, Error> {
-        return Signal<Value, Error> { observer, _ in
+    public static func interrupted() -> SignalProducer<Value, Error> {
+        return SignalProducer<Value, Error> { observer, _ in
             observer.sendInterrupted()
         }
     }
