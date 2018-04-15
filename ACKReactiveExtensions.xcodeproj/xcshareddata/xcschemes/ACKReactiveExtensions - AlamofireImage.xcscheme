@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "699C4F8C20838B6300AEEAA1"
-               BuildableName = "AlamofireImage.framework"
+               BuildableName = "ACKReactiveExtensionsAlamofireImage.framework"
                BlueprintName = "AlamofireImage"
                ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699C4F8C20838B6300AEEAA1"
-            BuildableName = "AlamofireImage.framework"
+            BuildableName = "ACKReactiveExtensionsAlamofireImage.framework"
             BlueprintName = "AlamofireImage"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "699C4F8C20838B6300AEEAA1"
-            BuildableName = "AlamofireImage.framework"
+            BuildableName = "ACKReactiveExtensionsAlamofireImage.framework"
             BlueprintName = "AlamofireImage"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>

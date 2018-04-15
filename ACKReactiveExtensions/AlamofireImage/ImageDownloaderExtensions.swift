@@ -20,12 +20,11 @@ public struct ImageDownloadError: Error {
 }
 
 extension Reactive where Base: ImageDownloader {
-    public func loadImage(with url: URL) -> SignalProducer<UIImage, ImageDownloadError> {
+    public func loadImage(with url: URL, filter: ImageFilter? = nil) -> SignalProducer<UIImage, ImageDownloadError> {
         return SignalProducer { [weak base = base] observer, lifetime in
             guard let base = base else { observer.sendInterrupted(); return }
-            
             let request = URLRequest(url: url)
-            base.download(request) { response in
+            base.download(request, filter: filter) { response in
                 switch response.result {
                 case .success(let image):
                     observer.send(value: image)
