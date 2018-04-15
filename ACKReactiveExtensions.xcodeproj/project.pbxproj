@@ -44,6 +44,7 @@
 		699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		699C4F872083892300AEEAA1 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		699B59161FF5305F00FFDC91 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		699B59171FF5305F00FFDC91 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		699B591B1FF53A0800FFDC91 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
 		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -341,6 +343,7 @@
 				691F8595202A106600DA4FAD /* UIControlExtensions.swift */,
 				698F88022029B3310099B8FB /* UINavigationItemExtensions.swift */,
 				698F88062029B3A10099B8FB /* UIStackViewExtensions.swift */,
+				699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */,
 				698F88042029B3760099B8FB /* UITextFieldExtensions.swift */,
 				698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */,
 				699B58CD1FF5277600FFDC91 /* Supporting files */,
@@ -814,6 +817,7 @@
 				698F88072029B3A10099B8FB /* UIStackViewExtensions.swift in Sources */,
 				698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */,
 				699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */,
+				699C4F872083892300AEEAA1 /* UITableViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
