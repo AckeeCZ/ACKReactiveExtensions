@@ -11,7 +11,7 @@ import ReactiveSwift
 extension Reactive where Base: UITableView {
     
     /// Reactively set `tableHeaderView`
-    var tableHeaderView: BindingTarget<UIView?> {
+    public var tableHeaderView: BindingTarget<UIView?> {
         return makeBindingTarget { $0.tableHeaderView = $1 }
     }
 }
