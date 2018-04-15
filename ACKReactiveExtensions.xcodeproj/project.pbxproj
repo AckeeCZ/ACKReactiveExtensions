@@ -49,6 +49,7 @@
 		699C4F9A20838C0900AEEAA1 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4F9820838C0900AEEAA1 /* AlamofireImage.framework */; };
 		699C4F9B20838C0900AEEAA1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4F9920838C0900AEEAA1 /* Alamofire.framework */; };
 		699C4F9C20838C4500AEEAA1 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
+		699C4F9E20838EB600AEEAA1 /* ImageDownloaderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		699C4F9520838BB700AEEAA1 /* AlamofireImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireImageExtensions.swift; sourceTree = "<group>"; };
 		699C4F9820838C0900AEEAA1 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		699C4F9920838C0900AEEAA1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderExtensions.swift; sourceTree = "<group>"; };
 		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
 		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -475,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				699C4F9520838BB700AEEAA1 /* AlamofireImageExtensions.swift */,
+				699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */,
 				699C4F9720838BBE00AEEAA1 /* Supporting files */,
 			);
 			path = AlamofireImage;
@@ -951,6 +954,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699C4F9E20838EB600AEEAA1 /* ImageDownloaderExtensions.swift in Sources */,
 				699C4F9620838BB700AEEAA1 /* AlamofireImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

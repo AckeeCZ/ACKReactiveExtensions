@@ -11,7 +11,7 @@ import ReactiveSwift
 import AlamofireImage
 
 extension Reactive where Base: UIImageView {
-    var imageURL: BindingTarget<URL> {
+    public var imageURL: BindingTarget<URL> {
         return makeBindingTarget { $0.af_setImage(withURL: $1) }
     }
 }
