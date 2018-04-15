@@ -4,3 +4,4 @@ github "realm/realm-cocoa" ~> 3.0
 github "utahiosmac/Marshal" ~> 1.2
 github "thoughtbot/Argo" ~> 4.1
 github "ashleymills/Reachability.swift" ~> 4.1
+github "Alamofire/AlamofireImage" ~> 3.3
