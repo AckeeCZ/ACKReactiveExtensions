@@ -70,5 +70,11 @@ Pod::Spec.new do |s|
     marshal.dependency 'Marshal', '~> 1.2'
     marshal.source_files = 'ACKReactiveExtensions/Marshal/*.swift'
   end
+  
+  s.subspec 'AlamofireImage' do |marshal|
+      marshal.dependency 'ACKReactiveExtensions/Core'
+      marshal.dependency 'AlamofireImage', '~> 3.3'
+      marshal.source_files = 'ACKReactiveExtensions/AlamofireImage/*.swift'
+  end
 
 end
