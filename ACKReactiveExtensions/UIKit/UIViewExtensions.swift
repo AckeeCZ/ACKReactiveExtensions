@@ -18,4 +18,9 @@ extension Reactive where Base: UIView {
     private var isHiddenSignal: Signal<Bool, NoError> {
         return signal(forKeyPath: "hidden").map { $0 as? Bool }.skipNil()
     }
+    
+    /// Reactively set `transform`
+    public var transform: BindingTarget<CGAffineTransform> {
+        return makeBindingTarget { $0.transform = $1 }
+    }
 }
