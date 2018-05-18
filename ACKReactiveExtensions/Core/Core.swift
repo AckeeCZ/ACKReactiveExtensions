@@ -33,6 +33,14 @@ extension Signal {
             observer.sendInterrupted()
         }
     }
+
+    /// Creates new signal by merging `Self` with other signal.
+    ///
+    /// - Parameter other: Signal to merge `Self` with
+    /// - Returns: New Signal
+    public func merge(with other: Signal<Value, Error>) -> Signal<Value, Error> {
+        return Signal.merge([self, other])
+    }
 }
 
 extension SignalProducer where Value == Void, Error == NoError {
@@ -60,6 +68,14 @@ extension SignalProducer {
             observer.send(value: lazyValue())
             observer.sendCompleted()
         }
+    }
+
+    /// Creates new signal producer by merging `Self` with other producer.
+    ///
+    /// - Parameter other: Producer to merge `Self` with
+    /// - Returns: New SignalProducer
+    public func merge(with other: SignalProducer<Value, Error>) -> SignalProducer<Value, Error> {
+        return SignalProducer.merge([self, other])
     }
 }
 
