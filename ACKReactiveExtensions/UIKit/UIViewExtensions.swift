@@ -23,4 +23,11 @@ extension Reactive where Base: UIView {
     public var transform: BindingTarget<CGAffineTransform> {
         return makeBindingTarget { $0.transform = $1 }
     }
+    
+    /// End editing reactively
+    public var endEditing: BindingTarget<Void> {
+        return makeBindingTarget { base, _ in
+            base.endEditing(true)
+        }
+    }
 }

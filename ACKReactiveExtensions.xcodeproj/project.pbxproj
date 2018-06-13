@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
+		6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
 		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
 		698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88002029AE3C0099B8FB /* CALayerExtensions.swift */; };
@@ -44,13 +45,13 @@
 		699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		699C4F872083892300AEEAA1 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */; };
 		699C4F9120838B6300AEEAA1 /* AlamofireImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 699C4F8F20838B6300AEEAA1 /* AlamofireImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		699C4F9620838BB700AEEAA1 /* AlamofireImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9520838BB700AEEAA1 /* AlamofireImageExtensions.swift */; };
 		699C4F9A20838C0900AEEAA1 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4F9820838C0900AEEAA1 /* AlamofireImage.framework */; };
 		699C4F9B20838C0900AEEAA1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4F9920838C0900AEEAA1 /* Alamofire.framework */; };
 		699C4F9C20838C4500AEEAA1 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
 		699C4F9E20838EB600AEEAA1 /* ImageDownloaderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */; };
-		699C4F872083892300AEEAA1 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 /* Begin PBXFileReference section */
 		691F8593202A0E8000DA4FAD /* RealmObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectExtensions.swift; sourceTree = "<group>"; };
 		691F8595202A106600DA4FAD /* UIControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
+		6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		69470C63200763C00013A386 /* ActionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtensions.swift; sourceTree = "<group>"; };
 		698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		698F88002029AE3C0099B8FB /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		699B59161FF5305F00FFDC91 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		699B59171FF5305F00FFDC91 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		699B591B1FF53A0800FFDC91 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		699C4F8D20838B6300AEEAA1 /* ACKReactiveExtensionsAlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensionsAlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		699C4F8F20838B6300AEEAA1 /* AlamofireImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlamofireImage.h; sourceTree = "<group>"; };
 		699C4F9020838B6300AEEAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +167,6 @@
 		699C4F9820838C0900AEEAA1 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		699C4F9920838C0900AEEAA1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderExtensions.swift; sourceTree = "<group>"; };
-		699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
 		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -370,6 +372,7 @@
 				698F88062029B3A10099B8FB /* UIStackViewExtensions.swift */,
 				699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */,
 				698F88042029B3760099B8FB /* UITextFieldExtensions.swift */,
+				6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */,
 				698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */,
 				699B58CD1FF5277600FFDC91 /* Supporting files */,
 			);
@@ -899,6 +902,7 @@
 				691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */,
 				698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */,
 				698F88052029B3760099B8FB /* UITextFieldExtensions.swift in Sources */,
+				6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */,
 				698F88072029B3A10099B8FB /* UIStackViewExtensions.swift in Sources */,
 				698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */,
 				699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */,
