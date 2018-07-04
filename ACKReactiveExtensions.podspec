@@ -1,27 +1,15 @@
-#
-# Be sure to run `pod lib lint ACKReactiveExtensions.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '3.2.1'
+  s.version          = '3.3.0'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
-
   s.description      = <<-DESC
   Use ReactiveCocoa with various iOS components.
                        DESC
-
   s.homepage         = 'https://github.com/AckeeCZ/ACKReactiveExtensions'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ackee' => 'info@ackee.cz' }
   s.source           = { :git => 'https://github.com/AckeeCZ/ACKReactiveExtensions.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.3'
-
-#s.source_files = ''
 
   s.default_subspec = 'Core','UIKit'
 
