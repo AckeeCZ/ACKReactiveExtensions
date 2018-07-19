@@ -13,12 +13,10 @@ extension Action {
                 case (true, _): return events.dematerialize().producer
                 case (false, false): return SignalProducer<Output, Error>.interrupted()
                 case (false, true): return events.dematerialize().producer
-                    .on(
-                        started: { [weak self] in disposable = self?.apply(input).start() },
-                        disposed: { disposable?.dispose() }
-                    )
                 }
-        }
+            }
+            .on(started: { [weak self] in disposable = self?.apply(input).start() },
+                disposed: { disposable?.dispose() })
     }
 }
 
