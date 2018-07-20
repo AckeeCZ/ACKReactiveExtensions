@@ -10,6 +10,7 @@
 ACKReactiveExtensions is set of useful extensions for ReactiveCocoa you could use in your apps.
 
 Currently we have extensions for
+- [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
 - [Argo](https://github.com/thoughtbot/Argo)
 - [Marshal](https://github.com/utahiosmac/Marshal)
 - [Reachability](https://github.com/tonymillion/Reachability)
@@ -40,6 +41,7 @@ For Swift 2.x compatible version use ACKReactiveExtensions in 1.2.x version.
 By using `pod "ACKReactiveExtensions"` you will get only general and UIKit extensions but there are also subspecs you can like/need.
 
 ```ruby
+pod 'ACKReactiveExtensions/AlamofireImage'
 pod 'ACKReactiveExtensions/Argo'
 pod 'ACKReactiveExtensions/Marshal'
 pod 'ACKReactiveExtensions/Reachability'
