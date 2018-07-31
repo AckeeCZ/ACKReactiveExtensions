@@ -61,14 +61,6 @@ extension SignalProducer {
             observer.sendCompleted()
         }
     }
-
-    /// Creates new signal producer by merging `Self` with other producer.
-    ///
-    /// - Parameter other: Producer to merge `Self` with
-    /// - Returns: New SignalProducer
-    public func merge(with other: SignalProducer<Value, Error>) -> SignalProducer<Value, Error> {
-        return SignalProducer.merge([self, other])
-    }
 }
 
 //MARK: Disposing
