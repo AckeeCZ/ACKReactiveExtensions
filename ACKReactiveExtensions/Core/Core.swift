@@ -33,14 +33,6 @@ extension Signal {
             observer.sendInterrupted()
         }
     }
-
-    /// Creates new signal by merging `Self` with other signal.
-    ///
-    /// - Parameter other: Signal to merge `Self` with
-    /// - Returns: New Signal
-    public func merge(with other: Signal<Value, Error>) -> Signal<Value, Error> {
-        return Signal.merge([self, other])
-    }
 }
 
 extension SignalProducer where Value == Void, Error == NoError {
