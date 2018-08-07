@@ -14,4 +14,9 @@ extension Reactive where Base: UITableView {
     public var tableHeaderView: BindingTarget<UIView?> {
         return makeBindingTarget { $0.tableHeaderView = $1 }
     }
+    
+    /// Reactively set `tableFooterView`
+    public var tableFooterView: BindingTarget<UIView?> {
+        return makeBindingTarget { $0.tableFooterView = $1 }
+    }
 }
