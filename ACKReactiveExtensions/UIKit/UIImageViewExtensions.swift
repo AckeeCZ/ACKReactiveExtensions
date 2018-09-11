@@ -10,7 +10,7 @@ import ReactiveSwift
 import enum Result.NoError
 
 extension Reactive where Base: UIImageView {
-    var imageSignal: Signal<UIImage?, NoError> {
+    public var imageSignal: Signal<UIImage?, NoError> {
         return signal(forKeyPath: "image").map { $0 as? UIImage }
     }
 }
