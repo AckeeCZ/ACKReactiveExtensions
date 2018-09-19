@@ -15,18 +15,25 @@ before_deploy:
 - travis_wait 120 carthage build --no-skip-current --platform iOS
 - carthage archive --output $FRAMEWORK_NAME
 script:
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Argo" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Marshal" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - UIKit" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - WebKit" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - SDWebImage" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Reachability" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Realm" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Argo" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Marshal" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - UIKit" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - WebKit" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - SDWebImage" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Reachability" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
+- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Realm" -destination
+  'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
 - pod lib lint --allow-warnings --quick
 deploy:
   provider: releases
   api_key:
-    secure: YDcNgfW9+5xvi2F6CFVpKjRTZRcH1FFW0pzXlKvvS+qKZUomketirPb8eGI0ZJoqAPNEkKpVgkopRBPdLfOoOVI4WiO7fuu/5TTDlIV7C57aUNfY5kplAyjF7o2oLdG1ufDz+WR6awTCmi7ZLMefB2wGFr1ytId5B/W3W2wIAadCIqrarPQs6/zgmkCI9ndc7vTkr4Q7mo0WR0t0fNgBfZ5xIPpt2Uw5SqKNlXSSoH7Ci2THdveu7FryzYFdUZnuQlBxt7Up+j+NNGNQ4Q7QKNxG0pU5yuMedoj+benSR9dJlY1NOpyVvQV1Ou9WSzwi5Ns8U6Kba7tHAhL/leURCSuMbk72OJDgOFLIiAFLUktZmnIDtLEGWL5mL0witePCIrqLh87Ao+st/9twMHR1WNf4y2HrgPF2NUeYThlGpTHb/WPqbj6VOhcmR5OfGxjyMGOI87BWrmUh/StegiNbrL9r7MZjuYUJMRuz99UkI1iUJYVGWVs58z+tiQ8hne60Zktv5Pnhh/nTsHFOjmkdhnPgXvEwaYTtJgrus8HXwjYE/H4LLd8RUGXnjzgMykr3FVJjd06kS3SHR0RfbbaMmmytJxtIotyyPc3dWVTxfyJuS+VY3mMnNN47Hw4vsHuzAN8/1O0PKikEy/W6KYTzxd/nO545HkXiTHZYsdD7m0A=
+    secure: b50PHNZVc8hh6DoEw5PMp3enqeI4MrOG15wLdr0Yox6REmi1ATnJbTkS04vANP2mxvWbKwIMfqE/oYvWcYehbHIKugSh8N4rOBLsVG99HJqnqKI+b/CMuMCKU5RVNfN6HGal/8+V2QyAjgEPM/sDUoZQLYIMBC2GAAxzbtA/cUv8KpT6WcXaxCNhwNbVFHgLktV1gH/sQNTl6SIgXyBNqsbEjiX+x/DeKR1kQ9A7N4OkfenXxFPVvLZrrsrYa1evGH5DCdmekUi4b7Ga2RtObxzpC+yTQoPE483bCdlWnReZ6JFqHSibaTQe0uCX1/hFcZSo9djxUaACGcy6ZYUMlnl9NalUYIpZdZj5AYvn7fy3qcNLAUI4fxwOXsyQE/LeBficbYjggzSUsV9gllNuU+5XsGllw5tQ7BJrGjp5XNugDSm24RtQo3epPTR5LbNn81Rv10bWl2UiThmpRRA88PbJjyhJQr/bjZxPgwfUbD6iNzX/aXc/ISGhIOgVwC6JQP7Iu9w5ZB284yN//GglbN2UiVQ97jmPNmN3rHP0feTYj9Jc+ubs60q1EIZj8wN+4A91RG/p9g0U/zvHhWnqxLwBrBnjSOQpn6l+oOHoQ3CuzGhj+IfOhhZNBiNcKc2FMKdJIxG4gjNJ4NG23CW3Wci+lAyc3Yon91H55l/+bTQ=
   file: "$FRAMEWORK_NAME.framework.zip"
   skip_cleanup: true
   on:
