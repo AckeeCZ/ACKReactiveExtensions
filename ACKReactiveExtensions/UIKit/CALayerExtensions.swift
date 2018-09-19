@@ -18,4 +18,9 @@ extension Reactive where Base: CALayer {
     public var borderColor: BindingTarget<CGColor> {
         return makeBindingTarget { $0.borderColor = $1 }
     }
+    
+    /// Binding that represents `cornerRadius`
+    public var cornerRadius: BindingTarget<CGFloat> {
+        return makeBindingTarget { $0.cornerRadius = $1 }
+    }
 }

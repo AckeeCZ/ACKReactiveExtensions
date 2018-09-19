@@ -30,4 +30,22 @@ extension Reactive where Base: UIView {
             base.endEditing(true)
         }
     }
+    
+    /// Property that represents `frame`
+    public var frame: Property<CGRect> {
+        return Property(initial: base.frame, then: frameSignal)
+    }
+    
+    /// Property that represents `bounds`
+    public var bounds: Property<CGRect> {
+        return Property(initial: base.bounds, then: boundsSignal)
+    }
+    
+    private var frameSignal: Signal<CGRect, NoError> {
+        return signal(forKeyPath: "frame").filterMap { $0 as? CGRect }
+    }
+    
+    private var boundsSignal: Signal<CGRect, NoError> {
+        return signal(forKeyPath: "bounds").filterMap { $0 as? CGRect }
+    }
 }
