@@ -10,9 +10,9 @@ before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
 before_script:
-- travis_wait 60 carthage bootstrap --platform iOS --cache-builds
+- travis_wait 120 carthage bootstrap --platform iOS --cache-builds
 before_deploy:
-- carthage build --no-skip-current --platform iOS
+- travis_wait 120 carthage build --no-skip-current --platform iOS
 - carthage archive $FRAMEWORK_NAME
 script:
 - set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Argo" -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
