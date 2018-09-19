@@ -13,7 +13,7 @@ before_script:
 - travis_wait 120 carthage bootstrap --platform iOS --cache-builds
 before_deploy:
 - travis_wait 120 carthage build --no-skip-current --platform iOS
-- carthage archive --output $FRAMEWORK_NAME
+- carthage archive --output "$FRAMEWORK_NAME.framework.zip"
 script:
 - set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Argo" -destination
   'platform=iOS Simulator,name=iPhone X,OS=11.4' ONLY_ACTIVE_ARCH=YES | xcpretty
