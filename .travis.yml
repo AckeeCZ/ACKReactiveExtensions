@@ -14,7 +14,7 @@ before_script:
 before_deploy:
 - carthage archive --output "$FRAMEWORK_NAME.framework.zip"
 script:
-- carthage build --platform iOS --cache-builds --no-skip-current
+- travis_wait 60 carthage build --platform iOS --cache-builds --no-skip-current
 - pod lib lint --allow-warnings --quick
 deploy:
   provider: releases
