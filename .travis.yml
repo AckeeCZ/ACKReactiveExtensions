@@ -10,18 +10,11 @@ before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
 before_script:
-- travis_wait 120 carthage bootstrap --platform iOS --cache-builds
+- carthage checkout
 before_deploy:
-- travis_wait 120 carthage build --no-skip-current --platform iOS
 - carthage archive --output "$FRAMEWORK_NAME.framework.zip"
 script:
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Argo" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Marshal" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - UIKit" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - WebKit" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - SDWebImage" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Reachability" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
-- set -o pipefail && xcodebuild -scheme "ACKReactiveExtensions - Realm" -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.0' ONLY_ACTIVE_ARCH=YES | xcpretty
+- carthage build --platform iOS --cache-builds --no-skip-current
 - pod lib lint --allow-warnings --quick
 deploy:
   provider: releases
