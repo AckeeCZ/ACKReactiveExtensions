@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '3.5.0'
+  s.version          = '4.0.0'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
   s.description      = <<-DESC
   Use ReactiveCocoa with various iOS components.
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Ackee' => 'info@ackee.cz' }
   s.source           = { :git => 'https://github.com/AckeeCZ/ACKReactiveExtensions.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.3'
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
   s.default_subspec = 'Core','UIKit'
   s.dependency 'ReactiveCocoa', '~> 8.0'
 
