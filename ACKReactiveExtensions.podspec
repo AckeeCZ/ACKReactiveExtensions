@@ -23,24 +23,6 @@ Pod::Spec.new do |s|
     uikit.source_files = 'ACKReactiveExtensions/UIKit/*.swift'
   end
 
-  s.subspec 'Argo' do |argo|
-    argo.dependency 'ACKReactiveExtensions/Core'
-    argo.dependency 'Argo', '~> 4.1'
-    argo.source_files = 'ACKReactiveExtensions/Argo/*.swift'
-  end
-
-  s.subspec 'Reachability' do |reachability|
-    reachability.dependency 'ACKReactiveExtensions/Core'
-    reachability.dependency 'ReachabilitySwift', '~> 4.1'
-    reachability.source_files = 'ACKReactiveExtensions/Reachability/*.swift'
-  end
-
-  s.subspec 'SDWebImage' do |sdwebimage|
-    sdwebimage.dependency 'ACKReactiveExtensions/Core'
-    sdwebimage.dependency 'SDWebImage', '~> 4.0'
-    sdwebimage.source_files = 'ACKReactiveExtensions/SDWebImage/*.swift'
-  end
-
   s.subspec 'WebKit' do |webkit|
     webkit.dependency 'ACKReactiveExtensions/Core'
     webkit.source_files = 'ACKReactiveExtensions/WebKit/*.swift'
