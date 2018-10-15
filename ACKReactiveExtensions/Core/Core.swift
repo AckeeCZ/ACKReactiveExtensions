@@ -63,34 +63,6 @@ extension SignalProducer {
     }
 }
 
-//MARK: Disposing
-
-private struct AssociationKey {
-    static var lifecycleObject: UInt8 = 1
-}
-
-/**
- * Protocol that allows various objects to take advantage of reactive.lifetime signal
- */
-public protocol Disposing: class { }
-
-extension Disposing {
-    fileprivate var lifecycleObject: NSObject {
-        return lazyAssociatedProperty(self, &AssociationKey.lifecycleObject, factory: {
-            NSObject()
-        })
-    }
-}
-
-extension Reactive where Base: Disposing {
-    /**
-     * Lifetime of object
-     */
-    public var lifetime: Lifetime {
-        return base.lifecycleObject.reactive.lifetime
-    }
-}
-
 //MARK: Associated properties
 
 /**
