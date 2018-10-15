@@ -1,17 +1,5 @@
-//
-//  Core.swift
-//  Pods
-//
-//  Created by Jan Mísař on 04.06.16.
-//
-//
-
-import Foundation
-import ReactiveSwift
-import ReactiveCocoa
 import Result
-
-//MARK: ReactiveCocoa
+import ReactiveSwift
 
 extension SignalProducer {
     /// Ignore errors and return SignalProducer that completes instead of error
@@ -60,45 +48,5 @@ extension SignalProducer {
             observer.send(value: lazyValue())
             observer.sendCompleted()
         }
-    }
-}
-
-//MARK: Associated properties
-
-/**
- * Create associated property with given host.
- * Subsequent calls with the same host and key return the same associated objects.
- *
- * - parameter host: Host of the newly created property
- * - parameter key: Key with which the newly created property will be associated with
- * - parameter factory: Factory that actually creates the object to be associated
- * - returns: Newly created property
- */
-public func lazyAssociatedProperty<T: Any>(_ host: Any, _ key: UnsafeRawPointer, factory: () -> T) -> T {
-    var associatedProperty = objc_getAssociatedObject(host, key) as? T
-
-    if associatedProperty == nil {
-        associatedProperty = factory()
-        objc_setAssociatedObject(host, key, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
-    }
-    return associatedProperty!
-}
-
-/**
- * Create associated mutable property with given host.
- * Subsequent calls with the same host and key return the same associated objects.
- *
- * - parameter host: Host of the newly created property
- * - parameter key: Key with which the newly created property will be associated with
- * - parameter setter: Setter that will propagate new values to the newly created property
- * - parameter getter: Getter that will read initial value
- * - returns: Newly created MutableProperty
- */
-public func lazyMutableProperty<T>(_ host: AnyObject, _ key: UnsafeRawPointer, _ setter: @escaping (T) -> (), _ getter: () -> T) -> MutableProperty<T> {
-    return lazyAssociatedProperty(host, key) {
-        let property = MutableProperty<T>(getter())
-        property.producer
-            .startWithValues { setter($0) }
-        return property
     }
 }
