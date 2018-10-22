@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import ReactiveCocoa
 import ReactiveSwift
 
 #if !COCOAPODS
