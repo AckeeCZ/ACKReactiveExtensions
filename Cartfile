@@ -1,4 +1,5 @@
 github "ReactiveCocoa/ReactiveCocoa" ~> 8.0
+github "antitypical/Result" ~> 4.1
 github "realm/realm-cocoa" ~> 3.0
 github "utahiosmac/Marshal" ~> 1.2
 github "Alamofire/AlamofireImage" ~> 3.3

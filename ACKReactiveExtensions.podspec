@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '4.0.1'
+  s.version          = '4.0.2'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
   s.description      = <<-DESC
   Use ReactiveCocoa with various iOS components.
@@ -37,13 +37,14 @@ Pod::Spec.new do |s|
   s.subspec 'Marshal' do |marshal|
     marshal.dependency 'ACKReactiveExtensions/Core'
     marshal.dependency 'Marshal', '~> 1.2'
+    marshal.dependency 'Result', '~> 4.1'
     marshal.source_files = 'ACKReactiveExtensions/Marshal/*.swift'
   end
   
-  s.subspec 'AlamofireImage' do |marshal|
-      marshal.dependency 'ACKReactiveExtensions/Core'
-      marshal.dependency 'AlamofireImage', '~> 3.3'
-      marshal.source_files = 'ACKReactiveExtensions/AlamofireImage/*.swift'
+  s.subspec 'AlamofireImage' do |alamofire|
+    alamofire.dependency 'ACKReactiveExtensions/Core'
+    alamofire.dependency 'AlamofireImage', '~> 3.3'
+    alamofire.source_files = 'ACKReactiveExtensions/AlamofireImage/*.swift'
   end
 
 end
