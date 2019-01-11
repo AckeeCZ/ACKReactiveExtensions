@@ -42,7 +42,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
      */
     public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<Model, Error> where Model: Unmarshaling {
         return attemptMap { json in
-            Result {
+            Result(catching: {
                 if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                     assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
                 }
@@ -56,7 +56,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                 } else {
                     return try Model.init(object: marshaledJSON)
                 }
-                }
+            })
                 .mapError { Error.createMarshalError($0) }
         }
     }
@@ -68,7 +68,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
      */
     public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
         return signal.attemptMap { json in
-            Result {
+            Result(catching: {
                 if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                     assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
                 }
@@ -82,7 +82,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                 else {
                     throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
                 }
-                }
+            })
                 .mapError { Error.createMarshalError($0) }
         }
     }
@@ -94,7 +94,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
      */
     public func mapResponse<Model>(forKey key: KeyType) -> Signal<Model, Error> where Model: ValueType {
         return signal.attemptMap { json in
-            Result {
+            Result(catching: {
                 if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                     assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
                 }
@@ -104,7 +104,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                         throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
                 }
                 return try marshaledJSON.value(for: key)
-                }
+            })
                 .mapError { Error.createMarshalError($0) }
         }
     }
