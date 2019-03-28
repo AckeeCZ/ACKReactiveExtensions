@@ -8,6 +8,8 @@
 
 ## master
 
+## 4.1
+
 - migrate to Xcode 10.2 and Swift 5 (#39, kudos to @olejnjak)
 
 ## 4.0.2
