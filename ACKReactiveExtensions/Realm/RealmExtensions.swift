@@ -37,7 +37,7 @@ public enum Change<T> {
 public extension Reactive where Base: RealmCollection {
     
     /// SignalProducer that sends changes as they happen
-    public var changes: SignalProducer<Change<Base>, RealmError> {
+    var changes: SignalProducer<Change<Base>, RealmError> {
         var notificationToken: NotificationToken? = nil
         
         let producer: SignalProducer<Change<Base>, RealmError> = SignalProducer { sink, d in
@@ -94,7 +94,7 @@ public extension Reactive where Base: RealmCollection {
     }
     
     /// SignalProducer that sends the latest value
-    public var values: SignalProducer<Base, RealmError> {
+    var values: SignalProducer<Base, RealmError> {
         return self.changes.map { changes -> Base in
             switch changes {
             case .initial(let initial):
@@ -106,7 +106,7 @@ public extension Reactive where Base: RealmCollection {
     }
     
     /// Property which represents the latest value
-    public var property: ReactiveSwift.Property<Base> {
+    var property: ReactiveSwift.Property<Base> {
         return ReactiveSwift.Property(initial: self.base, then: values.ignoreError().skip(first: 1) )
     }
 }
@@ -120,7 +120,7 @@ public extension Reactive where Base: Object {
      * - parameter update: Realm should find existing object using primaryKey() and update it if it exists otherwise create new object
      * - parameter writeBlock: Closure which allows custom Realm operation instead of default add
      */
-    public func save(update: Bool = true, writeBlock: ((Realm)->Void)? = nil) -> SignalProducer<Base, RealmError>{
+    func save(update: Bool = true, writeBlock: ((Realm)->Void)? = nil) -> SignalProducer<Base, RealmError>{
         return SignalProducer<Base, RealmError> { sink, d in
             do {
                 let realm = try Realm()
@@ -144,7 +144,7 @@ public extension Reactive where Base: Object {
     /**
      * Reactively delete object
      */
-    public func delete() -> SignalProducer<(), RealmError> {
+    func delete() -> SignalProducer<(), RealmError> {
         return SignalProducer { sink, d in
             do {
                 let realm = try Realm()
@@ -160,7 +160,7 @@ public extension Reactive where Base: Object {
         }
     }
     
-    public var changes: SignalProducer<ObjectChange, RealmError> {
+    var changes: SignalProducer<ObjectChange, RealmError> {
         var notificationToken: NotificationToken? = nil
         
         let producer: SignalProducer<ObjectChange, RealmError> = SignalProducer { sink, d in
@@ -214,7 +214,7 @@ public extension Reactive where Base: Object {
         return producer
     }
     
-    public var values: SignalProducer<Base, RealmError> {
+    var values: SignalProducer<Base, RealmError> {
         return self.changes
             .filter { if case .deleted = $0 { return false }; return true }
             .map { _ in
@@ -222,7 +222,7 @@ public extension Reactive where Base: Object {
         }
     }
     
-    public var property: ReactiveSwift.Property<Base> {
+    var property: ReactiveSwift.Property<Base> {
         return ReactiveSwift.Property(initial: base, then: values.ignoreError() )
     }
 }
@@ -239,7 +239,7 @@ public protocol RealmTableViewReloading {
 public extension Reactive where Base: UIViewController, Base: RealmTableViewReloading {
     
     /// Binding target which updates tableView according to received changes
-    public var changes: BindingTarget<Change<Results<Base.Element>>> {
+    var changes: BindingTarget<Change<Results<Base.Element>>> {
         return makeBindingTarget { vc, changes in
             guard let tableView = vc.tableView else { return }
             switch changes {
