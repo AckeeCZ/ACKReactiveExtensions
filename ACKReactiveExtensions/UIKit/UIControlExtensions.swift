@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Result
 import ReactiveSwift
 
 extension Reactive where Base: UIControl {

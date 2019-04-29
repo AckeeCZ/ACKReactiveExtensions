@@ -11,7 +11,7 @@ extension Action {
             .flatMap(.latest) { isExecuting, isEnabled -> SignalProducer<Output, Error> in
                 switch (isExecuting, isEnabled) {
                 case (true, _): return events.dematerialize().producer
-                case (false, false): return SignalProducer<Output, Error>.interrupted()
+                case (false, false): return SignalProducer<Output, Never>.interrupted().promoteError()
                 case (false, true): return events.dematerialize().producer
                 }
             }

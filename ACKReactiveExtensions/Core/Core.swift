@@ -1,15 +1,14 @@
-import Result
 import ReactiveSwift
 
 extension SignalProducer {
     /// Ignore errors and return SignalProducer that completes instead of error
-    public func ignoreError() -> SignalProducer<Value, NoError> {
+    public func ignoreError() -> SignalProducer<Value, Never> {
         return flatMapError { _ in .empty }
     }
     
     /// Create interrupted producer
-    public static func interrupted() -> SignalProducer<Value, Error> {
-        return SignalProducer<Value, Error> { observer, _ in
+    public static func interrupted() -> SignalProducer<Value, Never> {
+        return SignalProducer<Value, Never> { observer, _ in
             observer.sendInterrupted()
         }
     }
@@ -23,10 +22,10 @@ extension Signal {
     }
 }
 
-extension SignalProducer where Value == Void, Error == NoError {
+extension SignalProducer where Value == Void, Error == Never {
     /// Perform side effect
-    public static func sideEffect(actions: @escaping () -> ()) -> SignalProducer<(), NoError> {
-        return SignalProducer<(), NoError> { sink, _ in
+    public static func sideEffect(actions: @escaping () -> ()) -> SignalProducer<(), Never> {
+        return SignalProducer<(), Never> { sink, _ in
             actions()
             sink.sendCompleted()
         }

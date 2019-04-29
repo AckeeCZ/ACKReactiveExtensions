@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		690C440F2141870000C39F46 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C440D214186E600C39F46 /* UIImageViewExtensions.swift */; };
-		691DCED421105D5300F5C06A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
 		6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
@@ -22,7 +21,6 @@
 		699B58E51FF5289A00FFDC91 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */; };
 		699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */; };
 		699B58ED1FF52DD700FFDC91 /* WKWebViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58EC1FF52DD600FFDC91 /* WKWebViewExtensions.swift */; };
-		699B58F31FF52E2D00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B58F41FF52E2D00FFDC91 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
 		699B58F51FF52E2D00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B58F81FF52F0600FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
@@ -33,7 +31,6 @@
 		699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59171FF5305F00FFDC91 /* Realm.framework */; };
 		699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
 		699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59161FF5305F00FFDC91 /* RealmSwift.framework */; };
-		699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F01FF52E2D00FFDC91 /* Result.framework */; };
 		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699C4F872083892300AEEAA1 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */; };
@@ -134,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B58F31FF52E2D00FFDC91 /* Result.framework in Frameworks */,
 				699B58F41FF52E2D00FFDC91 /* ReactiveCocoa.framework in Frameworks */,
 				699B58F51FF52E2D00FFDC91 /* ReactiveSwift.framework in Frameworks */,
 			);
@@ -153,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				691DCED421105D5300F5C06A /* Result.framework in Frameworks */,
 				699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */,
 				699B58F91FF52F0E00FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
@@ -172,7 +167,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B59251FF53DDB00FFDC91 /* Result.framework in Frameworks */,
 				699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */,
 				699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */,
 				699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */,
