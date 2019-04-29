@@ -9,7 +9,7 @@ import UIKit
 import ReactiveSwift
 
 extension Reactive where Base: UIControl {
-    public var valueChanged: Signal<Base, NoError> {
+    public var valueChanged: Signal<Base, Never> {
         return controlEvents(.valueChanged)
     }
 }
