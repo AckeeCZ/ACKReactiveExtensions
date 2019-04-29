@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.3'
   s.swift_version    = '5.0'
   s.default_subspec  = 'Core','UIKit'
-  s.dependency 'ReactiveCocoa', '~> 9.0'
-  s.dependency 'ReactiveSwift', '~> 5.0'
+  s.dependency 'ReactiveCocoa', '~> 10.0'
+  s.dependency 'ReactiveSwift', '~> 6.0'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/*.swift'
