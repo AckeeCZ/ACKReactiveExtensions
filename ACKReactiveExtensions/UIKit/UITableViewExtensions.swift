@@ -10,13 +10,13 @@ import ReactiveSwift
 
 extension Reactive where Base: UITableView {
     /// Reactively set `tableHeaderView`
-    @available(*, deprecated, message: "User [\\.tableHeaderView] instead")
+    @available(*, deprecated, renamed: "[\\.tableHeaderView]")
     public var tableHeaderView: BindingTarget<UIView?> {
         return self[\.tableHeaderView]
     }
     
     /// Reactively set `tableFooterView`
-    @available(*, deprecated, message: "User [\\.tableFooterView] instead")
+    @available(*, deprecated, renamed: "[\\.tableFooterView]")
     public var tableFooterView: BindingTarget<UIView?> {
         return self[\.tableFooterView]
     }
