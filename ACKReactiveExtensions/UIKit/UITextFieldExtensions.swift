@@ -10,8 +10,9 @@ import ReactiveSwift
 
 extension Reactive where Base: UITextField {
     /// Binding that represents `textColor`
+    @available(*, deprecated, message: "Use [\\.textColor] instead")
     public var textColor: BindingTarget<UIColor?> {
-        return makeBindingTarget { $0.textColor = $1 }
+        return self[\.textColor]
     }
     
     /**

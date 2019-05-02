@@ -11,16 +11,13 @@ import ReactiveSwift
 extension Reactive where Base: UIView {
     /// Property that represents `isHidden`
     public var isHiddenProperty: Property<Bool> {
-        return Property(initial: base.isHidden, then: isHiddenSignal)
-    }
-    
-    private var isHiddenSignal: Signal<Bool, Never> {
-        return signal(forKeyPath: "hidden").map { $0 as? Bool }.skipNil()
+        return Property(initial: base.isHidden, then: signal(for: \.isHidden))
     }
     
     /// Reactively set `transform`
+    @available(*, deprecated, message: "Use [\\.transform] instead")
     public var transform: BindingTarget<CGAffineTransform> {
-        return makeBindingTarget { $0.transform = $1 }
+        return self[\.transform]
     }
     
     /// End editing reactively
@@ -32,19 +29,11 @@ extension Reactive where Base: UIView {
     
     /// Property that represents `frame`
     public var frame: Property<CGRect> {
-        return Property(initial: base.frame, then: frameSignal)
+        return Property(initial: base.frame, then: signal(for: \.frame))
     }
     
     /// Property that represents `bounds`
     public var bounds: Property<CGRect> {
-        return Property(initial: base.bounds, then: boundsSignal)
-    }
-    
-    private var frameSignal: Signal<CGRect, Never> {
-        return signal(forKeyPath: "frame").filterMap { $0 as? CGRect }
-    }
-    
-    private var boundsSignal: Signal<CGRect, Never> {
-        return signal(forKeyPath: "bounds").filterMap { $0 as? CGRect }
+        return Property(initial: base.bounds, then: signal(for: \.bounds))
     }
 }
