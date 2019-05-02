@@ -10,17 +10,20 @@ import ReactiveSwift
 
 extension Reactive where Base: CALayer {
     /// Binding that represents `borderWidth`
+    @available(*, deprecated, message: "User [\\.borderWidth] instead")
     public var borderWidth: BindingTarget<CGFloat> {
-        return makeBindingTarget { $0.borderWidth = $1 }
+        return self[\.borderWidth]
     }
     
     /// Binding that represents `borderColor`
-    public var borderColor: BindingTarget<CGColor> {
-        return makeBindingTarget { $0.borderColor = $1 }
+    @available(*, deprecated, message: "User [\\.borderColor] instead")
+    public var borderColor: BindingTarget<CGColor?> {
+        return self[\.borderColor]
     }
     
     /// Binding that represents `cornerRadius`
+    @available(*, deprecated, message: "User [\\.cornerRadius] instead")
     public var cornerRadius: BindingTarget<CGFloat> {
-        return makeBindingTarget { $0.cornerRadius = $1 }
+        return self[\.cornerRadius]
     }
 }

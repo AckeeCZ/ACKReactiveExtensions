@@ -9,7 +9,8 @@ import UIKit
 import ReactiveSwift
 
 extension Reactive where Base: UIImageView {
+    @available(*, deprecated, message: "User signal(for: \\.image) instead")
     public var imageSignal: Signal<UIImage?, Never> {
-        return signal(forKeyPath: "image").map { $0 as? UIImage }
+        return signal(for: \.image)
     }
 }
