@@ -15,7 +15,7 @@ extension Reactive where Base: UIView {
     }
     
     /// Reactively set `transform`
-    @available(*, deprecated, renamed: "[\\.transform]")
+    @available(*, deprecated, message: "Use [\\.transform] instead")
     public var transform: BindingTarget<CGAffineTransform> {
         return self[\.transform]
     }

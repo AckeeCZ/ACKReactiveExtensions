@@ -9,7 +9,7 @@ import UIKit
 import ReactiveSwift
 
 extension Reactive where Base: UIImageView {
-    @available(*, deprecated, renamed: "signal(for: \\.image)")
+    @available(*, deprecated, message: "signal(for: \\.image)")
     public var imageSignal: Signal<UIImage?, Never> {
         return signal(for: \.image)
     }
