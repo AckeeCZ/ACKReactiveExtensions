@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Result
 import ReactiveSwift
 
 extension Reactive where Base: UIView {
@@ -15,7 +14,7 @@ extension Reactive where Base: UIView {
         return Property(initial: base.isHidden, then: isHiddenSignal)
     }
     
-    private var isHiddenSignal: Signal<Bool, NoError> {
+    private var isHiddenSignal: Signal<Bool, Never> {
         return signal(forKeyPath: "hidden").map { $0 as? Bool }.skipNil()
     }
     
@@ -41,11 +40,11 @@ extension Reactive where Base: UIView {
         return Property(initial: base.bounds, then: boundsSignal)
     }
     
-    private var frameSignal: Signal<CGRect, NoError> {
+    private var frameSignal: Signal<CGRect, Never> {
         return signal(forKeyPath: "frame").filterMap { $0 as? CGRect }
     }
     
-    private var boundsSignal: Signal<CGRect, NoError> {
+    private var boundsSignal: Signal<CGRect, Never> {
         return signal(forKeyPath: "bounds").filterMap { $0 as? CGRect }
     }
 }

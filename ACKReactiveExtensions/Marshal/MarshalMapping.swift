@@ -6,7 +6,6 @@
 //  Ackee
 //
 
-import Result
 import Marshal
 import ReactiveSwift
 
@@ -57,7 +56,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                     return try Model.init(object: marshaledJSON)
                 }
             })
-                .mapError { Error.createMarshalError($0) }
+                .mapError { Error.createMarshalError($0 as! MarshalError) }
         }
     }
     
@@ -68,22 +67,24 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
      */
     public func mapResponse<Model>(forKey key: KeyType? = nil) -> Signal<[Model], Error> where Model: Unmarshaling {
         return signal.attemptMap { json in
-            Result(catching: {
+            return Result(catching: {
                 if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                     assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
                 }
                 
-                if let key = key, let marshaledJSON = json as? MarshaledObject {
-                    return try marshaledJSON.value(for: key)
-                }
-                else if let marshaledArray = json as? [MarshaledObject] {
-                    return try marshaledArray.map(Model.init)
-                }
-                else {
-                    throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
+                do {
+                    if let key = key, let marshaledJSON = json as? MarshaledObject {
+                        return try marshaledJSON.value(for: key)
+                    }
+                    else if let marshaledArray = json as? [MarshaledObject] {
+                        return try marshaledArray.map(Model.init)
+                    }
+                    else {
+                        throw MarshalError.typeMismatch(expected: MarshaledObject.self, actual: type(of: json))
+                    }
                 }
             })
-                .mapError { Error.createMarshalError($0) }
+                .mapError { Error.createMarshalError($0 as! MarshalError) }
         }
     }
     
@@ -105,7 +106,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                 }
                 return try marshaledJSON.value(for: key)
             })
-                .mapError { Error.createMarshalError($0) }
+                .mapError { Error.createMarshalError($0 as! MarshalError) }
         }
     }
 }
