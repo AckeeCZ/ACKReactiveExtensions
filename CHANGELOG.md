@@ -8,6 +8,8 @@
 
 ## master
 
+## 5.0
+
 - update ReactiveSwift & ReactiveCocoa, use native Result (#41, kudos to @olejnjak)
 - deprecate extensions which are available using Swift typed keypaths #40 (#42, kudos to @olejnjak)
 
