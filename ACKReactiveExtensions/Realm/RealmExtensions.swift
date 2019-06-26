@@ -107,7 +107,7 @@ public extension Reactive where Base: RealmCollection {
     
     /// Property which represents the latest value
     var property: ReactiveSwift.Property<Base> {
-        return ReactiveSwift.Property(initial: self.base, then: values.ignoreError().skip(first: 1) )
+        return ReactiveSwift.Property(initial: base, then: values.ignoreError() )
     }
 }
 

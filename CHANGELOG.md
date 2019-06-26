@@ -8,6 +8,8 @@
 
 ## master
 
+- fix `RealmCollection` bug in case when Realm data is modified before it sends initial change notification (#43, kudos to @olejnjak)
+
 ## 5.0
 
 - update ReactiveSwift & ReactiveCocoa, use native Result (#41, kudos to @olejnjak)
