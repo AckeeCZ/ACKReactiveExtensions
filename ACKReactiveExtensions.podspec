@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.3'
   s.swift_version    = '5.0'
   s.default_subspec  = 'Core','UIKit'
-  s.dependency 'ReactiveCocoa', '~> 10.0'
-  s.dependency 'ReactiveSwift', '~> 6.0'
+  s.dependency 'ReactiveCocoa', '~> 10.1'
+  s.dependency 'ReactiveSwift', '~> 6.1'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/*.swift'
@@ -31,14 +31,13 @@ Pod::Spec.new do |s|
 
   s.subspec 'Realm' do |realm|
     realm.dependency 'ACKReactiveExtensions/Core'
-    realm.dependency 'RealmSwift', '~> 3.14'
+    realm.dependency 'RealmSwift', '~> 4.3'
     realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
   end
 
   s.subspec 'Marshal' do |marshal|
     marshal.dependency 'ACKReactiveExtensions/Core'
     marshal.dependency 'Marshal', '~> 1.2'
-    marshal.dependency 'Result', '~> 4.1'
     marshal.source_files = 'ACKReactiveExtensions/Marshal/*.swift'
   end
   
