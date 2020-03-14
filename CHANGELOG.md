@@ -8,6 +8,8 @@
 
 ## master
 
+- update `Realm` dependency to `~> 4.3` (#46, kudos to @olejnjak)
+
 ## 5.0.1
 
 - fix `RealmCollection` bug in case when Realm data is modified before it sends initial change notification (#43, kudos to @olejnjak)
