@@ -120,7 +120,7 @@ public extension Reactive where Base: Object {
      * - parameter update: Realm should find existing object using primaryKey() and update it if it exists otherwise create new object
      * - parameter writeBlock: Closure which allows custom Realm operation instead of default add
      */
-    func save(update: Bool = true, writeBlock: ((Realm)->Void)? = nil) -> SignalProducer<Base, RealmError>{
+    func save(update: Realm.UpdatePolicy = .all, writeBlock: ((Realm)->Void)? = nil) -> SignalProducer<Base, RealmError>{
         return SignalProducer<Base, RealmError> { sink, d in
             do {
                 let realm = try Realm()
@@ -313,7 +313,7 @@ func ~==(lhs: PrimaryKeyEquatable, rhs: PrimaryKeyEquatable) -> Bool {
 extension Realm {
     
     /// Add objects and delete non-present objects from the orphan query
-    public func add<S: Sequence>(_ objects: S, update: Bool = true, deleteOrphanedQuery: Results<S.Iterator.Element>) where S.Iterator.Element: Object {
+    public func add<S: Sequence>(_ objects: S, update: Realm.UpdatePolicy = .all, deleteOrphanedQuery: Results<S.Iterator.Element>) where S.Iterator.Element: Object {
         let allObjects = deleteOrphanedQuery.map { $0 }
         //This could be faster with set, but we can't redefine hashable
         let objectsToDelete = allObjects.filter { old in
