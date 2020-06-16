@@ -16,7 +16,7 @@ import ReactiveSwift
 #endif
 
 /// Error return in case of Realm operation failure
-public struct RealmError : Error {
+public struct RealmError: Error {
     public let underlyingError: NSError
     public init(underlyingError: NSError){
         self.underlyingError = underlyingError
@@ -26,26 +26,26 @@ public struct RealmError : Error {
 /// Enum which represents RealmCollectionChange
 public enum Change<T> {
     typealias Element = T
-    
+
     /// Initial value
     case initial(T)
-    
+
     /// RealmCollection was updated
     case update(T, deletions: [Int], insertions: [Int], modifications: [Int])
 }
 
 public extension Reactive where Base: RealmCollection {
-    
+
     /// SignalProducer that sends changes as they happen
     var changes: SignalProducer<Change<Base>, RealmError> {
         var notificationToken: NotificationToken? = nil
-        
+
         let producer: SignalProducer<Change<Base>, RealmError> = SignalProducer { sink, d in
             guard let realm = self.base.realm else {
                 print("Cannot observe object without Realm")
                 return
             }
-            
+
             func observe() -> NotificationToken? {
                 return self.base.observe(on: nil) { changes in
                     switch changes {
@@ -58,25 +58,25 @@ public extension Reactive where Base: RealmCollection {
                     }
                 }
             }
-            
+
             let registerObserverIfPossible: () -> (Bool, NotificationToken?) = {
                 if !realm.isInWriteTransaction { return (true, observe()) }
                 return (false, nil)
             }
-            
+
             var counter = 0
             let maxRetries = 10
-            
+
             func registerWhileNotSuccessful(queue: DispatchQueue) {
                 let (registered, token) = registerObserverIfPossible()
-                
+
                 guard !registered, counter < maxRetries else { notificationToken = token; return  }
-                
+
                 counter += 1
-                
+
                 queue.async { registerWhileNotSuccessful(queue: queue) }
             }
-            
+
             if let opQueue = OperationQueue.current, let dispatchQueue = opQueue.underlyingQueue {
                 registerWhileNotSuccessful(queue: dispatchQueue)
             } else {
@@ -89,10 +89,10 @@ public extension Reactive where Base: RealmCollection {
                 notificationToken?.invalidate()
                 notificationToken = nil
             })
-        
+
         return producer
     }
-    
+
     /// SignalProducer that sends the latest value
     var values: SignalProducer<Base, RealmError> {
         return self.changes.map { changes -> Base in
@@ -104,7 +104,7 @@ public extension Reactive where Base: RealmCollection {
             }
         }
     }
-    
+
     /// Property which represents the latest value
     var property: ReactiveSwift.Property<Base> {
         return ReactiveSwift.Property(initial: base, then: values.ignoreError() )
@@ -113,7 +113,7 @@ public extension Reactive where Base: RealmCollection {
 
 //MARK: Saving
 public extension Reactive where Base: Object {
-    
+
     /**
      * Reactive save Realm object
      *
@@ -138,9 +138,9 @@ public extension Reactive where Base: Object {
                 sink.send(error: RealmError(underlyingError: e as NSError) )
             }
         }
-        
+
     }
-    
+
     /**
      * Reactively delete object
      */
@@ -159,16 +159,16 @@ public extension Reactive where Base: Object {
             }
         }
     }
-    
+
     var changes: SignalProducer<ObjectChange<Object>, RealmError> {
         var notificationToken: NotificationToken? = nil
-        
+
         let producer: SignalProducer<ObjectChange<Object>, RealmError> = SignalProducer { sink, d in
             guard let realm = self.base.realm else {
                 print("Cannot observe object without Realm")
                 return
             }
-            
+
             func observe() -> NotificationToken? {
                 return self.base.observe { change in
                     switch change {
@@ -179,25 +179,25 @@ public extension Reactive where Base: Object {
                     }
                 }
             }
-            
+
             let registerObserverIfPossible: () -> (Bool, NotificationToken?) = {
                 if !realm.isInWriteTransaction { return (true, observe()) }
                 return (false, nil)
             }
-            
+
             var counter = 0
             let maxRetries = 10
-            
+
             func registerWhileNotSuccessful(queue: DispatchQueue) {
                 let (registered, token) = registerObserverIfPossible()
-                
+
                 guard !registered, counter < maxRetries else { notificationToken = token; return  }
-                
+
                 counter += 1
-                
+
                 queue.async { registerWhileNotSuccessful(queue: queue) }
             }
-            
+
             if let opQueue = OperationQueue.current, let dispatchQueue = opQueue.underlyingQueue {
                 registerWhileNotSuccessful(queue: dispatchQueue)
             } else {
@@ -210,10 +210,10 @@ public extension Reactive where Base: Object {
                 notificationToken?.invalidate()
                 notificationToken = nil
             })
-        
+
         return producer
     }
-    
+
     var values: SignalProducer<Base, RealmError> {
         return self.changes
             .filter { if case .deleted = $0 { return false }; return true }
@@ -221,14 +221,13 @@ public extension Reactive where Base: Object {
                 return self.base
         }
     }
-    
+
     var property: ReactiveSwift.Property<Base> {
         return ReactiveSwift.Property(initial: base, then: values.ignoreError() )
     }
 }
 
 //MARK: Table view
-
 
 /// Protocol which allows UITableView to be reloaded automatically when database changes happen
 public protocol RealmTableViewReloading {
@@ -237,7 +236,7 @@ public protocol RealmTableViewReloading {
 }
 
 public extension Reactive where Base: UIViewController, Base: RealmTableViewReloading {
-    
+
     /// Binding target which updates tableView according to received changes
     var changes: BindingTarget<Change<Results<Base.Element>>> {
         return makeBindingTarget { vc, changes in
@@ -261,7 +260,6 @@ public extension Reactive where Base: UIViewController, Base: RealmTableViewRelo
     }
 }
 
-
 //MARK: PrimaryKeyEquatable
 
 protocol PrimaryKeyEquatable: class {
@@ -280,16 +278,16 @@ infix operator ~== : PrimaryKeyEquative
 func ~==(lhs: PrimaryKeyEquatable, rhs: PrimaryKeyEquatable) -> Bool {
     //Super ugly but can't find nicer way to assert same types
     guard "\(type(of: lhs))" == "\(type(of: rhs))" else {
-        assertionFailure("Trying to compare different types \(type(of: lhs)) and \(type(of: rhs))");
+        assertionFailure("Trying to compare different types \(type(of: lhs)) and \(type(of: rhs))")
         return false
     }
-    
+
     guard let primaryKey = type(of: lhs).primaryKey(), let lValue = lhs[primaryKey],
         let rValue = rhs[primaryKey] else {
-            assertionFailure("Trying to compare object that has no primary key");
+            assertionFailure("Trying to compare object that has no primary key")
             return false
     }
-    
+
     if let l = lValue as? String, let r = rValue as? String {
         return l == r
     } else if let l = lValue as? Int, let r = rValue as? Int {
@@ -311,7 +309,7 @@ func ~==(lhs: PrimaryKeyEquatable, rhs: PrimaryKeyEquatable) -> Bool {
 //MARK: Orphaned Object
 
 extension Realm {
-    
+
     /// Add objects and delete non-present objects from the orphan query
     public func add<S: Sequence>(_ objects: S, update: Realm.UpdatePolicy = .all, deleteOrphanedQuery: Results<S.Iterator.Element>) where S.Iterator.Element: Object {
         let allObjects = deleteOrphanedQuery.map { $0 }

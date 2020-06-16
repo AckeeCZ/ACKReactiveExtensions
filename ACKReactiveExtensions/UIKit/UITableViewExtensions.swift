@@ -14,7 +14,7 @@ extension Reactive where Base: UITableView {
     public var tableHeaderView: BindingTarget<UIView?> {
         return self[\.tableHeaderView]
     }
-    
+
     /// Reactively set `tableFooterView`
     @available(*, deprecated, message: "Use [\\.tableFooterView] instead")
     public var tableFooterView: BindingTarget<UIView?> {

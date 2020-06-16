@@ -5,7 +5,7 @@ extension SignalProducer {
     public func ignoreError() -> SignalProducer<Value, Never> {
         return flatMapError { _ in .empty }
     }
-    
+
     /// Create interrupted producer
     public static func interrupted() -> SignalProducer<Value, Never> {
         return SignalProducer<Value, Never> { observer, _ in

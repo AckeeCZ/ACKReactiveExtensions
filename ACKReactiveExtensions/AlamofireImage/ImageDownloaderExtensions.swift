@@ -13,7 +13,7 @@ import AlamofireImage
 
 public struct ImageDownloadError: Error {
     public let underlyingError: Error
-    
+
     public init(underlyingError: Error) {
         self.underlyingError = underlyingError
     }
