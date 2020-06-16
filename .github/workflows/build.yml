@@ -1,0 +1,23 @@
+name: Build
+
+on: [pull_request, push]
+
+jobs:
+  tests:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: AckeeCZ/load-xcode-version@1.0
+      - uses: actions/cache@v1
+        with:
+          path: Carthage
+          key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-carthage-
+      - name: Install Carthage dependencies
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: carthage bootstrap --platform iOS --cache-builds
+      - name: Build Carthage binary
+        run: carthage build --platform iOS --cache-builds --no-skip-current
