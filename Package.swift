@@ -29,6 +29,7 @@ let package = Package(
             .product(name: "ReactiveSwift", package: "ReactiveSwift"),
             .product(name: "ReactiveCocoa", package: "ReactiveCocoa")], path: "ACKReactiveExtensions/Core"),
         .target(name: "ACKReactiveExtensionsMarshal", dependencies: [
+            .target(name: "ACKReactiveExtensionsCore"),
             .product(name: "Marshal", package: "Marshal")], path: "ACKReactiveExtensions/Marshal"),
         .target(name: "ACKReactiveExtensionsRealm", dependencies: [
             .target(name: "ACKReactiveExtensionsCore"),
