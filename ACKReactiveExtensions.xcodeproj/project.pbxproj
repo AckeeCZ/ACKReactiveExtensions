@@ -25,6 +25,13 @@
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
 		6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
+		695FAAD32498AD4600882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
+		695FAAD52498AD4600882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		695FAAD82498AD5700882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		695FAADB2498AD6100882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
+		695FAADD2498AD6100882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
+		695FAAE02498AD6D00882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
+		695FAAE32498AD7600882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
 		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
 		698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88002029AE3C0099B8FB /* CALayerExtensions.swift */; };
 		698F88052029B3760099B8FB /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88042029B3760099B8FB /* UITextFieldExtensions.swift */; };
@@ -169,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */,
+				695FAAE32498AD7600882ED2 /* ReactiveCocoa.framework in Frameworks */,
 				699B58F81FF52F0600FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */,
+				695FAAE02498AD6D00882ED2 /* ReactiveCocoa.framework in Frameworks */,
 				699B58F91FF52F0E00FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,7 +196,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				699B59111FF52FE100FFDC91 /* Marshal.framework in Frameworks */,
+				695FAADB2498AD6100882ED2 /* ReactiveCocoa.framework in Frameworks */,
 				699B59011FF52F3300FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
+				695FAADD2498AD6100882ED2 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +208,7 @@
 			files = (
 				699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */,
 				699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */,
+				695FAAD82498AD5700882ED2 /* ReactiveSwift.framework in Frameworks */,
 				699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */,
 				699B59071FF52F5100FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 			);
@@ -208,7 +220,9 @@
 			files = (
 				699C4F9C20838C4500AEEAA1 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 				699C4F9A20838C0900AEEAA1 /* AlamofireImage.framework in Frameworks */,
+				695FAAD52498AD4600882ED2 /* ReactiveSwift.framework in Frameworks */,
 				699C4F9B20838C0900AEEAA1 /* Alamofire.framework in Frameworks */,
+				695FAAD32498AD4600882ED2 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
