@@ -20,4 +20,4 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
           carthage checkout
-          carthage build --platform iOS --cache-builds --no-skip-current --verbose
+          carthage build --platform iOS --cache-builds --no-skip-current

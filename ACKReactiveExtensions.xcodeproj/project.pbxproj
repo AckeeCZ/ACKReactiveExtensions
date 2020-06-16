@@ -697,7 +697,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftlint autocorrect\nswiftlint\n";
+			shellScript = "swiftlint autocorrect || true\nswiftlint || true\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
