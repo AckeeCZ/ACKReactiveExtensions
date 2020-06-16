@@ -18,4 +18,6 @@ jobs:
       - name: Build Carthage binary
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: carthage checkout; carthage build --platform iOS --cache-builds --no-skip-current
+        run: | 
+          carthage checkout
+          carthage build --platform iOS --cache-builds --no-skip-current --verbose
