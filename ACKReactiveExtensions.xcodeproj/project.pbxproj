@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		69836755249899670047C995 /* Swiftlint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 69836758249899670047C995 /* Build configuration list for PBXAggregateTarget "Swiftlint" */;
+			buildPhases = (
+				698367592498996F0047C995 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Swiftlint;
+			productName = Swiftlint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		690C440F2141870000C39F46 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C440D214186E600C39F46 /* UIImageViewExtensions.swift */; };
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
@@ -43,6 +57,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6983675A249899950047C995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 690B9FB01FF526770098BEC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69836755249899670047C995;
+			remoteInfo = Swiftlint;
+		};
+		6983675C2498999E0047C995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 690B9FB01FF526770098BEC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69836755249899670047C995;
+			remoteInfo = Swiftlint;
+		};
 		699B58F61FF52EFB00FFDC91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 690B9FB01FF526770098BEC6 /* Project object */;
@@ -424,6 +452,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6983675B249899950047C995 /* PBXTargetDependency */,
 			);
 			name = Core;
 			productName = Core;
@@ -518,6 +547,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6983675D2498999E0047C995 /* PBXTargetDependency */,
 			);
 			name = AlamofireImage;
 			productName = AlamofireImage;
@@ -530,8 +560,12 @@
 		690B9FB01FF526770098BEC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1150;
 				TargetAttributes = {
+					69836755249899670047C995 = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+					};
 					699B583E1FF526A000FFDC91 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = "";
@@ -570,6 +604,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 690B9FAF1FF526770098BEC6;
 			productRefGroup = 699B58401FF526A000FFDC91 /* Products */;
@@ -582,6 +617,7 @@
 				699B58731FF526CB00FFDC91 /* Marshal */,
 				699B588D1FF526F800FFDC91 /* Realm */,
 				699C4F8C20838B6300AEEAA1 /* AlamofireImage */,
+				69836755249899670047C995 /* Swiftlint */,
 			);
 		};
 /* End PBXProject section */
@@ -630,6 +666,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		698367592498996F0047C995 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftlint autocorrect\nswiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		699B583A1FF526A000FFDC91 /* Sources */ = {
@@ -694,6 +750,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6983675B249899950047C995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69836755249899670047C995 /* Swiftlint */;
+			targetProxy = 6983675A249899950047C995 /* PBXContainerItemProxy */;
+		};
+		6983675D2498999E0047C995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69836755249899670047C995 /* Swiftlint */;
+			targetProxy = 6983675C2498999E0047C995 /* PBXContainerItemProxy */;
+		};
 		699B58F71FF52EFB00FFDC91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 699B583E1FF526A000FFDC91 /* Core */;
@@ -781,7 +847,26 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		69836756249899670047C995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		69836757249899670047C995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1657,6 +1742,15 @@
 			buildConfigurations = (
 				690B9FB41FF526770098BEC6 /* Debug */,
 				690B9FB51FF526770098BEC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69836758249899670047C995 /* Build configuration list for PBXAggregateTarget "Swiftlint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69836756249899670047C995 /* Debug */,
+				69836757249899670047C995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
