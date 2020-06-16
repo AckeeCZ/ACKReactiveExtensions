@@ -15,6 +15,14 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
+      - uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+      - name: Build SwiftPM
+        run: swift build
       - name: Build Carthage binary
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
