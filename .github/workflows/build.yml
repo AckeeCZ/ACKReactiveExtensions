@@ -15,9 +15,7 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
-      - name: Install Carthage dependencies
+      - name: Build Carthage binary
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: carthage bootstrap --platform iOS --cache-builds
-      - name: Build Carthage binary
-        run: carthage build --platform iOS --cache-builds --no-skip-current
+        run: carthage checkout; carthage build --platform iOS --cache-builds --no-skip-current
