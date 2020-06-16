@@ -47,7 +47,7 @@ public extension Reactive where Base: RealmCollection {
             }
             
             func observe() -> NotificationToken? {
-                return self.base.observe { (changes) in
+                return self.base.observe(on: nil) { changes in
                     switch changes {
                     case .initial(let initial):
                         sink.send(value: Change.initial(initial))
@@ -160,10 +160,10 @@ public extension Reactive where Base: Object {
         }
     }
     
-    var changes: SignalProducer<ObjectChange, RealmError> {
+    var changes: SignalProducer<ObjectChange<Object>, RealmError> {
         var notificationToken: NotificationToken? = nil
         
-        let producer: SignalProducer<ObjectChange, RealmError> = SignalProducer { sink, d in
+        let producer: SignalProducer<ObjectChange<Object>, RealmError> = SignalProducer { sink, d in
             guard let realm = self.base.realm else {
                 print("Cannot observe object without Realm")
                 return
