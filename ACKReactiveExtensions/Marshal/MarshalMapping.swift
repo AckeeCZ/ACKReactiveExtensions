@@ -6,6 +6,7 @@
 //  Ackee
 //
 
+import Foundation
 import Marshal
 import ReactiveSwift
 
