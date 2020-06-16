@@ -56,6 +56,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                     return try Model.init(object: marshaledJSON)
                 }
             })
+                // swiftlint:disable:next force_cast
                 .mapError { Error.createMarshalError($0 as! MarshalError) }
         }
     }
@@ -84,6 +85,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                     }
                 }
             })
+                // swiftlint:disable:next force_cast
                 .mapError { Error.createMarshalError($0 as! MarshalError) }
         }
     }
@@ -106,6 +108,7 @@ extension Signal where Value == Any, Error: MarshalErrorCreatable {
                 }
                 return try marshaledJSON.value(for: key)
             })
+                // swiftlint:disable:next force_cast
                 .mapError { Error.createMarshalError($0 as! MarshalError) }
         }
     }
