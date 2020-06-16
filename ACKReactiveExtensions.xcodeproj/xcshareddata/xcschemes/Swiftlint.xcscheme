@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "699B58591FF526B900FFDC91"
-               BuildableName = "ACKReactiveExtensionsWebKit.framework"
-               BlueprintName = "WebKit"
+               BlueprintIdentifier = "69836755249899670047C995"
+               BuildableName = "Swiftlint"
+               BlueprintName = "Swiftlint"
                ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "699B58591FF526B900FFDC91"
-            BuildableName = "ACKReactiveExtensionsWebKit.framework"
-            BlueprintName = "WebKit"
-            ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "699B58591FF526B900FFDC91"
-            BuildableName = "ACKReactiveExtensionsWebKit.framework"
-            BlueprintName = "WebKit"
+            BlueprintIdentifier = "69836755249899670047C995"
+            BuildableName = "Swiftlint"
+            BlueprintName = "Swiftlint"
             ReferencedContainer = "container:ACKReactiveExtensions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

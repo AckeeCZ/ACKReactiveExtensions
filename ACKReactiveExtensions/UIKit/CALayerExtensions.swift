@@ -14,13 +14,13 @@ extension Reactive where Base: CALayer {
     public var borderWidth: BindingTarget<CGFloat> {
         return self[\.borderWidth]
     }
-    
+
     /// Binding that represents `borderColor`
     @available(*, deprecated, message: "Use [\\.borderColor] instead")
     public var borderColor: BindingTarget<CGColor?> {
         return self[\.borderColor]
     }
-    
+
     /// Binding that represents `cornerRadius`
     @available(*, deprecated, message: "Use [\\.cornerRadius] instead")
     public var cornerRadius: BindingTarget<CGFloat> {

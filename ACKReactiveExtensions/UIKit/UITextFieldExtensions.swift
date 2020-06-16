@@ -14,7 +14,7 @@ extension Reactive where Base: UITextField {
     public var textColor: BindingTarget<UIColor?> {
         return self[\.textColor]
     }
-    
+
     /**
      * Property if field contains valid email
      *
