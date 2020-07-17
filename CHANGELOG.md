@@ -8,6 +8,8 @@
 
 ## master
 
+## 5.1.0
+
 - add SwiftPM support (#47, kudos to @olejnjak)
 - update `Realm` dependency to `~> 5.0` (#47, kudos to @olejnjak)
 
