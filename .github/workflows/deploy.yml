@@ -18,8 +18,10 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
+      - name: Checkout dependencies
+        run: carthage checkout
       - name: Build
-        run: carthage build --no-skip-current --cache-builds
+        run: carthage build --no-skip-current --cache-builds --platform iOS
       - name: Archive
         run: carthage archive --output "ACKReactiveExtensions.framework.zip"
       - uses: xresloader/upload-to-github-release@v1
