@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Alamofire/AlamofireImage", .upToNextMajor(from: "3.3.0")),
         .package(url: "https://github.com/utahiosmac/Marshal", .upToNextMajor(from: "1.2.8")),
-        .package(url: "https://github.com/realm/realm-cocoa", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/realm/realm-cocoa", .upToNextMajor(from: "5.3.0")),
         .package(url: "https://github.com/ReactiveCocoa/ReactiveCocoa", .upToNextMajor(from: "10.3.0")),
         .package(url: "https://github.com/ReactiveCocoa/ReactiveSwift", .upToNextMajor(from: "6.3.0")),
     ],
