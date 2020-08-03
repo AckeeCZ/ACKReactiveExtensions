@@ -7,6 +7,7 @@
 ```
 
 ## master
+- add extensions for `Codable` (#49, kudos to @olejnjak)
 
 ## 5.1.0
 
