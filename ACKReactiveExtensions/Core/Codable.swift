@@ -10,13 +10,7 @@ public protocol DecodingErrorCreatable: Error {
      *
      * - parameter decodeError: `DecodingError` which should be wrapped
      */
-    static func createDecodeError(_ decodingError: DecodingError) -> Self
-}
-
-extension DecodingError: DecodingErrorCreatable {
-    public static func createDecodeError(_ decodingError: DecodingError) -> DecodingError {
-        decodingError
-    }
+    static func createDecodeError(_ decodingError: MappingError<DecodingError>) -> Self
 }
 
 public extension SignalProducer where Value == Data, Error: DecodingErrorCreatable {
@@ -42,18 +36,10 @@ public extension Signal where Value == Data, Error: DecodingErrorCreatable {
                 let decoded = try decoder.decode(ResultType.self, from: data)
                 return .success(decoded)
             } catch let error as Swift.DecodingError {
-                return .failure(Error.createDecodeError(.decoding(error)))
+                return .failure(Error.createDecodeError(.mapping(error)))
             } catch {
                 return .failure(Error.createDecodeError(.generic(error)))
             }
         }
     }
-}
-
-/// Error thrown when `decode` fails
-public enum DecodingError: Error {
-    /// Decoding failed
-    case decoding(Swift.DecodingError)
-    /// Other internal error, generally all errors which are not `DecodingError`s will match this case
-    case generic(Error)
 }
