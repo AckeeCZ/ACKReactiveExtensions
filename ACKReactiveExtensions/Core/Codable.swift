@@ -41,11 +41,19 @@ public extension Signal where Value == Data, Error: DecodingErrorCreatable {
             do {
                 let decoded = try decoder.decode(ResultType.self, from: data)
                 return .success(decoded)
+            } catch let error as Swift.DecodingError {
+                return .failure(Error.createDecodeError(.decoding(error)))
             } catch {
-                // swiftlint:disable:next force_cast
-                let decodingError = error as! DecodingError
-                return .failure(Error.createDecodeError(decodingError))
+                return .failure(Error.createDecodeError(.generic(error)))
             }
         }
     }
+}
+
+/// Error thrown when `decode` fails
+public enum DecodingError: Error {
+    /// Decoding failed
+    case decoding(Swift.DecodingError)
+    /// Other internal error, generally all errors which are not `DecodingError`s will match this case
+    case generic(Error)
 }
