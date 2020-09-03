@@ -19,7 +19,6 @@ extension DecodingError: DecodingErrorCreatable {
     }
 }
 
-
 public extension SignalProducer where Value == Data, Error: DecodingErrorCreatable {
     /// Decodes given `type` from received data using given `decoder`
     ///
@@ -38,7 +37,7 @@ public extension Signal where Value == Data, Error: DecodingErrorCreatable {
             if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                 assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
             }
-            
+
             do {
                 let decoded = try decoder.decode(ResultType.self, from: data)
                 return .success(decoded)
