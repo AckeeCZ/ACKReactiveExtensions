@@ -16,7 +16,7 @@ public enum MappingError<MappingErrorType: Error>: Error {
     case mapping(MappingErrorType)
     /// Other internal error, generally all errors which are not `MappingErrorType`s will match this case
     case generic(Error)
-    
+
     /// If `self` is `.mapping` its associated value is returned
     public var mappingError: MappingErrorType? {
         switch self {
@@ -24,7 +24,7 @@ public enum MappingError<MappingErrorType: Error>: Error {
         case .generic: return nil
         }
     }
-    
+
     /// If `self` is `.generic` its associated value is returned
     public var genericError: Error? {
         switch self {
