@@ -35,7 +35,7 @@ public extension Signal where Value == Data, Error: DecodingErrorCreatable {
             do {
                 let decoded = try decoder.decode(ResultType.self, from: data)
                 return .success(decoded)
-            } catch let error as Swift.DecodingError {
+            } catch let error as DecodingError {
                 return .failure(Error.createDecodeError(.mapping(error)))
             } catch {
                 return .failure(Error.createDecodeError(.generic(error)))
