@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ACKReactiveExtensions'
-  s.version          = '5.1.0'
+  s.version          = '5.2.0'
   s.summary          = 'Useful extensions for ReactiveCocoa.'
   s.description      = <<-DESC
   Use ReactiveCocoa with various iOS components.
