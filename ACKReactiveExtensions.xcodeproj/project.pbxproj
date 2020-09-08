@@ -21,9 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		690568FD24D8531400AE9F45 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690568FC24D8531400AE9F45 /* Codable.swift */; };
 		690C440F2141870000C39F46 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C440D214186E600C39F46 /* UIImageViewExtensions.swift */; };
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
 		6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */; };
+		692FC2012500EB8000B72449 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FC2002500EB8000B72449 /* MappingError.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
 		695FAAD32498AD4600882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
 		695FAAD52498AD4600882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
@@ -109,10 +111,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690568FC24D8531400AE9F45 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		690C440D214186E600C39F46 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		691F8593202A0E8000DA4FAD /* RealmObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectExtensions.swift; sourceTree = "<group>"; };
 		691F8595202A106600DA4FAD /* UIControlExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
 		6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		692FC2002500EB8000B72449 /* MappingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		69470C63200763C00013A386 /* ActionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtensions.swift; sourceTree = "<group>"; };
 		698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		698F88002029AE3C0099B8FB /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
@@ -271,7 +275,9 @@
 			children = (
 				699B58DC1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift */,
 				69470C63200763C00013A386 /* ActionExtensions.swift */,
+				690568FC24D8531400AE9F45 /* Codable.swift */,
 				699B58DD1FF5286700FFDC91 /* Core.swift */,
+				692FC2002500EB8000B72449 /* MappingError.swift */,
 				699B58D21FF5279C00FFDC91 /* Supporting files */,
 			);
 			path = Core;
@@ -708,7 +714,9 @@
 			files = (
 				699B58DF1FF5286700FFDC91 /* Core.swift in Sources */,
 				699B58DE1FF5286700FFDC91 /* ACKReactiveExtensionsConfiguration.swift in Sources */,
+				690568FD24D8531400AE9F45 /* Codable.swift in Sources */,
 				69470C64200763C00013A386 /* ActionExtensions.swift in Sources */,
+				692FC2012500EB8000B72449 /* MappingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1550,6 +1558,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Realm/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1623,6 +1632,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Realm/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Realm;
