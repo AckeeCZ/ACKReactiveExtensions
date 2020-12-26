@@ -8,6 +8,8 @@
 
 ## master
 
+- update Realm dependency (#51, kudos to @olejnjak)
+
 ## 5.2.0
 
 - add extensions for `Codable` (#49, kudos to @olejnjak)
