@@ -1,5 +1,5 @@
-github "ReactiveCocoa/ReactiveCocoa" ~> 10.3
+github "ReactiveCocoa/ReactiveCocoa" ~> 11.1
 github "ReactiveCocoa/ReactiveSwift" ~> 6.3
-github "realm/realm-cocoa" ~> 5.3
+github "realm/realm-cocoa" ~> 10.5
 github "utahiosmac/Marshal" ~> 1.2
 github "Alamofire/AlamofireImage" ~> 3.3
