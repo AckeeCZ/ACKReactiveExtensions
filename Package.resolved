@@ -29,30 +29,12 @@
         }
       },
       {
-        "package": "Nimble",
-        "repositoryURL": "https://github.com/Quick/Nimble.git",
-        "state": {
-          "branch": null,
-          "revision": "2b1809051b4a65c1d7f5233331daa24572cd7fca",
-          "version": "8.1.1"
-        }
-      },
-      {
-        "package": "Quick",
-        "repositoryURL": "https://github.com/Quick/Quick.git",
-        "state": {
-          "branch": null,
-          "revision": "09b3becb37cb2163919a3842a4c5fa6ec7130792",
-          "version": "2.2.1"
-        }
-      },
-      {
         "package": "ReactiveCocoa",
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveCocoa",
         "state": {
           "branch": null,
-          "revision": "8be399d8df3ca96e54f94c2a5091ce07c2cfe93c",
-          "version": "10.3.0"
+          "revision": "cca8bdc26d10a889b8bec3cc2167544df730953e",
+          "version": "11.1.0"
         }
       },
       {
@@ -60,8 +42,8 @@
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift",
         "state": {
           "branch": null,
-          "revision": "3f4351d04115fd8797802d9b2d17b812cd761602",
-          "version": "6.3.0"
+          "revision": "e03cda84105ba707de039b757e2b2de868c65a3e",
+          "version": "6.5.0"
         }
       },
       {
@@ -69,17 +51,17 @@
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {
           "branch": null,
-          "revision": "d35c699577de02ffb2e025e9e6b308a38408bfe6",
-          "version": "5.0.3"
+          "revision": "c236b2c1270fe41ba7c101a1d17ef56494987cb9",
+          "version": "10.5.0"
         }
       },
       {
-        "package": "RealmCore",
+        "package": "RealmDatabase",
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "bc900a2a8e05722c1b42f95396adb3c99eeb500f",
-          "version": "6.0.6"
+          "revision": "7390723ae39b432bd00f093ea84e3b79534a202c",
+          "version": "10.3.2"
         }
       }
     ]
