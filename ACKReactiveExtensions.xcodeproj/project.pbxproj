@@ -46,6 +46,8 @@
 		699C4F9620838BB700AEEAA1 /* AlamofireImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9520838BB700AEEAA1 /* AlamofireImageExtensions.swift */; };
 		699C4F9C20838C4500AEEAA1 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
 		699C4F9E20838EB600AEEAA1 /* ImageDownloaderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */; };
+		69CD71D425CC42020068444D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CD71D325CC42020068444D /* libz.tbd */; };
+		69CD71DD25CC420A0068444D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CD71DC25CC420A0068444D /* libc++.tbd */; };
 		69F8B4B625CC354100F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
 		69F8B4B825CC354100F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
 		69F8B4CE25CC355200F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
@@ -163,6 +165,8 @@
 		699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderExtensions.swift; sourceTree = "<group>"; };
 		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
 		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
+		69CD71D325CC42020068444D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		69CD71DC25CC420A0068444D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
 		69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveCocoa.xcframework; path = Carthage/Build/ReactiveCocoa.xcframework; sourceTree = "<group>"; };
 		69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveSwift.xcframework; path = Carthage/Build/ReactiveSwift.xcframework; sourceTree = "<group>"; };
 		69F8B4FD25CC357300F1AC6E /* Marshal.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Marshal.xcframework; path = Carthage/Build/Marshal.xcframework; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CD71DD25CC420A0068444D /* libc++.tbd in Frameworks */,
+				69CD71D425CC42020068444D /* libz.tbd in Frameworks */,
 				69F8B50E25CC358800F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 				699B59071FF52F5100FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
 				69F8B51025CC358800F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
@@ -383,6 +389,8 @@
 		699B58EF1FF52E2D00FFDC91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69CD71DC25CC420A0068444D /* libc++.tbd */,
+				69CD71D325CC42020068444D /* libz.tbd */,
 				69F8B53725CC35A300F1AC6E /* Alamofire.xcframework */,
 				69F8B53825CC35A300F1AC6E /* AlamofireImage.xcframework */,
 				69F8B51A25CC358800F1AC6E /* Realm.xcframework */,
