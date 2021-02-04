@@ -19,6 +19,7 @@ jobs:
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
-          brew update carthage
+          brew update
+          brew upgrade carthage
           carthage checkout
           carthage build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
