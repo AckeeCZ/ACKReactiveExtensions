@@ -22,4 +22,4 @@ jobs:
           brew update
           brew upgrade carthage
           carthage checkout
-          carthage build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
+          carthage build --platform iOS --cache-builds --no-skip-current --use-xcframeworks --no-use-binaries

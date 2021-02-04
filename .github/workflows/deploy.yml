@@ -24,7 +24,7 @@ jobs:
   #         brew upgrade carthage
   #         carthage checkout
   #     - name: Build
-  #       run: carthage build --no-skip-current --cache-builds --platform iOS --use-xcframeworks
+  #       run: carthage build --no-skip-current --cache-builds --platform iOS --use-xcframeworks --no-use-binaries
   #     - name: Archive
   #       run: carthage archive --output "ACKReactiveExtensions.framework.zip"
   #     - uses: xresloader/upload-to-github-release@v1
