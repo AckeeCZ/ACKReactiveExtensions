@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -27,13 +27,6 @@
 		6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */; };
 		692FC2012500EB8000B72449 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FC2002500EB8000B72449 /* MappingError.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
-		695FAAD32498AD4600882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
-		695FAAD52498AD4600882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
-		695FAAD82498AD5700882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
-		695FAADB2498AD6100882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
-		695FAADD2498AD6100882ED2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
-		695FAAE02498AD6D00882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
-		695FAAE32498AD7600882ED2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
 		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
 		698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88002029AE3C0099B8FB /* CALayerExtensions.swift */; };
 		698F88052029B3760099B8FB /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88042029B3760099B8FB /* UITextFieldExtensions.swift */; };
@@ -44,25 +37,32 @@
 		699B58E51FF5289A00FFDC91 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E41FF5289A00FFDC91 /* RealmExtensions.swift */; };
 		699B58EB1FF52DCC00FFDC91 /* TextfieldBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58E91FF52DCC00FFDC91 /* TextfieldBinding.swift */; };
 		699B58ED1FF52DD700FFDC91 /* WKWebViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B58EC1FF52DD600FFDC91 /* WKWebViewExtensions.swift */; };
-		699B58F41FF52E2D00FFDC91 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
-		699B58F51FF52E2D00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699B58F81FF52F0600FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
 		699B58F91FF52F0E00FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
 		699B59011FF52F3300FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
 		699B59071FF52F5100FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
-		699B59111FF52FE100FFDC91 /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59101FF52FE100FFDC91 /* Marshal.framework */; };
-		699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59171FF5305F00FFDC91 /* Realm.framework */; };
-		699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F11FF52E2D00FFDC91 /* ReactiveCocoa.framework */; };
-		699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B59161FF5305F00FFDC91 /* RealmSwift.framework */; };
-		699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
-		699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B58F21FF52E2D00FFDC91 /* ReactiveSwift.framework */; };
 		699C4F872083892300AEEAA1 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F862083892300AEEAA1 /* UITableViewExtensions.swift */; };
 		699C4F9120838B6300AEEAA1 /* AlamofireImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 699C4F8F20838B6300AEEAA1 /* AlamofireImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		699C4F9620838BB700AEEAA1 /* AlamofireImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9520838BB700AEEAA1 /* AlamofireImageExtensions.swift */; };
-		699C4F9A20838C0900AEEAA1 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4F9820838C0900AEEAA1 /* AlamofireImage.framework */; };
-		699C4F9B20838C0900AEEAA1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4F9920838C0900AEEAA1 /* Alamofire.framework */; };
 		699C4F9C20838C4500AEEAA1 /* ACKReactiveExtensionsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699B583F1FF526A000FFDC91 /* ACKReactiveExtensionsCore.framework */; };
 		699C4F9E20838EB600AEEAA1 /* ImageDownloaderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */; };
+		69F8B4B625CC354100F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
+		69F8B4B825CC354100F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
+		69F8B4CE25CC355200F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
+		69F8B4D025CC355200F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
+		69F8B4E025CC355F00F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
+		69F8B4E225CC355F00F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
+		69F8B4F225CC357300F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
+		69F8B4F425CC357300F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
+		69F8B4FE25CC357300F1AC6E /* Marshal.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4FD25CC357300F1AC6E /* Marshal.xcframework */; };
+		69F8B50E25CC358800F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
+		69F8B51025CC358800F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
+		69F8B51B25CC358800F1AC6E /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B51325CC358800F1AC6E /* RealmSwift.xcframework */; };
+		69F8B51D25CC358800F1AC6E /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B51A25CC358800F1AC6E /* Realm.xcframework */; };
+		69F8B52C25CC35A300F1AC6E /* ReactiveCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */; };
+		69F8B52E25CC35A300F1AC6E /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */; };
+		69F8B53925CC35A300F1AC6E /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B53725CC35A300F1AC6E /* Alamofire.xcframework */; };
+		69F8B53B25CC35A300F1AC6E /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F8B53825CC35A300F1AC6E /* AlamofireImage.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +163,13 @@
 		699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderExtensions.swift; sourceTree = "<group>"; };
 		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
 		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
+		69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveCocoa.xcframework; path = Carthage/Build/ReactiveCocoa.xcframework; sourceTree = "<group>"; };
+		69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveSwift.xcframework; path = Carthage/Build/ReactiveSwift.xcframework; sourceTree = "<group>"; };
+		69F8B4FD25CC357300F1AC6E /* Marshal.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Marshal.xcframework; path = Carthage/Build/Marshal.xcframework; sourceTree = "<group>"; };
+		69F8B51325CC358800F1AC6E /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		69F8B51A25CC358800F1AC6E /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
+		69F8B53725CC35A300F1AC6E /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		69F8B53825CC35A300F1AC6E /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +177,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B58F41FF52E2D00FFDC91 /* ReactiveCocoa.framework in Frameworks */,
-				699B58F51FF52E2D00FFDC91 /* ReactiveSwift.framework in Frameworks */,
+				69F8B4B825CC354100F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
+				69F8B4B625CC354100F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,9 +186,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B59261FF5434E00FFDC91 /* ReactiveSwift.framework in Frameworks */,
-				695FAAE32498AD7600882ED2 /* ReactiveCocoa.framework in Frameworks */,
+				69F8B4CE25CC355200F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 				699B58F81FF52F0600FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
+				69F8B4D025CC355200F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +196,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B59271FF5437300FFDC91 /* ReactiveSwift.framework in Frameworks */,
-				695FAAE02498AD6D00882ED2 /* ReactiveCocoa.framework in Frameworks */,
+				69F8B4E025CC355F00F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 				699B58F91FF52F0E00FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
+				69F8B4E225CC355F00F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,10 +206,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B59111FF52FE100FFDC91 /* Marshal.framework in Frameworks */,
-				695FAADB2498AD6100882ED2 /* ReactiveCocoa.framework in Frameworks */,
+				69F8B4F225CC357300F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 				699B59011FF52F3300FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
-				695FAADD2498AD6100882ED2 /* ReactiveSwift.framework in Frameworks */,
+				69F8B4FE25CC357300F1AC6E /* Marshal.xcframework in Frameworks */,
+				69F8B4F425CC357300F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,11 +217,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B59241FF53DC300FFDC91 /* RealmSwift.framework in Frameworks */,
-				699B59211FF53DA900FFDC91 /* ReactiveCocoa.framework in Frameworks */,
-				695FAAD82498AD5700882ED2 /* ReactiveSwift.framework in Frameworks */,
-				699B59191FF5305F00FFDC91 /* Realm.framework in Frameworks */,
+				69F8B50E25CC358800F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 				699B59071FF52F5100FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
+				69F8B51025CC358800F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
+				69F8B51B25CC358800F1AC6E /* RealmSwift.xcframework in Frameworks */,
+				69F8B51D25CC358800F1AC6E /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,11 +229,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F8B53925CC35A300F1AC6E /* Alamofire.xcframework in Frameworks */,
+				69F8B52C25CC35A300F1AC6E /* ReactiveCocoa.xcframework in Frameworks */,
 				699C4F9C20838C4500AEEAA1 /* ACKReactiveExtensionsCore.framework in Frameworks */,
-				699C4F9A20838C0900AEEAA1 /* AlamofireImage.framework in Frameworks */,
-				695FAAD52498AD4600882ED2 /* ReactiveSwift.framework in Frameworks */,
-				699C4F9B20838C0900AEEAA1 /* Alamofire.framework in Frameworks */,
-				695FAAD32498AD4600882ED2 /* ReactiveCocoa.framework in Frameworks */,
+				69F8B52E25CC35A300F1AC6E /* ReactiveSwift.xcframework in Frameworks */,
+				69F8B53B25CC35A300F1AC6E /* AlamofireImage.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +383,13 @@
 		699B58EF1FF52E2D00FFDC91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69F8B53725CC35A300F1AC6E /* Alamofire.xcframework */,
+				69F8B53825CC35A300F1AC6E /* AlamofireImage.xcframework */,
+				69F8B51A25CC358800F1AC6E /* Realm.xcframework */,
+				69F8B51325CC358800F1AC6E /* RealmSwift.xcframework */,
+				69F8B4FD25CC357300F1AC6E /* Marshal.xcframework */,
+				69F8B4B425CC354100F1AC6E /* ReactiveCocoa.xcframework */,
+				69F8B4B525CC354100F1AC6E /* ReactiveSwift.xcframework */,
 				699C4F9920838C0900AEEAA1 /* Alamofire.framework */,
 				699C4F9820838C0900AEEAA1 /* AlamofireImage.framework */,
 				699B591B1FF53A0800FFDC91 /* Reachability.framework */,
@@ -954,7 +968,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Core/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Core;
@@ -1028,7 +1046,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Core/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Core;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsCore;
@@ -1037,7 +1059,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1107,7 +1130,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/UIKit/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.UIKit;
@@ -1181,7 +1208,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/UIKit/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.UIKit;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsUIKit;
@@ -1190,7 +1221,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1260,7 +1292,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/WebKit/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.WebKit;
@@ -1334,7 +1370,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/WebKit/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.WebKit;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsWebKit;
@@ -1343,7 +1383,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1413,7 +1454,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Marshal/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Marshal;
@@ -1487,7 +1532,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Marshal/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Marshal;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsMarshal;
@@ -1496,7 +1545,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1567,7 +1617,11 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Realm/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Realm;
@@ -1642,7 +1696,11 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/Realm/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.Realm;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsRealm;
@@ -1651,7 +1709,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1700,7 +1759,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/AlamofireImage/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.AlamofireImage;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsAlamofireImage;
@@ -1753,7 +1816,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/ACKReactiveExtensions/AlamofireImage/Supporting files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.AlamofireImage;
 				PRODUCT_MODULE_NAME = ACKReactiveExtensionsAlamofireImage;
@@ -1762,7 +1829,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
