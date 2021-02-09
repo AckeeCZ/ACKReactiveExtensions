@@ -1,4 +1,5 @@
 import ReactiveSwift
+import Foundation
 
 /**
  * Protocol that allows creation of custom Decoding errors
