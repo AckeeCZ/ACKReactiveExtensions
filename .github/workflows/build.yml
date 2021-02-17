@@ -20,7 +20,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
           carthage checkout
-      - uses: olejnjak/carthage-workaround
+      - uses: olejnjak/carthage-workaround@v2
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
