@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.subspec 'Realm' do |realm|
     realm.ios.deployment_target = '9.0'
     realm.dependency 'ACKReactiveExtensions/Core'
-    realm.dependency 'RealmSwift', '~> 10.5'
+    realm.dependency 'RealmSwift', '~> 10.6'
     realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
   end
 

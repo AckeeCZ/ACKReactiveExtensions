@@ -160,10 +160,10 @@ public extension Reactive where Base: Object {
         }
     }
 
-    var changes: SignalProducer<ObjectChange<Object>, RealmError> {
+    var changes: SignalProducer<ObjectChange<ObjectBase>, RealmError> {
         var notificationToken: NotificationToken? = nil
 
-        let producer: SignalProducer<ObjectChange<Object>, RealmError> = SignalProducer { sink, d in
+        let producer: SignalProducer<ObjectChange<ObjectBase>, RealmError> = SignalProducer { sink, d in
             guard let realm = self.base.realm else {
                 print("Cannot observe object without Realm")
                 return
