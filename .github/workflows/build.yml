@@ -25,4 +25,4 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           force: true
-          input: build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
+          action: build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
