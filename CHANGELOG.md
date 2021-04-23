@@ -9,6 +9,7 @@
 ## master
 
 - update dependencies, use Xcode 12.4 (#51, kudos to @olejnjak)
+- update deployment target to iOS 9.0 (#53, kudos to @olejnjak)
 
 ## 5.2.0
 
