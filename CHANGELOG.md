@@ -8,6 +8,10 @@
 
 ## master
 
+## 5.3.1
+
+- update dependencies (#54, kudos to @IgorRosocha)
+
 ## 5.3.0
 
 - update dependencies, use Xcode 12.4 (#51, kudos to @olejnjak)
