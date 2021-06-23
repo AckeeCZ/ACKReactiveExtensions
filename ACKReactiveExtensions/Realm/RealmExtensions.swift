@@ -262,7 +262,7 @@ public extension Reactive where Base: UIViewController, Base: RealmTableViewRelo
 
 //MARK: PrimaryKeyEquatable
 
-protocol PrimaryKeyEquatable: class {
+protocol PrimaryKeyEquatable: AnyObject {
     static func primaryKey() -> String?
     subscript(key: String) -> Any? { get set }
 }
