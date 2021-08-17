@@ -8,6 +8,8 @@
 
 ## master
 
+- use custom queue for `RealmCollection` observing (#56, kudos to @IgorRosocha)
+
 ## 5.3.1
 
 - update dependencies (#54, kudos to @IgorRosocha)
