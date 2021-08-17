@@ -47,7 +47,7 @@ public extension Reactive where Base: RealmCollection {
             }
 
             func observe() -> NotificationToken? {
-                return self.base.observe(on: nil) { changes in
+                return self.base.observe(on: DispatchQueue(label: "RealmCollectionObserve")) { changes in
                     switch changes {
                     case .initial(let initial):
                         sink.send(value: Change.initial(initial))
