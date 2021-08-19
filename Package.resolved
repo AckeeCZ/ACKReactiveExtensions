@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift",
         "state": {
           "branch": null,
-          "revision": "4a8e1e4a683e96daf658f68132dae781738bc862",
-          "version": "6.6.0"
+          "revision": "2c06e9421011a1a4cf57ea4bbcd8936843a6c9da",
+          "version": "6.6.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {
           "branch": null,
-          "revision": "827f9bf97f44e40fda8a750698f3e096734629ee",
-          "version": "10.8.1"
+          "revision": "83a07f6a508c3427058d9e2c466208d0b6a960fa",
+          "version": "10.12.0"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "d85d071cc25b6f64fabbbebbaaae20f367ef64ae",
-          "version": "11.0.3"
+          "revision": "e72b3078bfc5c3f69a0b18f7a220be27e28c463f",
+          "version": "11.2.0"
         }
       }
     ]
