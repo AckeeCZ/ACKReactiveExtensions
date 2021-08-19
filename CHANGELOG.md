@@ -8,7 +8,7 @@
 
 ## master
 
-- use custom queue for `RealmCollection` observing (#56, kudos to @IgorRosocha)
+- use non-nil queue for `RealmCollection` observing (#56, kudos to @IgorRosocha + #57, kudos to @olejnjak)
 
 ## 5.3.1
 
