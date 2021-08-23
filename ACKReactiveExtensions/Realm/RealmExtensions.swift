@@ -34,9 +34,6 @@ public enum Change<T> {
     case update(T, deletions: [Int], insertions: [Int], modifications: [Int])
 }
 
-/// Custom queue used for `RealmCollection` observing
-private var realmCollectionQueue = DispatchQueue(label: "RealmCollectionQueue")
-
 public extension Reactive where Base: RealmCollection {
 
     /// SignalProducer that sends changes as they happen
@@ -50,7 +47,7 @@ public extension Reactive where Base: RealmCollection {
             }
 
             func observe() -> NotificationToken? {
-                return self.base.observe(on: realmCollectionQueue) { changes in
+                return self.base.observe(on: OperationQueue.current?.underlyingQueue) { changes in
                     switch changes {
                     case .initial(let initial):
                         sink.send(value: Change.initial(initial))
