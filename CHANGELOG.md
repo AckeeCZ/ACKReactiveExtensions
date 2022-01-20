@@ -8,6 +8,9 @@
 
 ## master
 
+## 5.3.3 
+- update dependencies and deployment target to iOS 10.0 (#58, kudos to @vendulasvastal)
+
 ## 5.3.2
 
 - use non-nil queue for `RealmCollection` observing (#56, kudos to @IgorRosocha + #57, kudos to @olejnjak)
