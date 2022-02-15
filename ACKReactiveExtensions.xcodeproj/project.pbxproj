@@ -37,9 +37,7 @@
 		0E1CD65027999914007B7405 /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CD64E27999914007B7405 /* AlamofireImage.xcframework */; };
 		0E1CD65227999914007B7405 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CD64F27999914007B7405 /* Alamofire.xcframework */; };
 		0E1CD65627999D58007B7405 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CD65427999D58007B7405 /* RealmSwift.xcframework */; };
-		0E1CD65727999D58007B7405 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CD65427999D58007B7405 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0E1CD65827999D58007B7405 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CD65527999D58007B7405 /* Realm.xcframework */; };
-		0E1CD65927999D58007B7405 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CD65527999D58007B7405 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		690568FD24D8531400AE9F45 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690568FC24D8531400AE9F45 /* Codable.swift */; };
 		690C440F2141870000C39F46 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C440D214186E600C39F46 /* UIImageViewExtensions.swift */; };
 		691F8596202A106600DA4FAD /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691F8595202A106600DA4FAD /* UIControlExtensions.swift */; };
@@ -111,21 +109,6 @@
 			remoteInfo = Core;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0E1CD65A27999D58007B7405 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0E1CD65727999D58007B7405 /* RealmSwift.xcframework in Embed Frameworks */,
-				0E1CD65927999D58007B7405 /* Realm.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E1CD62B2799986A007B7405 /* ReactiveCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveCocoa.xcframework; path = Carthage/Build/ReactiveCocoa.xcframework; sourceTree = "<group>"; };
@@ -575,7 +558,6 @@
 				699B588A1FF526F800FFDC91 /* Frameworks */,
 				699B588B1FF526F800FFDC91 /* Headers */,
 				699B588C1FF526F800FFDC91 /* Resources */,
-				0E1CD65A27999D58007B7405 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
