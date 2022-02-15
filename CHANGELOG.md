@@ -8,7 +8,7 @@
 
 ## master
 
-## 6.0.0
+## 6.0.0 & 6.0.1
 - update dependencies and deployment target to iOS 10.0 (#58, kudos to @vendulasvastal)
 
 ## 5.3.2
