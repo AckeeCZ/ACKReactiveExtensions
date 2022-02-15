@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ackee' => 'info@ackee.cz' }
   s.source           = { :git => 'https://github.com/AckeeCZ/ACKReactiveExtensions.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.swift_version    = '5.0'
   s.default_subspec  = 'Core','UIKit'
-  s.dependency 'ReactiveCocoa', '~> 11.1'
-  s.dependency 'ReactiveSwift', '~> 6.5'
+  s.dependency 'ReactiveCocoa', '~> 12.0'
+  s.dependency 'ReactiveSwift', '~> 7.0'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/*.swift'
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'AlamofireImage' do |alamofire|
     alamofire.dependency 'ACKReactiveExtensions/Core'
-    alamofire.dependency 'AlamofireImage', '~> 3.3'
+    alamofire.dependency 'AlamofireImage', '~> 4.0'
     alamofire.source_files = 'ACKReactiveExtensions/AlamofireImage/*.swift'
   end
 

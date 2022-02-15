@@ -24,7 +24,7 @@ extension Reactive where Base: ImageDownloader {
         return SignalProducer { [weak base = base] observer, lifetime in
             guard let base = base else { observer.sendInterrupted(); return }
             let request = URLRequest(url: url)
-            base.download(request, filter: filter) { response in
+            base.download(request, filter: filter, completion: { response in
                 switch response.result {
                 case .success(let image):
                     observer.send(value: image)
@@ -32,7 +32,7 @@ extension Reactive where Base: ImageDownloader {
                 case .failure(let error):
                     observer.send(error: ImageDownloadError(underlyingError: error))
                 }
-            }
+            })
         }
     }
 }
