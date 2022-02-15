@@ -15,14 +15,9 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
-      - name: Carthage Checkout
+      - name: Carthage build
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
           carthage checkout
-      - uses: olejnjak/carthage-workaround@v2
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          force: true
-          action: build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
+          carthage build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
