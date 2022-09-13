@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ackee' => 'info@ackee.cz' }
   s.source           = { :git => 'https://github.com/AckeeCZ/ACKReactiveExtensions.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version    = '5.0'
   s.default_subspec  = 'Core','UIKit'
   s.dependency 'ReactiveCocoa', '~> 12.0'
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Realm' do |realm|
     realm.dependency 'ACKReactiveExtensions/Core'
-    realm.dependency 'RealmSwift', '~> 10.6'
+    realm.dependency 'RealmSwift', '~> 10.28'
     realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
   end
 
