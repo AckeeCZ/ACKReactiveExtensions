@@ -6,6 +6,8 @@ jobs:
   tests:
     name: Build
     runs-on: macos-12
+    env:
+      GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: AckeeCZ/load-xcode-version@1.0
@@ -15,9 +17,7 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
-      - name: Carthage build
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
-        run: | 
-          carthage checkout
-          carthage build --platform iOS --cache-builds --no-skip-current --use-xcframeworks
+      - name: Build dependencies
+        run: carthage build --cache-builds --use-xcframeworks
+      - name: Build
+        run: carthage build --cache-builds --use-xcframeworks --no-skip-current 

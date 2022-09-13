@@ -9,6 +9,8 @@ jobs:
   carthage:
     name: Upload Carthage binary 
     runs-on: macos-12
+    env:
+      GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: AckeeCZ/load-xcode-version@1.0
@@ -18,8 +20,10 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
+      - name: Build dependencies
+        run: carthage build --cache-builds --use-xcframeworks
       - name: Build
-        run: carthage build --no-skip-current --cache-builds --use-xcframeworks
+        run: carthage build --cache-builds --use-xcframeworks --no-skip-current 
       - name: Archive
         run: | 
           DST=$PWD
