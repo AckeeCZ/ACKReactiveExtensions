@@ -9,7 +9,7 @@ jobs:
   # Just comment out as we would want to uncomment it when Carthage supports archives with XCFrameworks
   # carthage:
   #   name: Upload Carthage binary 
-  #   runs-on: macos-latest
+  #   runs-on: macos-12
   #   steps:
   #     - uses: actions/checkout@v2
   #     - uses: AckeeCZ/load-xcode-version@1.0
@@ -35,7 +35,7 @@ jobs:
   #         draft: false
   cocoapods:
     name: Push podspec to Cocoapods trunk
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
       - uses: actions/checkout@v2
       - uses: AckeeCZ/load-xcode-version@1.0
