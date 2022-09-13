@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Realm' do |realm|
     realm.dependency 'ACKReactiveExtensions/Core'
-    realm.dependency 'RealmSwift', '~> 10.6'
+    realm.dependency 'RealmSwift', '~> 10.28'
     realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
   end
 
