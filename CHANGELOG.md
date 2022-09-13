@@ -8,6 +8,9 @@
 
 ## master
 
+## 6.1.0
+- update dependencies and deployment target to iOS 11.0, use Xcode 14 (#59, kudos to @olejnjak)
+
 ## 6.0.0 & 6.0.1
 - update dependencies and deployment target to iOS 10.0 (#58, kudos to @vendulasvastal)
 
