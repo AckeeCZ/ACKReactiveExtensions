@@ -21,7 +21,7 @@ jobs:
       - name: Build dependencies
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
-        run: carthage build --cache-builds --use-xcframeworks
+        run: carthage bootstrap --cache-builds --use-xcframeworks
       - name: Build
         run: carthage build --cache-builds --use-xcframeworks --no-skip-current 
       - name: Archive
