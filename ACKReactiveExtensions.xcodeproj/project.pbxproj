@@ -44,6 +44,9 @@
 		6925243F20D14EC300228289 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */; };
 		692FC2012500EB8000B72449 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FC2002500EB8000B72449 /* MappingError.swift */; };
 		69470C64200763C00013A386 /* ActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69470C63200763C00013A386 /* ActionExtensions.swift */; };
+		696E9DE828D1C93E00F2967D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 696E9DE728D1C93E00F2967D /* libz.tbd */; };
+		696E9DEA28D1C94500F2967D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 696E9DE928D1C94500F2967D /* libc++.tbd */; };
+		696E9DEC28D1C94A00F2967D /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 696E9DEB28D1C94A00F2967D /* libcompression.tbd */; };
 		698F87FF2029AE120099B8FB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */; };
 		698F88012029AE3C0099B8FB /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88002029AE3C0099B8FB /* CALayerExtensions.swift */; };
 		698F88052029B3760099B8FB /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F88042029B3760099B8FB /* UITextFieldExtensions.swift */; };
@@ -125,6 +128,11 @@
 		6925243D20D14E7100228289 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		692FC2002500EB8000B72449 /* MappingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		69470C63200763C00013A386 /* ActionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtensions.swift; sourceTree = "<group>"; };
+		696E9DE328D1C92F00F2967D /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		696E9DE528D1C93500F2967D /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
+		696E9DE728D1C93E00F2967D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		696E9DE928D1C94500F2967D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		696E9DEB28D1C94A00F2967D /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		698F87FD2029ADFA0099B8FB /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		698F88002029AE3C0099B8FB /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
 		698F88042029B3760099B8FB /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
@@ -217,6 +225,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				696E9DEC28D1C94A00F2967D /* libcompression.tbd in Frameworks */,
+				696E9DEA28D1C94500F2967D /* libc++.tbd in Frameworks */,
+				696E9DE828D1C93E00F2967D /* libz.tbd in Frameworks */,
 				0E1CD644279998F5007B7405 /* ReactiveCocoa.xcframework in Frameworks */,
 				0E1CD646279998F5007B7405 /* ReactiveSwift.xcframework in Frameworks */,
 				699B59071FF52F5100FFDC91 /* ACKReactiveExtensionsCore.framework in Frameworks */,
@@ -383,6 +394,11 @@
 		699B58EF1FF52E2D00FFDC91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				696E9DEB28D1C94A00F2967D /* libcompression.tbd */,
+				696E9DE928D1C94500F2967D /* libc++.tbd */,
+				696E9DE728D1C93E00F2967D /* libz.tbd */,
+				696E9DE528D1C93500F2967D /* libz.1.2.8.tbd */,
+				696E9DE328D1C92F00F2967D /* libc++.1.tbd */,
 				0E1CD65527999D58007B7405 /* Realm.xcframework */,
 				0E1CD65427999D58007B7405 /* RealmSwift.xcframework */,
 				0E1CD64F27999914007B7405 /* Alamofire.xcframework */,

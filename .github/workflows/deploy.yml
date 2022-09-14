@@ -23,7 +23,7 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
         run: carthage bootstrap --cache-builds --use-xcframeworks
       - name: Build
-        run: carthage build --cache-builds --use-xcframeworks --no-skip-current 
+        run: carthage build --cache-builds --use-xcframeworks --no-skip-current --no-use-binaries
       - name: Archive
         run: | 
           DST=$PWD
