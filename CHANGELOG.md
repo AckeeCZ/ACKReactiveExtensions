@@ -7,6 +7,7 @@
 ```
 
 ## master
+- deprecate (more like remove) Realm and Marshal extensions from dependency managers distribution (#60, kudos to @olejnjak)
 
 ## 6.1.0
 - update dependencies and deployment target to iOS 11.0, use Xcode 14 (#59, kudos to @olejnjak)

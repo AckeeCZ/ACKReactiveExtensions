@@ -7,9 +7,9 @@ jobs:
     name: Build
     runs-on: macos-12
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.3.0
       - uses: AckeeCZ/load-xcode-version@1.0
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.2.2
         with:
           path: Carthage
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
@@ -18,6 +18,6 @@ jobs:
       - name: Build dependencies
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
-        run: carthage bootstrap --cache-builds --use-xcframeworks
+        run: carthage bootstrap --cache-builds --use-xcframeworks --platform iOS
       - name: Build
-        run: carthage build --cache-builds --use-xcframeworks --no-skip-current --no-use-binaries
+        run: carthage build --cache-builds --use-xcframeworks --no-skip-current --no-use-binaries  --platform iOS

@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.swift_version    = '5.0'
   s.default_subspec  = 'Core','UIKit'
   s.dependency 'ReactiveCocoa', '~> 12.0'
-  s.dependency 'ReactiveSwift', '~> 7.0'
+  s.dependency 'ReactiveSwift', '~> 7.0.0' # ReactiveCocoa has deployment target iOS 9, ReactiveSwift 7.1 has iOS 10, sorry for now
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/*.swift'
@@ -29,18 +29,6 @@ Pod::Spec.new do |s|
     webkit.source_files = 'ACKReactiveExtensions/WebKit/*.swift'
   end
 
-  s.subspec 'Realm' do |realm|
-    realm.dependency 'ACKReactiveExtensions/Core'
-    realm.dependency 'RealmSwift', '~> 10.28'
-    realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
-  end
-
-  s.subspec 'Marshal' do |marshal|
-    marshal.dependency 'ACKReactiveExtensions/Core'
-    marshal.dependency 'Marshal', '~> 1.2'
-    marshal.source_files = 'ACKReactiveExtensions/Marshal/*.swift'
-  end
-  
   s.subspec 'AlamofireImage' do |alamofire|
     alamofire.dependency 'ACKReactiveExtensions/Core'
     alamofire.dependency 'AlamofireImage', '~> 4.0'

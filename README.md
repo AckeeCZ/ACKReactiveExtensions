@@ -11,11 +11,6 @@ ACKReactiveExtensions is set of useful extensions for ReactiveCocoa you could us
 
 Currently we have extensions for
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
-- [Argo](https://github.com/thoughtbot/Argo)
-- [Marshal](https://github.com/utahiosmac/Marshal)
-- [Reachability](https://github.com/tonymillion/Reachability)
-- [Realm](https://github.com/realm/realm-cocoa)
-- [SDWebImage](https://github.com/rs/SDWebImage)
 - UIKit
 - WebKit
 
@@ -34,11 +29,6 @@ By using `pod "ACKReactiveExtensions"` you will get only general and UIKit exten
 
 ```ruby
 pod 'ACKReactiveExtensions/AlamofireImage'
-pod 'ACKReactiveExtensions/Argo'
-pod 'ACKReactiveExtensions/Marshal'
-pod 'ACKReactiveExtensions/Reachability'
-pod 'ACKReactiveExtensions/Realm'
-pod 'ACKReactiveExtensions/SDWebImage'
 pod 'ACKReactiveExtensions/WebKit'
 ```
 These subspecs mostly require aditional dependencies (as Argo or Reachability) and you could not need it for your project. That's why it is separated to subspecs.
