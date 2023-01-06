@@ -29,18 +29,6 @@ Pod::Spec.new do |s|
     webkit.source_files = 'ACKReactiveExtensions/WebKit/*.swift'
   end
 
-  s.subspec 'Realm' do |realm|
-    realm.dependency 'ACKReactiveExtensions/Core'
-    realm.dependency 'RealmSwift', '~> 10.28'
-    realm.source_files = 'ACKReactiveExtensions/Realm/*.swift'
-  end
-
-  s.subspec 'Marshal' do |marshal|
-    marshal.dependency 'ACKReactiveExtensions/Core'
-    marshal.dependency 'Marshal', '~> 1.2'
-    marshal.source_files = 'ACKReactiveExtensions/Marshal/*.swift'
-  end
-  
   s.subspec 'AlamofireImage' do |alamofire|
     alamofire.dependency 'ACKReactiveExtensions/Core'
     alamofire.dependency 'AlamofireImage', '~> 4.0'
