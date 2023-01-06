@@ -18,6 +18,6 @@ jobs:
       - name: Build dependencies
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.CI_PERSONAL_ACCESS_TOKEN }}
-        run: carthage bootstrap --cache-builds --use-xcframeworks
+        run: carthage bootstrap --cache-builds --use-xcframeworks --platform iOS
       - name: Build
-        run: carthage build --cache-builds --use-xcframeworks --no-skip-current --no-use-binaries
+        run: carthage build --cache-builds --use-xcframeworks --no-skip-current --no-use-binaries  --platform iOS
