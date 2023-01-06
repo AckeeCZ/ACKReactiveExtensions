@@ -7,6 +7,9 @@
 ```
 
 ## master
+
+# 6.2.0
+
 - deprecate (more like remove) Realm and Marshal extensions from dependency managers distribution (#60, kudos to @olejnjak)
 
 ## 6.1.0
