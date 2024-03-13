@@ -8,6 +8,7 @@
 
 ## master
 
+- remove AlamofireImage extensions, moved to [Deprecated/AlamofireImage] for users relying on it (#62, kudos to @olejnjak)
 - use Xcode 15.2 on CI ➡️ bump deployment target to iOS 12 (#61, kudos to @olejnjak)
 
 # 6.2.0
