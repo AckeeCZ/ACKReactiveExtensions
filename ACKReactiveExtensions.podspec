@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ackee' => 'info@ackee.cz' }
   s.source           = { :git => 'https://github.com/AckeeCZ/ACKReactiveExtensions.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   s.swift_version    = '5.0'
   s.default_subspec  = 'Core','UIKit'
   s.dependency 'ReactiveCocoa', '~> 12.0'
-  s.dependency 'ReactiveSwift', '~> 7.0.0' # ReactiveCocoa has deployment target iOS 9, ReactiveSwift 7.1 has iOS 10, sorry for now
+  s.dependency 'ReactiveSwift', '~> 7.0'
 
   s.subspec 'Core' do |core|
     core.source_files = 'ACKReactiveExtensions/Core/*.swift'

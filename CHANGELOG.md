@@ -8,6 +8,8 @@
 
 ## master
 
+- use Xcode 15.2 on CI ➡️ bump deployment target to iOS 12 (#61, kudos to @olejnjak)
+
 # 6.2.0
 
 - deprecate (more like remove) Realm and Marshal extensions from dependency managers distribution (#60, kudos to @olejnjak)
