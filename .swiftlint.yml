@@ -16,9 +16,7 @@ whitelist_rules:
   - weak_delegate
   - overridden_super_call
 included: # paths to include during linting. `--path` is ignored if present.
-  - ACKReactiveExtensions
-excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Carthage
+  - Sources
 force_cast: warning # implicitly
 function_body_length:
   - 100 # warning

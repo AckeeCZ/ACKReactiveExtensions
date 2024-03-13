@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
@@ -8,35 +8,23 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "ACKReactiveExtensionsCore",
-            targets: ["ACKReactiveExtensionsCore"]
-        ),
-        .library(
-            name: "ACKReactiveExtensionsUIKit",
-            targets: ["ACKReactiveExtensionsUIKit"]
-        ),
-        .library(
-            name: "ACKReactiveExtensionsWebKit",
-            targets: ["ACKReactiveExtensionsWebKit"]
+            name: "ACKReactiveExtensions",
+            targets: ["ACKReactiveExtensions"]
         ),
     ],
     dependencies: [
         .package(
             url: "https://github.com/ReactiveCocoa/ReactiveCocoa",
-            .upToNextMajor(
-                from: "12.0.0"
-            )
+            from: "12.0.0"
         ),
         .package(
             url: "https://github.com/ReactiveCocoa/ReactiveSwift",
-            .upToNextMajor(
-                from: "7.0.0"
-            )
+            from: "7.1.1"
         ),
     ],
     targets: [
         .target(
-            name: "ACKReactiveExtensionsCore",
+            name: "ACKReactiveExtensions",
             dependencies: [
                 .product(
                     name: "ReactiveSwift",
@@ -46,22 +34,7 @@ let package = Package(
                     name: "ReactiveCocoa",
                     package: "ReactiveCocoa"
                 )
-            ],
-            path: "ACKReactiveExtensions/Core"
-        ),
-        .target(
-            name: "ACKReactiveExtensionsUIKit",
-            dependencies: [
-                "ACKReactiveExtensionsCore"
-            ],
-            path: "ACKReactiveExtensions/UIKit"
-        ),
-        .target(
-            name: "ACKReactiveExtensionsWebKit",
-            dependencies: [
-                "ACKReactiveExtensionsCore"
-            ],
-            path: "ACKReactiveExtensions/WebKit"
+            ]
         ),
     ],
     swiftLanguageVersions: [
