@@ -8,7 +8,7 @@ on:
 jobs:
   carthage:
     name: Upload Carthage binary 
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
       - uses: AckeeCZ/load-xcode-version@v1
