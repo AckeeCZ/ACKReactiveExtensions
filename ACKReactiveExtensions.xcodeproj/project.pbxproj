@@ -152,7 +152,6 @@
 		699C4F9920838C0900AEEAA1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		699C4F9D20838EB600AEEAA1 /* ImageDownloaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderExtensions.swift; sourceTree = "<group>"; };
 		69BDC494201A477700591992 /* Cartfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Cartfile; sourceTree = "<group>"; };
-		69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = ACKReactiveExtensions.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +213,6 @@
 		690B9FAF1FF526770098BEC6 = {
 			isa = PBXGroup;
 			children = (
-				69BDC495201A477700591992 /* ACKReactiveExtensions.podspec */,
 				69BDC494201A477700591992 /* Cartfile */,
 				699B58A31FF5273C00FFDC91 /* ACKReactiveExtensions */,
 				699B58401FF526A000FFDC91 /* Products */,
