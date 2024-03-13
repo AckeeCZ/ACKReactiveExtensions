@@ -6,7 +6,9 @@
 - <description> (#<PR_number>, kudos to @<author>)
 ```
 
-## master
+## main
+
+## 7.0.0
 
 - use single ACKReactiveExtensions target (#63, kudos to @olejnjak)
 - remove AlamofireImage extensions, moved to [Deprecated/AlamofireImage] for users relying on it (#62, kudos to @olejnjak)
