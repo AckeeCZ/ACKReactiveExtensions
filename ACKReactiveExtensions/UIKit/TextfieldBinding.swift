@@ -1,11 +1,3 @@
-//
-//  TextFieldBinding.swift
-//  Pods
-//
-//  Created by Jakub Olejník on 28/06/2017.
-//
-//
-
 import UIKit
 import ReactiveSwift
 

@@ -10,10 +10,7 @@ import UIKit
 import RealmSwift
 import ReactiveCocoa
 import ReactiveSwift
-
-#if !COCOAPODS
-    import ACKReactiveExtensionsCore
-#endif
+import ACKReactiveExtensionsCore
 
 /// Error return in case of Realm operation failure
 public struct RealmError: Error {

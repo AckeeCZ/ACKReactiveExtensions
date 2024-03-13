@@ -1,16 +1,12 @@
 ![ackee|ACKReactiveExtensions](Resources/cover-image.png)
 
 ![Build](https://github.com/AckeeCZ/ACKReactiveExtensions/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/cocoapods/v/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
-[![License](https://img.shields.io/cocoapods/l/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
-[![Platform](https://img.shields.io/cocoapods/p/ACKReactiveExtensions.svg?style=flat)](http://cocoapods.org/pods/ACKReactiveExtensions)
 
 # ACKReactiveExtensions
 
 ACKReactiveExtensions is set of useful extensions for ReactiveCocoa you could use in your apps.
 
 Currently we have extensions for
-- [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
 - UIKit
 - WebKit
 
@@ -18,37 +14,16 @@ If you'd love to have more extensions available just open an issue or even bette
 
 ## Installation
 
-ACKReactiveExtensions is available through [CocoaPods](http://cocoapods.org). Simply add the following line to your Podfile:
+You can use Carthage by adding it to your Cartfile:
 
-```ruby
-pod "ACKReactiveExtensions"
+```
+github "AckeeCZ/ACKReactiveExtensions
 ```
 
-## Subspecs
-By using `pod "ACKReactiveExtensions"` you will get only general and UIKit extensions but there are also subspecs you can like/need.
-
-```ruby
-pod 'ACKReactiveExtensions/AlamofireImage'
-pod 'ACKReactiveExtensions/WebKit'
-```
-These subspecs mostly require aditional dependencies (as Argo or Reachability) and you could not need it for your project. That's why it is separated to subspecs.
+Or you can use SPM by adding it to you _Package.swift_.
 
 ## Usage
 Usage is really simple, ACKReactiveExtensions contains just more extensions for ReactiveSwift's `Reactive` struct so it can be used on more objects.
-
-```swift
-let imageURL: Property<URL> = ...
-let imageView = UIImageView()
-
-imageView.reactive.imageURL <~ imageURL
-```
-
-### Mapping extensions
-
-ACKReactiveExtensions contains reactive mapping extensions for following libraries. See their page for more information.
-
-- [Argo extensions](Docs/Argo.md)
-- [Marshal extensions](Docs/Marshal.md)
 
 #### Mapping configuration
 

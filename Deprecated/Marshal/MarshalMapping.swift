@@ -9,10 +9,7 @@
 import Foundation
 import Marshal
 import ReactiveSwift
-
-#if !COCOAPODS
-    import ACKReactiveExtensionsCore
-#endif
+import ACKReactiveExtensionsCore
 
 /**
  * Protocol that allows creation of custom Marshal errors
