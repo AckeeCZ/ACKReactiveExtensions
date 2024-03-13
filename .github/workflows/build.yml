@@ -3,9 +3,9 @@ name: Build
 on: [pull_request, push]
 
 jobs:
-  tests:
-    name: Build
-    runs-on: macos-13
+  carthage:
+    name: Carthage
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
       - uses: AckeeCZ/load-xcode-version@v1
