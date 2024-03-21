@@ -8,6 +8,8 @@
 
 ## main
 
+- add extensions for running async operations as `SignalProducer` (#64, kudos to @olejnjak)
+
 ## 7.0.0
 
 - use single ACKReactiveExtensions target (#63, kudos to @olejnjak)
