@@ -8,6 +8,8 @@
 
 ## main
 
+## 7.1.0
+
 - add extensions for running async operations as `SignalProducer` (#64, kudos to @olejnjak)
 - remove default `JSONDecoder` for decode extension (#65, kudos to @olejnjak)
 
