@@ -18,7 +18,7 @@ public extension SignalProducer where Value == Data, Error: DecodingErrorCreatab
     /// Decodes given `type` from received data using given `decoder`
     ///
     /// By default the `type` is inferred from return value
-    func decode<ResultType: Decodable>(type: ResultType.Type = ResultType.self, using decoder: JSONDecoder = ACKReactiveExtensionsConfiguration.jsonDecoder) -> SignalProducer<ResultType, Error> {
+    func decode<ResultType: Decodable>(type: ResultType.Type = ResultType.self, using decoder: JSONDecoder) -> SignalProducer<ResultType, Error> {
         lift { $0.decode(type: type, using: decoder) }
     }
 }
@@ -27,7 +27,7 @@ public extension Signal where Value == Data, Error: DecodingErrorCreatable {
     /// Decodes given `type` from received data using given `decoder`
     ///
     /// By default the `type` is inferred from return value, if no `decoder` is provided then `ACKReactiveExtensionsConfiguration.jsonDecoder` is used
-    func decode<ResultType: Decodable>(type: ResultType.Type = ResultType.self, using decoder: JSONDecoder = ACKReactiveExtensionsConfiguration.jsonDecoder) -> Signal<ResultType, Error> {
+    func decode<ResultType: Decodable>(type: ResultType.Type = ResultType.self, using decoder: JSONDecoder) -> Signal<ResultType, Error> {
         attemptMap { data -> Result<ResultType, Error> in
             if ACKReactiveExtensionsConfiguration.allowMappingOnMainThread == false {
                 assert(Thread.current.isMainThread == false, "Mapping should not be performed on main thread!")
