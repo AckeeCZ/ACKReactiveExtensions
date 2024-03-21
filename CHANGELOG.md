@@ -8,6 +8,8 @@
 
 ## main
 
+- remove default `JSONDecoder` for decode extension (#65, kudos to @olejnjak)
+
 ## 7.0.0
 
 - use single ACKReactiveExtensions target (#63, kudos to @olejnjak)
