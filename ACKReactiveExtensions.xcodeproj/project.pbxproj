@@ -25,6 +25,7 @@
 		691475352BA1D83C00E1D102 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691475222BA1D83C00E1D102 /* UIViewControllerExtensions.swift */; };
 		691475362BA1D83C00E1D102 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691475232BA1D83C00E1D102 /* UIViewExtensions.swift */; };
 		691475372BA1D83C00E1D102 /* WKWebViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691475252BA1D83C00E1D102 /* WKWebViewExtensions.swift */; };
+		697E29C12BA35AE100E3BC48 /* SignalProducer+Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E29C02BA35AE100E3BC48 /* SignalProducer+Concurrency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		6914753A2BA1D85300E1D102 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		6914753B2BA1D85300E1D102 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		697A8F452BA1D76C0080FA82 /* ACKReactiveExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ACKReactiveExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		697E29C02BA35AE100E3BC48 /* SignalProducer+Concurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Concurrency.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				691475172BA1D83C00E1D102 /* Codable.swift */,
 				691475182BA1D83C00E1D102 /* Core.swift */,
 				691475192BA1D83C00E1D102 /* MappingError.swift */,
+				697E29C02BA35AE100E3BC48 /* SignalProducer+Concurrency.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				691475352BA1D83C00E1D102 /* UIViewControllerExtensions.swift in Sources */,
 				6914752A2BA1D83C00E1D102 /* ActionExtensions.swift in Sources */,
 				691475302BA1D83C00E1D102 /* UIControlExtensions.swift in Sources */,
+				697E29C12BA35AE100E3BC48 /* SignalProducer+Concurrency.swift in Sources */,
 				691475312BA1D83C00E1D102 /* UIImageViewExtensions.swift in Sources */,
 				691475322BA1D83C00E1D102 /* UIStackViewExtensions.swift in Sources */,
 				691475362BA1D83C00E1D102 /* UIViewExtensions.swift in Sources */,
